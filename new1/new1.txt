@@ -1,0 +1,6 @@
+$libraries = @(
+    [PSCustomObject]@{
+        Name = "Library: AAA - CAO Service Acceptance"
+        Url  = "odopen://sync?userEmail={0}&siteId=%7B7fb0a224%2D75c3%2D45ee%2D9bf8%2Dd557b6a936f1%7D&webId=%7B173c34ac%2Dec17%2D4c26%2Dabc2%2Dbd3fbdbb5580%7D&listId=5451faaf%2D2af7%2D4605%2Da2a8%2D56805625a449&webUrl=https%3A%2F%2Farlingtonva%2Esharepoint%2Ecom%2Fsites%2FCAO%2DCaseManagementSite"
+    }
+)
