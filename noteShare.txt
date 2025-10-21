@@ -1,66 +1,7 @@
-POST https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/SitePages/undefined/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.clientPeoplePickerSearchUser 404 (Not Found)
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:185
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:188
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:188
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:206
-Promise.then
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:206
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:206
-Promise.then
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:206
-Promise.then
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:206
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:201
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:201
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-pu @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-e.searchTenant @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-pu @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-e.searchPeople @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-Eh @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-a.onSearchFieldChanged @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-n._onResolveSuggestions @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-_ @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-h @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-setTimeout
-e.setTimeout @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-h @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-g @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-t.updateValue @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-n.onInputChange @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-(anonymous) @ case-macro-view-web-part_5c27e7e6050503526581.js:2
-pr @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-ms @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Lc @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:100
-Ki @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Ac @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-hc @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:100
-Ki @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Qi @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-qi @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Te @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Re @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Ta @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Zt @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Xt @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-(anonymous) @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:100
-Ki @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Pe @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
-Yt @ sp-pages-assembly_en-us_b3e212fb9829abf6e61bee5444214b19.js:102
+https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_api/web/getList('%2Fsites%2FCAO-CaseManagementSite%2F1050')?%24select=Id%2CTitle%2CRootFolder%2FServerRelativeUrl&%24expand=RootFolder
+
+
+<m:error xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+<m:code>-2147024894, System.IO.FileNotFoundException</m:code>
+<m:message xml:lang="en-US">File Not Found.</m:message>
+</m:error>
