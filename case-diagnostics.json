@@ -1,6 +1,6 @@
 [
   {
-    "t": "2025-10-22T19:47:02.327Z",
+    "t": "2025-10-22T19:59:32.342Z",
     "type": "ViewService.getViews",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -51,7 +51,48 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:02.517Z",
+    "t": "2025-10-22T19:59:32.520Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-22T19:59:32.520Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "orderAfterExclude": [
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-22T19:59:32.521Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-22T19:59:32.545Z",
     "type": "ViewService.getListFieldTitles",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -59,7 +100,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:02.522Z",
+    "t": "2025-10-22T19:59:32.547Z",
     "type": "CenterGrid.viewsLoaded",
     "data": {
       "container": {
@@ -115,7 +156,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:11.996Z",
+    "t": "2025-10-22T19:59:32.693Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -132,7 +173,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:11.997Z",
+    "t": "2025-10-22T19:59:32.694Z",
     "type": "CenterGrid.buildColumns.start",
     "data": {
       "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717",
@@ -147,7 +188,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:11.998Z",
+    "t": "2025-10-22T19:59:32.694Z",
     "type": "ViewService.renderAtFolder.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -156,49 +197,8 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:12.154Z",
-    "type": "ViewService.getViewFieldInternalNames",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-22T19:47:12.154Z",
-    "type": "CenterGrid.buildColumns.start",
-    "data": {
-      "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "orderAfterExclude": [
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-22T19:47:12.154Z",
-    "type": "ViewService.renderAtFolder.start",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-22T19:47:12.359Z",
-    "type": "ViewService.renderAtFolder.viewXml",
+    "t": "2025-10-22T19:59:32.833Z",
+    "type": "ViewService.renderAtFolder.viewXml.rawHead",
     "data": {
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
       "title": "All Documents",
@@ -206,7 +206,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:12.359Z",
+    "t": "2025-10-22T19:59:32.835Z",
     "type": "ViewService.renderAtFolder.RLDaS.params",
     "data": {
       "parms": {
@@ -214,13 +214,21 @@
         "DatesInUtc": true,
         "AllowMultipleValueFilterForTaxonomyFields": true,
         "FolderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
-        "ViewXml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+        "OverrideViewXml": true,
+        "ViewXml": "<View><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit></View>"
       }
     }
   },
   {
-    "t": "2025-10-22T19:47:12.535Z",
-    "type": "ViewService.renderAtFolder.viewXml",
+    "t": "2025-10-22T19:59:32.968Z",
+    "type": "ViewService.renderAtFolder.error",
+    "data": {
+      "error": "Error: Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot convert a primitive value to the expected type 'Edm.String'. See the inner exception for more details.\"}}}"
+    }
+  },
+  {
+    "t": "2025-10-22T19:59:32.970Z",
+    "type": "ViewService.renderAtFolder.viewXml.rawHead",
     "data": {
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
       "title": "All Documents",
@@ -228,7 +236,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:12.536Z",
+    "t": "2025-10-22T19:59:32.971Z",
     "type": "ViewService.renderAtFolder.RLDaS.params",
     "data": {
       "parms": {
@@ -236,35 +244,43 @@
         "DatesInUtc": true,
         "AllowMultipleValueFilterForTaxonomyFields": true,
         "FolderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
-        "ViewXml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+        "OverrideViewXml": true,
+        "ViewXml": "<View><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit></View>"
       }
     }
   },
   {
-    "t": "2025-10-22T19:47:12.629Z",
-    "type": "ViewService.renderAtFolder.RLDaS.rows",
+    "t": "2025-10-22T19:59:33.098Z",
+    "type": "ViewService.renderAtFolder.error",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "error": "Error: Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot convert a primitive value to the expected type 'Edm.String'. See the inner exception for more details.\"}}}"
     }
   },
   {
-    "t": "2025-10-22T19:47:12.629Z",
-    "type": "ViewService.renderAtFolder.done",
+    "t": "2025-10-22T19:59:33.202Z",
+    "type": "ViewService.renderAtFolder.fallbackOData",
     "data": {
-      "outCount": 0
+      "count": 18
     }
   },
   {
-    "t": "2025-10-22T19:47:12.634Z",
+    "t": "2025-10-22T19:59:33.229Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "count": 18,
+      "firstRowKeys": [
+        "UniqueId",
+        "FileLeafRef",
+        "FileRef",
+        "FSObjType",
+        "Modified",
+        "Editor",
+        "ContentTypeId"
+      ]
     }
   },
   {
-    "t": "2025-10-22T19:47:12.642Z",
+    "t": "2025-10-22T19:59:33.253Z",
     "type": "CenterGrid.columnsFinal",
     "data": {
       "names": [
@@ -286,30 +302,30 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:12.799Z",
-    "type": "ViewService.renderAtFolder.RLDaS.rows",
+    "t": "2025-10-22T19:59:33.376Z",
+    "type": "ViewService.renderAtFolder.fallbackOData",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "count": 18
     }
   },
   {
-    "t": "2025-10-22T19:47:12.799Z",
-    "type": "ViewService.renderAtFolder.done",
-    "data": {
-      "outCount": 0
-    }
-  },
-  {
-    "t": "2025-10-22T19:47:12.803Z",
+    "t": "2025-10-22T19:59:33.389Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "count": 18,
+      "firstRowKeys": [
+        "UniqueId",
+        "FileLeafRef",
+        "FileRef",
+        "FSObjType",
+        "Modified",
+        "Editor",
+        "ContentTypeId"
+      ]
     }
   },
   {
-    "t": "2025-10-22T19:47:12.805Z",
+    "t": "2025-10-22T19:59:33.398Z",
     "type": "CenterGrid.columnsFinal",
     "data": {
       "names": [
@@ -331,7 +347,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:33.602Z",
+    "t": "2025-10-22T19:59:38.193Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -349,7 +365,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:33.602Z",
+    "t": "2025-10-22T19:59:38.193Z",
     "type": "CenterGrid.buildColumns.start",
     "data": {
       "selectedViewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
@@ -365,7 +381,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:33.602Z",
+    "t": "2025-10-22T19:59:38.193Z",
     "type": "ViewService.renderAtFolder.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -374,8 +390,8 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:33.901Z",
-    "type": "ViewService.renderAtFolder.viewXml",
+    "t": "2025-10-22T19:59:38.463Z",
+    "type": "ViewService.renderAtFolder.viewXml.rawHead",
     "data": {
       "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
       "title": "Assignment Documents",
@@ -383,7 +399,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:47:33.901Z",
+    "t": "2025-10-22T19:59:38.463Z",
     "type": "ViewService.renderAtFolder.RLDaS.params",
     "data": {
       "parms": {
@@ -391,44 +407,43 @@
         "DatesInUtc": true,
         "AllowMultipleValueFilterForTaxonomyFields": true,
         "FolderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
-        "ViewXml": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document</Value></Eq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"_UIVersionString\"/><FieldRef Name=\"mvDocumentType\"/><FieldRef Name=\"mvDocumentAuthor\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"CheckoutUser\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+        "OverrideViewXml": true,
+        "ViewXml": "<View Scope=\"Recursive\"><Query><OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document</Value></Eq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"_UIVersionString\"/><FieldRef Name=\"mvDocumentType\"/><FieldRef Name=\"mvDocumentAuthor\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"CheckoutUser\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit></View>"
       }
     }
   },
   {
-    "t": "2025-10-22T19:47:34.201Z",
-    "type": "ViewService.renderAtFolder.RLDaS.rows",
+    "t": "2025-10-22T19:59:38.674Z",
+    "type": "ViewService.renderAtFolder.error",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "error": "Error: Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot convert a primitive value to the expected type 'Edm.String'. See the inner exception for more details.\"}}}"
     }
   },
   {
-    "t": "2025-10-22T19:47:34.201Z",
-    "type": "ViewService.filter.ContentTypeNameEq",
+    "t": "2025-10-22T19:59:38.846Z",
+    "type": "ViewService.renderAtFolder.fallbackOData",
     "data": {
-      "want": "assignment document",
-      "before": 0,
-      "after": 0
+      "count": 18
     }
   },
   {
-    "t": "2025-10-22T19:47:34.201Z",
-    "type": "ViewService.renderAtFolder.done",
-    "data": {
-      "outCount": 0
-    }
-  },
-  {
-    "t": "2025-10-22T19:47:34.204Z",
+    "t": "2025-10-22T19:59:38.851Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "count": 18,
+      "firstRowKeys": [
+        "UniqueId",
+        "FileLeafRef",
+        "FileRef",
+        "FSObjType",
+        "Modified",
+        "Editor",
+        "ContentTypeId"
+      ]
     }
   },
   {
-    "t": "2025-10-22T19:47:34.209Z",
+    "t": "2025-10-22T19:59:38.866Z",
     "type": "CenterGrid.columnsFinal",
     "data": {
       "names": [
@@ -452,7 +467,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:48:00.445Z",
+    "t": "2025-10-22T19:59:42.422Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -469,7 +484,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:48:00.445Z",
+    "t": "2025-10-22T19:59:42.422Z",
     "type": "CenterGrid.buildColumns.start",
     "data": {
       "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717",
@@ -484,7 +499,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:48:00.446Z",
+    "t": "2025-10-22T19:59:42.422Z",
     "type": "ViewService.renderAtFolder.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -493,8 +508,8 @@
     }
   },
   {
-    "t": "2025-10-22T19:48:00.765Z",
-    "type": "ViewService.renderAtFolder.viewXml",
+    "t": "2025-10-22T19:59:42.695Z",
+    "type": "ViewService.renderAtFolder.viewXml.rawHead",
     "data": {
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
       "title": "All Documents",
@@ -502,7 +517,7 @@
     }
   },
   {
-    "t": "2025-10-22T19:48:00.766Z",
+    "t": "2025-10-22T19:59:42.697Z",
     "type": "ViewService.renderAtFolder.RLDaS.params",
     "data": {
       "parms": {
@@ -510,35 +525,43 @@
         "DatesInUtc": true,
         "AllowMultipleValueFilterForTaxonomyFields": true,
         "FolderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
-        "ViewXml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+        "OverrideViewXml": true,
+        "ViewXml": "<View><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit></View>"
       }
     }
   },
   {
-    "t": "2025-10-22T19:48:00.982Z",
-    "type": "ViewService.renderAtFolder.RLDaS.rows",
+    "t": "2025-10-22T19:59:42.832Z",
+    "type": "ViewService.renderAtFolder.error",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "error": "Error: Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot convert a primitive value to the expected type 'Edm.String'. See the inner exception for more details.\"}}}"
     }
   },
   {
-    "t": "2025-10-22T19:48:00.982Z",
-    "type": "ViewService.renderAtFolder.done",
+    "t": "2025-10-22T19:59:43.000Z",
+    "type": "ViewService.renderAtFolder.fallbackOData",
     "data": {
-      "outCount": 0
+      "count": 18
     }
   },
   {
-    "t": "2025-10-22T19:48:00.985Z",
+    "t": "2025-10-22T19:59:43.010Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
-      "count": 0,
-      "firstRowKeys": []
+      "count": 18,
+      "firstRowKeys": [
+        "UniqueId",
+        "FileLeafRef",
+        "FileRef",
+        "FSObjType",
+        "Modified",
+        "Editor",
+        "ContentTypeId"
+      ]
     }
   },
   {
-    "t": "2025-10-22T19:48:00.989Z",
+    "t": "2025-10-22T19:59:43.019Z",
     "type": "CenterGrid.columnsFinal",
     "data": {
       "names": [
