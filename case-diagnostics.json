@@ -1,0 +1,725 @@
+[
+  {
+    "t": "2025-10-23T14:50:31.213Z",
+    "type": "ViewService.getViews",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "views": [
+        {
+          "id": "0948eafd-8dd3-409d-b469-db475a257717",
+          "title": "All Documents",
+          "personal": false,
+          "defaultView": true
+        },
+        {
+          "id": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+          "title": "All Assignments",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+          "title": "Active Assignments",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
+          "title": "Assignment Documents Emails",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+          "title": "My Assignments",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+          "title": "Assignment Documents",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+          "title": "Emails",
+          "personal": false,
+          "defaultView": false
+        }
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.393Z",
+    "type": "ViewService.getListFieldTitles",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "count": 187
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.396Z",
+    "type": "CenterGrid.viewsLoaded",
+    "data": {
+      "container": {
+        "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+        "name": "1511-Abdelaziz Zinbi - SDT",
+        "serverRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+      },
+      "views": [
+        {
+          "id": "0948eafd-8dd3-409d-b469-db475a257717",
+          "title": "All Documents",
+          "personal": false,
+          "defaultView": true
+        },
+        {
+          "id": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+          "title": "All Assignments",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+          "title": "Active Assignments",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
+          "title": "Assignment Documents Emails",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+          "title": "My Assignments",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+          "title": "Assignment Documents",
+          "personal": false,
+          "defaultView": false
+        },
+        {
+          "id": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+          "title": "Emails",
+          "personal": false,
+          "defaultView": false
+        }
+      ],
+      "defaultViewId": "0948eafd-8dd3-409d-b469-db475a257717"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.399Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "names": [
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.399Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "orderAfterExclude": [
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.400Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.534Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "names": [
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.534Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "orderAfterExclude": [
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.534Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.693Z",
+    "type": "ViewService.renderAtFolder.viewXml.head",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "title": "All Documents",
+      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef "
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.694Z",
+    "type": "ViewService.renderAtFolder.caml.query",
+    "data": {
+      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"DocIcon\" /><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"_dlc_DocIdUrl\" /><FieldRef Name=\"FileSizeDisplay\" /><FieldRef Name=\"mvDocSetNumber\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"mv"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.813Z",
+    "type": "ViewService.renderAtFolder.viewXml.head",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "title": "All Documents",
+      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef "
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.814Z",
+    "type": "ViewService.renderAtFolder.caml.query",
+    "data": {
+      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"DocIcon\" /><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"_dlc_DocIdUrl\" /><FieldRef Name=\"FileSizeDisplay\" /><FieldRef Name=\"mvDocSetNumber\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"mv"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.868Z",
+    "type": "ViewService.renderAtFolder.caml.rows",
+    "data": {
+      "count": 18,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedById"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:31.996Z",
+    "type": "ViewService.renderAtFolder.caml.rows",
+    "data": {
+      "count": 18,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedById"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:32.015Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 18,
+      "firstRowKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedById",
+        "mvManagedByStringId",
+        "ID",
+        "CheckoutUserId",
+        "EditorId"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:32.026Z",
+    "type": "CenterGrid.columnsFinal",
+    "data": {
+      "names": [
+        "Name",
+        "Document ID",
+        "File Size",
+        "Assignment Number",
+        "Modified",
+        "Assignment Managed By"
+      ],
+      "keys": [
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:34.831Z",
+    "type": "CenterGrid.viewChanged",
+    "data": {
+      "newId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:34.983Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "names": [
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:34.983Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "orderAfterExclude": [
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:34.983Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:35.252Z",
+    "type": "ViewService.renderAtFolder.viewXml.head",
+    "data": {
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "title": "Active Assignments",
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><And><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Comp"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:35.386Z",
+    "type": "ViewService.renderAtFolder.caml.query",
+    "data": {
+      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936</Value></BeginsWith></And></Where>\n          <OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"DocIcon\" /><Field"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:35.545Z",
+    "type": "ViewService.renderAtFolder.caml.rows",
+    "data": {
+      "count": 0,
+      "sampleKeys": []
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:35.549Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 0,
+      "firstRowKeys": []
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:35.552Z",
+    "type": "CenterGrid.columnsFinal",
+    "data": {
+      "names": [
+        "Name",
+        "Assignment Managed By",
+        "Description"
+      ],
+      "keys": [
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:36.704Z",
+    "type": "CenterGrid.viewChanged",
+    "data": {
+      "newId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:36.870Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "names": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:36.870Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "orderAfterExclude": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:36.870Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:37.142Z",
+    "type": "ViewService.renderAtFolder.viewXml.head",
+    "data": {
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "title": "All Assignments",
+      "head": "<View Name=\"{46B421B5-6DBE-4F49-9183-EAD9C0407FD3}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assig"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:37.257Z",
+    "type": "ViewService.renderAtFolder.caml.query",
+    "data": {
+      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936</Value></BeginsWith></And></Where>\n          <OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"DocIcon\" /><Field"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:37.462Z",
+    "type": "ViewService.renderAtFolder.caml.rows",
+    "data": {
+      "count": 0,
+      "sampleKeys": []
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:37.463Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 0,
+      "firstRowKeys": []
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:37.465Z",
+    "type": "CenterGrid.columnsFinal",
+    "data": {
+      "names": [
+        "Name",
+        "Assignment Status",
+        "Assignment Managed By",
+        "Description"
+      ],
+      "keys": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:38.686Z",
+    "type": "CenterGrid.viewChanged",
+    "data": {
+      "newId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:38.850Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "names": [
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:38.850Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "orderAfterExclude": [
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:38.850Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:39.107Z",
+    "type": "ViewService.renderAtFolder.viewXml.head",
+    "data": {
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "title": "Emails",
+      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"mvReceivedTime\" Ascending=\"FALSE\"/></OrderBy><Where><Or><Contains><FieldRef Name=\"FileLeafRef\""
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:39.107Z",
+    "type": "ViewService.renderAtFolder.caml.query",
+    "data": {
+      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"mvReceivedTime\" Ascending=\"FALSE\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"DocIcon\" /><FieldRef Name=\"mvAttachmentIcon\" /><FieldRef Name=\"mvSubject\" /><FieldRef Name=\"mvTo\" /><FieldRef Name=\"mvFrom\" /><FieldRef Name=\"mvReceivedTime\" /><FieldRef "
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:39.333Z",
+    "type": "ViewService.renderAtFolder.caml.rows",
+    "data": {
+      "count": 18,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:39.346Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 18,
+      "firstRowKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "ID",
+        "Modified",
+        "CheckoutUserId",
+        "EditorId"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:39.374Z",
+    "type": "CenterGrid.columnsFinal",
+    "data": {
+      "names": [
+        "📎",
+        "Subject",
+        "To",
+        "From",
+        "Received Time",
+        "Name"
+      ],
+      "keys": [
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:47.520Z",
+    "type": "CenterGrid.viewChanged",
+    "data": {
+      "newId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:47.685Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "names": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:47.685Z",
+    "type": "CenterGrid.buildColumns.start",
+    "data": {
+      "selectedViewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "orderAfterExclude": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:47.685Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:47.956Z",
+    "type": "ViewService.renderAtFolder.viewXml.head",
+    "data": {
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "title": "All Assignments",
+      "head": "<View Name=\"{46B421B5-6DBE-4F49-9183-EAD9C0407FD3}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assig"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:48.087Z",
+    "type": "ViewService.renderAtFolder.caml.query",
+    "data": {
+      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936</Value></BeginsWith></And></Where>\n          <OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"DocIcon\" /><Field"
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:48.252Z",
+    "type": "ViewService.renderAtFolder.caml.rows",
+    "data": {
+      "count": 0,
+      "sampleKeys": []
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:48.255Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 0,
+      "firstRowKeys": []
+    }
+  },
+  {
+    "t": "2025-10-23T14:50:48.257Z",
+    "type": "CenterGrid.columnsFinal",
+    "data": {
+      "names": [
+        "Name",
+        "Assignment Status",
+        "Assignment Managed By",
+        "Description"
+      ],
+      "keys": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  }
+]
