@@ -1,6 +1,6 @@
 [
   {
-    "t": "2025-10-24T20:22:11.905Z",
+    "t": "2025-10-25T01:07:45.530Z",
     "type": "ViewService.getViews",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "t": "2025-10-24T20:22:12.080Z",
+    "t": "2025-10-25T01:07:45.664Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -25,16 +25,17 @@
     }
   },
   {
-    "t": "2025-10-24T20:22:12.099Z",
+    "t": "2025-10-25T01:07:45.673Z",
     "type": "ViewService.renderAtFolder.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-24T20:22:12.119Z",
+    "t": "2025-10-25T01:07:45.681Z",
     "type": "ViewService.getListFieldTitles",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -42,7 +43,7 @@
     }
   },
   {
-    "t": "2025-10-24T20:22:12.126Z",
+    "t": "2025-10-25T01:07:45.683Z",
     "type": "CenterGrid.viewsLoaded",
     "data": {
       "container": {
@@ -55,7 +56,7 @@
     }
   },
   {
-    "t": "2025-10-24T20:22:12.280Z",
+    "t": "2025-10-25T01:07:45.800Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -72,175 +73,389 @@
     }
   },
   {
-    "t": "2025-10-24T20:22:12.284Z",
+    "t": "2025-10-25T01:07:45.805Z",
     "type": "ViewService.renderAtFolder.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-24T20:22:12.393Z",
-    "type": "ViewService.renderAtFolder.viewXml.head",
+    "t": "2025-10-25T01:07:45.896Z",
+    "type": "ViewService.viewXml.parsed",
     "data": {
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "title": "All Documents",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef "
+      "requestedCount": 19
     }
   },
   {
-    "t": "2025-10-24T20:22:12.395Z",
-    "type": "ViewService.renderAtFolder.caml.query",
+    "t": "2025-10-25T01:07:45.898Z",
+    "type": "ViewService.caml",
     "data": {
-      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvDocSetNumber\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"LinkFilenameNoMenu\" /><FieldRef Name=\"LinkTitle\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Editor\" /><F"
+      "head": "<View Scope=\"Recursive\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"FileLeafRef\" Ascending=\"TRUE\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvDocSetNumber\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"ID\" /><FieldRef Name=\"UniqueId\" /><FieldRef Name=\"ContentTypeId\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"LinkTitle\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Created\" /><FieldRef Name=\"Author\" /><FieldRef Name=\"Editor\" /><FieldRef Name=\"mvManagedById\" /><FieldRef Name=\"File_x0020_Type\" /><FieldRef Name=\"File_x0020_Size\" /><FieldRef Name=\"SMTotalSize\" /><FieldRef Name=\"Length\" /></ViewFields>\n        <RowLimi",
+      "hash": "a3a2a060"
     }
   },
   {
-    "t": "2025-10-24T20:22:12.553Z",
-    "type": "ViewService.renderAtFolder.viewXml.head",
+    "t": "2025-10-25T01:07:46.025Z",
+    "type": "ViewService.viewXml.parsed",
     "data": {
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "title": "All Documents",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef "
+      "requestedCount": 19
     }
   },
   {
-    "t": "2025-10-24T20:22:12.554Z",
-    "type": "ViewService.renderAtFolder.caml.query",
+    "t": "2025-10-25T01:07:46.025Z",
+    "type": "ViewService.caml",
     "data": {
-      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvDocSetNumber\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"LinkFilenameNoMenu\" /><FieldRef Name=\"LinkTitle\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Editor\" /><F"
+      "head": "<View Scope=\"Recursive\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"FileLeafRef\" Ascending=\"TRUE\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvDocSetNumber\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"ID\" /><FieldRef Name=\"UniqueId\" /><FieldRef Name=\"ContentTypeId\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"LinkTitle\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Created\" /><FieldRef Name=\"Author\" /><FieldRef Name=\"Editor\" /><FieldRef Name=\"mvManagedById\" /><FieldRef Name=\"File_x0020_Type\" /><FieldRef Name=\"File_x0020_Size\" /><FieldRef Name=\"SMTotalSize\" /><FieldRef Name=\"Length\" /></ViewFields>\n        <RowLimi",
+      "hash": "a3a2a060"
     }
   },
   {
-    "t": "2025-10-24T20:22:12.583Z",
-    "type": "CenterGrid.effect.error",
+    "t": "2025-10-25T01:07:46.038Z",
+    "type": "ViewService.caml.firstAttempt.error",
     "data": {
-      "error": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}",
-      "container": {
-        "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-        "name": "1511-Abdelaziz Zinbi - SDT",
-        "serverRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-      },
-      "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717"
+      "msg": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}"
     }
   },
   {
-    "t": "2025-10-24T20:22:12.757Z",
-    "type": "CenterGrid.effect.error",
+    "t": "2025-10-25T01:07:46.038Z",
+    "type": "ViewService.caml.retryWithoutViewFields",
     "data": {
-      "error": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}",
-      "container": {
-        "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-        "name": "1511-Abdelaziz Zinbi - SDT",
-        "serverRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-      },
-      "selectedViewId": "0948eafd-8dd3-409d-b469-db475a257717"
+      "head": "<View Scope=\"Recursive\">\n          <Query>\n            <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n            <OrderBy><FieldRef Name=\"FileLeafRef\" Ascending=\"TRUE\"/></OrderBy>\n          </Query>\n          <RowLimit>500</RowLimit>\n        </View>",
+      "hash": "25c8feef"
     }
   },
   {
-    "t": "2025-10-24T20:22:14.726Z",
-    "type": "ViewService.getViewFieldInternalNames",
+    "t": "2025-10-25T01:07:46.171Z",
+    "type": "ViewService.caml.firstAttempt.error",
     "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "DocumentSetDescription"
+      "msg": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}"
+    }
+  },
+  {
+    "t": "2025-10-25T01:07:46.171Z",
+    "type": "ViewService.caml.retryWithoutViewFields",
+    "data": {
+      "head": "<View Scope=\"Recursive\">\n          <Query>\n            <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n            <OrderBy><FieldRef Name=\"FileLeafRef\" Ascending=\"TRUE\"/></OrderBy>\n          </Query>\n          <RowLimit>500</RowLimit>\n        </View>",
+      "hash": "25c8feef"
+    }
+  },
+  {
+    "t": "2025-10-25T01:07:46.439Z",
+    "type": "ViewService.rows.ok",
+    "data": {
+      "count": 14,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl"
       ]
     }
   },
   {
-    "t": "2025-10-24T20:22:14.729Z",
-    "type": "ViewService.renderAtFolder.start",
+    "t": "2025-10-25T01:07:46.469Z",
+    "type": "ViewService.rows.ok",
     "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
-      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-24T20:22:15.019Z",
-    "type": "ViewService.renderAtFolder.viewXml.head",
-    "data": {
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
-      "title": "All Assignments",
-      "head": "<View Name=\"{46B421B5-6DBE-4F49-9183-EAD9C0407FD3}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assig"
-    }
-  },
-  {
-    "t": "2025-10-24T20:22:15.165Z",
-    "type": "ViewService.renderAtFolder.caml.query",
-    "data": {
-      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936</Value></BeginsWith></And></Where>\n          <OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvDocSetStatus\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"DocumentSetDescripti"
-    }
-  },
-  {
-    "t": "2025-10-24T20:22:15.357Z",
-    "type": "CenterGrid.effect.error",
-    "data": {
-      "error": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}",
-      "container": {
-        "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-        "name": "1511-Abdelaziz Zinbi - SDT",
-        "serverRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-      },
-      "selectedViewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
-    }
-  },
-  {
-    "t": "2025-10-24T20:22:16.824Z",
-    "type": "ViewService.getViewFieldInternalNames",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "mvManagedBy",
-        "DocumentSetDescription"
+      "count": 14,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl"
       ]
     }
   },
   {
-    "t": "2025-10-24T20:22:16.829Z",
+    "t": "2025-10-25T01:07:46.469Z",
+    "type": "CenterGrid.sampleRow",
+    "data": {
+      "keys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl",
+        "mvOriginal_x0020_Author",
+        "mvOriginal_x0020_Created",
+        "mvOriginal_x0020_Modified",
+        "mvOriginal_x0020_Producer",
+        "mvOriginal_x0020_FileName",
+        "mvDocSetName"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:07:46.492Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 14
+    }
+  },
+  {
+    "t": "2025-10-25T01:07:59.424Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "_UIVersionString",
+        "mvDocumentType",
+        "mvDocumentAuthor",
+        "Modified",
+        "CheckoutUser"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:07:59.450Z",
     "type": "ViewService.renderAtFolder.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
-      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-24T20:22:17.130Z",
-    "type": "ViewService.renderAtFolder.viewXml.head",
+    "t": "2025-10-25T01:07:59.696Z",
+    "type": "ViewService.viewXml.parsed",
     "data": {
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
-      "title": "Active Assignments",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=47\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><And><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Comp"
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "requestedCount": 20
     }
   },
   {
-    "t": "2025-10-24T20:22:17.269Z",
-    "type": "ViewService.renderAtFolder.caml.query",
+    "t": "2025-10-25T01:07:59.825Z",
+    "type": "ViewService.caml",
     "data": {
-      "camlHead": "<View Scope=\"RecursiveAll\">\n        <Query>\n          <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936</Value></BeginsWith></And></Where>\n          <OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"DocumentSetDescription\" /><FieldRef Name=\"FileLeafRef\""
+      "head": "<View Scope=\"Recursive\">\n        <Query>\n          <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x010100C86DE5C0430CB94AAC51F30EDBAE542B00CA3A5D371B1694409A40E5307250AD38</Value></BeginsWith></And></Where>\n          <OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"mvDocumentType\" /><FieldRef Name=\"mvDocumentAuthor\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"ID\" /><FieldRef Name=\"UniqueId\" /><FieldRef Name=\"ContentTypeId\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"LinkTitle\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Created\" /><FieldRef Name=\"Author\" /><FieldRef Name=\"Editor\" /><FieldRef Name=\"mv",
+      "hash": "9edda371"
     }
   },
   {
-    "t": "2025-10-24T20:22:17.442Z",
-    "type": "CenterGrid.effect.error",
+    "t": "2025-10-25T01:08:00.060Z",
+    "type": "ViewService.caml.firstAttempt.error",
     "data": {
-      "error": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}",
-      "container": {
-        "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-        "name": "1511-Abdelaziz Zinbi - SDT",
-        "serverRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-      },
-      "selectedViewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+      "msg": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}"
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:00.060Z",
+    "type": "ViewService.caml.retryWithoutViewFields",
+    "data": {
+      "head": "<View Scope=\"Recursive\">\n          <Query>\n            <Where><And><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq><BeginsWith><FieldRef Name=\"ContentTypeId\"/><Value Type=\"Text\">0x010100C86DE5C0430CB94AAC51F30EDBAE542B00CA3A5D371B1694409A40E5307250AD38</Value></BeginsWith></And></Where>\n            <OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy>\n          </Query>\n          <RowLimit>500</RowLimit>\n        </View>",
+      "hash": "6b304677"
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:00.390Z",
+    "type": "ViewService.rows.ok",
+    "data": {
+      "count": 5,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:00.390Z",
+    "type": "CenterGrid.sampleRow",
+    "data": {
+      "keys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl",
+        "mvOriginal_x0020_Author",
+        "mvOriginal_x0020_Created",
+        "mvOriginal_x0020_Modified",
+        "mvOriginal_x0020_Producer",
+        "mvOriginal_x0020_FileName",
+        "mvDocSetName"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:00.416Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 5
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:12.683Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "names": [
+        "DocIcon",
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:12.706Z",
+    "type": "ViewService.renderAtFolder.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:12.969Z",
+    "type": "ViewService.viewXml.parsed",
+    "data": {
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "requestedCount": 23
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:12.971Z",
+    "type": "ViewService.caml",
+    "data": {
+      "head": "<View Scope=\"Recursive\">\n        <Query>\n          <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n          <OrderBy><FieldRef Name=\"mvReceivedTime\" Ascending=\"FALSE\"/></OrderBy>\n        </Query>\n        <ViewFields><FieldRef Name=\"mvAttachmentIcon\" /><FieldRef Name=\"mvSubject\" /><FieldRef Name=\"mvTo\" /><FieldRef Name=\"mvFrom\" /><FieldRef Name=\"mvReceivedTime\" /><FieldRef Name=\"LinkFilename\" /><FieldRef Name=\"ID\" /><FieldRef Name=\"UniqueId\" /><FieldRef Name=\"ContentTypeId\" /><FieldRef Name=\"FileLeafRef\" /><FieldRef Name=\"LinkTitle\" /><FieldRef Name=\"FileRef\" /><FieldRef Name=\"FSObjType\" /><FieldRef Name=\"Created\" /><FieldRef Name=\"Author\" /><FieldRef Name=\"Modified\" /><FieldRef Name=\"Editor\" /><FieldRef Name=\"mvManagedBy\" /><FieldRef Name=\"mvManagedById\" /><FieldRef Name=\"File_x0020_Type\" /><Fi",
+      "hash": "cd0c2a3"
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:13.195Z",
+    "type": "ViewService.caml.firstAttempt.error",
+    "data": {
+      "msg": "Error making HttpClient request in queryable [500]  ::> {\"odata.error\":{\"code\":\"-2147467259, Microsoft.SharePoint.SPException\",\"message\":{\"lang\":\"en-US\",\"value\":\"Cannot complete this action.\\n\\nPlease try again.\"}}}"
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:13.195Z",
+    "type": "ViewService.caml.retryWithoutViewFields",
+    "data": {
+      "head": "<View Scope=\"Recursive\">\n          <Query>\n            <Where><Eq><FieldRef Name=\"FileDirRef\"/><Value Type=\"Text\">/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT</Value></Eq></Where>\n            <OrderBy><FieldRef Name=\"mvReceivedTime\" Ascending=\"FALSE\"/></OrderBy>\n          </Query>\n          <RowLimit>500</RowLimit>\n        </View>",
+      "hash": "f89c0668"
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:14.149Z",
+    "type": "ViewService.rows.ok",
+    "data": {
+      "count": 14,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:14.149Z",
+    "type": "CenterGrid.sampleRow",
+    "data": {
+      "keys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "ContentTypeId",
+        "OData__ColorTag",
+        "ComplianceAssetId",
+        "Title",
+        "OData__dlc_DocId",
+        "OData__dlc_DocIdUrl",
+        "mvOriginal_x0020_Author",
+        "mvOriginal_x0020_Created",
+        "mvOriginal_x0020_Modified",
+        "mvOriginal_x0020_Producer",
+        "mvOriginal_x0020_FileName",
+        "mvDocSetName"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T01:08:14.170Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 14
     }
   }
 ]
