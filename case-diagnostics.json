@@ -1,6 +1,6 @@
 [
   {
-    "t": "2025-10-25T01:57:09.533Z",
+    "t": "2025-10-25T02:06:09.461Z",
     "type": "ViewService.getViews",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.684Z",
+    "t": "2025-10-25T02:06:09.599Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -25,7 +25,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.704Z",
+    "t": "2025-10-25T02:06:09.615Z",
     "type": "ViewService.RLDAS.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -35,7 +35,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.706Z",
+    "t": "2025-10-25T02:06:09.619Z",
     "type": "ViewService.getListFieldTitles",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -43,7 +43,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.709Z",
+    "t": "2025-10-25T02:06:09.623Z",
     "type": "CenterGrid.viewsLoaded",
     "data": {
       "container": {
@@ -56,16 +56,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.819Z",
-    "type": "ViewService.RLDAS.viewXml",
-    "data": {
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
-      "hasXml": true,
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-25T01:57:09.831Z",
+    "t": "2025-10-25T02:06:09.770Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -82,7 +73,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.836Z",
+    "t": "2025-10-25T02:06:09.776Z",
     "type": "ViewService.RLDAS.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -92,7 +83,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:09.958Z",
+    "t": "2025-10-25T02:06:09.834Z",
     "type": "ViewService.RLDAS.viewXml",
     "data": {
       "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
@@ -101,30 +92,87 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:10.193Z",
-    "type": "ViewService.RLDAS.ok",
+    "t": "2025-10-25T02:06:09.935Z",
+    "type": "ViewService.RLDAS.viewXml",
     "data": {
-      "count": 0,
-      "sampleKeys": []
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "hasXml": true,
+      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
     }
   },
   {
-    "t": "2025-10-25T01:57:10.197Z",
-    "type": "ViewService.RLDAS.ok",
+    "t": "2025-10-25T02:06:09.951Z",
+    "type": "ViewService.RLDAS.error",
     "data": {
-      "count": 0,
-      "sampleKeys": []
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "51c1a243"
     }
   },
   {
-    "t": "2025-10-25T01:57:10.201Z",
+    "t": "2025-10-25T02:06:10.039Z",
+    "type": "ViewService.RLDAS.error",
+    "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "51c1a243"
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:10.041Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
       "count": 0
     }
   },
   {
-    "t": "2025-10-25T01:57:22.172Z",
+    "t": "2025-10-25T02:06:25.610Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:25.616Z",
+    "type": "ViewService.RLDAS.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:25.745Z",
+    "type": "ViewService.RLDAS.viewXml",
+    "data": {
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "hasXml": true,
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:25.850Z",
+    "type": "ViewService.RLDAS.error",
+    "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "99483a54"
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:25.855Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 0
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:28.452Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -142,7 +190,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:22.177Z",
+    "t": "2025-10-25T02:06:28.460Z",
     "type": "ViewService.RLDAS.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -152,7 +200,7 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:22.310Z",
+    "t": "2025-10-25T02:06:28.577Z",
     "type": "ViewService.RLDAS.viewXml",
     "data": {
       "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
@@ -161,113 +209,169 @@
     }
   },
   {
-    "t": "2025-10-25T01:57:22.621Z",
-    "type": "ViewService.RLDAS.ok",
+    "t": "2025-10-25T02:06:28.683Z",
+    "type": "ViewService.RLDAS.error",
     "data": {
-      "count": 0,
-      "sampleKeys": []
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "20bfdfad"
     }
   },
   {
-    "t": "2025-10-25T01:57:22.623Z",
+    "t": "2025-10-25T02:06:28.686Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
       "count": 0
     }
   },
   {
-    "t": "2025-10-25T01:57:40.433Z",
+    "t": "2025-10-25T02:06:30.959Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "names": [
         "DocIcon",
-        "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "Modified"
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
       ]
     }
   },
   {
-    "t": "2025-10-25T01:57:40.438Z",
+    "t": "2025-10-25T02:06:30.969Z",
     "type": "ViewService.RLDAS.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
       "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-25T01:57:40.552Z",
+    "t": "2025-10-25T02:06:31.079Z",
     "type": "ViewService.RLDAS.viewXml",
     "data": {
-      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "hasXml": true,
-      "head": "<View Name=\"{27AB3AB1-EAAE-4A1B-B8C0-45E73B232E2A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"My Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/My Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layout"
+      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
     }
   },
   {
-    "t": "2025-10-25T01:57:40.804Z",
-    "type": "ViewService.RLDAS.ok",
+    "t": "2025-10-25T02:06:31.195Z",
+    "type": "ViewService.RLDAS.error",
     "data": {
-      "count": 0,
-      "sampleKeys": []
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "4be6c0"
     }
   },
   {
-    "t": "2025-10-25T01:57:40.807Z",
+    "t": "2025-10-25T02:06:31.196Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
       "count": 0
     }
   },
   {
-    "t": "2025-10-25T01:57:44.985Z",
+    "t": "2025-10-25T02:06:34.570Z",
     "type": "ViewService.getViewFieldInternalNames",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
       "names": [
         "DocIcon",
         "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "DocumentSetDescription"
+        "_dlc_DocIdUrl",
+        "_UIVersionString",
+        "Modified",
+        "mvReceivedTime",
+        "CheckoutUser"
       ]
     }
   },
   {
-    "t": "2025-10-25T01:57:44.988Z",
+    "t": "2025-10-25T02:06:34.578Z",
     "type": "ViewService.RLDAS.start",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
       "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
       "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-25T01:57:45.102Z",
+    "t": "2025-10-25T02:06:34.698Z",
     "type": "ViewService.RLDAS.viewXml",
     "data": {
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
       "hasXml": true,
-      "head": "<View Name=\"{46B421B5-6DBE-4F49-9183-EAD9C0407FD3}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
+      "head": "<View Name=\"{6F41D2F1-BE32-44A2-A9AD-A90809DC4AE7}\" MobileView=\"TRUE\" DefaultViewForContentType=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Document"
     }
   },
   {
-    "t": "2025-10-25T01:57:45.424Z",
-    "type": "ViewService.RLDAS.ok",
+    "t": "2025-10-25T02:06:34.863Z",
+    "type": "ViewService.RLDAS.error",
     "data": {
-      "count": 0,
-      "sampleKeys": []
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "6d465440"
     }
   },
   {
-    "t": "2025-10-25T01:57:45.429Z",
+    "t": "2025-10-25T02:06:34.865Z",
+    "type": "CenterGrid.rowsFetched",
+    "data": {
+      "count": 0
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:37.156Z",
+    "type": "ViewService.getViewFieldInternalNames",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "_UIVersionString",
+        "mvDocumentType",
+        "mvDocumentAuthor",
+        "Modified",
+        "CheckoutUser"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:37.165Z",
+    "type": "ViewService.RLDAS.start",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "folderServerRelativeUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:37.281Z",
+    "type": "ViewService.RLDAS.viewXml",
+    "data": {
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "hasXml": true,
+      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:37.389Z",
+    "type": "ViewService.RLDAS.error",
+    "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "paramsHash": "20bfdfad"
+    }
+  },
+  {
+    "t": "2025-10-25T02:06:37.391Z",
     "type": "CenterGrid.rowsFetched",
     "data": {
       "count": 0
