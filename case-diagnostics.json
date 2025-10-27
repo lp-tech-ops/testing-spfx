@@ -1,6 +1,6 @@
 [
   {
-    "t": "2025-10-27T20:44:48.634Z",
+    "t": "2025-10-27T21:06:07.574Z",
     "type": "CG.getViews.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -8,14 +8,14 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.634Z",
+    "t": "2025-10-27T21:06:07.574Z",
     "type": "VS.getViews.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-27T20:44:48.759Z",
+    "t": "2025-10-27T21:06:07.689Z",
     "type": "VS.getViews.ok",
     "data": {
       "count": 7,
@@ -31,7 +31,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.766Z",
+    "t": "2025-10-27T21:06:07.702Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.766Z",
+    "t": "2025-10-27T21:06:07.702Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -48,14 +48,14 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.772Z",
+    "t": "2025-10-27T21:06:07.711Z",
     "type": "VS.getListFieldTitles.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-27T20:44:48.892Z",
+    "t": "2025-10-27T21:06:07.831Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -71,7 +71,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.906Z",
+    "t": "2025-10-27T21:06:07.843Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -80,14 +80,14 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.912Z",
+    "t": "2025-10-27T21:06:07.857Z",
     "type": "VS.getListFieldTitles.ok",
     "data": {
       "count": 187
     }
   },
   {
-    "t": "2025-10-27T20:44:48.915Z",
+    "t": "2025-10-27T21:06:07.861Z",
     "type": "CG.getViews.ok",
     "data": {
       "count": 7,
@@ -95,7 +95,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.915Z",
+    "t": "2025-10-27T21:06:07.861Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -104,7 +104,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:48.915Z",
+    "t": "2025-10-27T21:06:07.861Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -112,25 +112,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:49.015Z",
-    "type": "VS.render.meta",
-    "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": false,
-      "hasOrderBy": true
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.015Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.114Z",
+    "t": "2025-10-27T21:06:08.082Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -146,7 +128,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:49.117Z",
+    "t": "2025-10-27T21:06:08.088Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -155,308 +137,96 @@
     }
   },
   {
-    "t": "2025-10-27T20:44:49.211Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.211Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.236Z",
-    "type": "VS.render.meta",
-    "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": false,
-      "hasOrderBy": true
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.236Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.405Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.405Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.406Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.folderHintOnly",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.406Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.571Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.folderHintOnly",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.571Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.582Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.582Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.796Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.796Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.810Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override.recursiveAll",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.935Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.viewOnly",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:49.973Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override.recursiveAll",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:50.080Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.withFolder",
-      "rows": 18
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:50.080Z",
+    "t": "2025-10-27T21:06:08.245Z",
     "type": "VS.render.warn",
     "data": {
-      "note": "CAML returned rows but names are blank, falling back to OData probe",
+      "note": "CAML returned rows but names are blank, patching with OData",
       "count": 18
     }
   },
   {
-    "t": "2025-10-27T20:44:50.096Z",
-    "type": "VS.render.try.ok",
+    "t": "2025-10-27T21:06:08.452Z",
+    "type": "VS.render.return",
     "data": {
-      "label": "caml.mergedWhere.viewOnly",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:50.246Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.withFolder",
-      "rows": 18
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:50.246Z",
-    "type": "VS.render.warn",
-    "data": {
-      "note": "CAML returned rows but names are blank, falling back to OData probe",
+      "path": "caml.mergedWhere",
       "count": 18
     }
   },
   {
-    "t": "2025-10-27T20:44:50.248Z",
-    "type": "VS.render.probe.items",
+    "t": "2025-10-27T21:06:08.600Z",
+    "type": "VS.render.warn",
     "data": {
-      "total": 50,
-      "inFolder": 4,
-      "sample": {
-        "odata.type": "SP.Data.1004Item",
-        "odata.id": "5ffe416c-1135-4e77-8d45-ad0334abe71f",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "b76b084d-47bb-43b8-8246-0bf6f425170c",
-          "Title": "Clarvon Outerbridge"
-        },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1
-      }
+      "note": "CAML returned rows but names are blank, patching with OData",
+      "count": 18
     }
   },
   {
-    "t": "2025-10-27T20:44:50.248Z",
+    "t": "2025-10-27T21:06:08.779Z",
     "type": "VS.render.return",
     "data": {
-      "path": "probe.direct",
-      "count": 4
+      "path": "caml.mergedWhere",
+      "count": 18
     }
   },
   {
-    "t": "2025-10-27T20:44:50.394Z",
-    "type": "VS.render.probe.items",
-    "data": {
-      "total": 50,
-      "inFolder": 4,
-      "sample": {
-        "odata.type": "SP.Data.1004Item",
-        "odata.id": "781fbdfd-9d74-4763-bfca-14c1f749cf33",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "d4a74fdc-f25c-4c4c-be80-f815559ef863",
-          "Title": "Clarvon Outerbridge"
-        },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1
-      }
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:50.394Z",
-    "type": "VS.render.return",
-    "data": {
-      "path": "probe.direct",
-      "count": 4
-    }
-  },
-  {
-    "t": "2025-10-27T20:44:50.407Z",
+    "t": "2025-10-27T21:06:08.806Z",
     "type": "CG.render.ok",
     "data": {
-      "rows": 4,
+      "rows": 18,
       "cols": 4,
       "sampleKeys": [
         "odata.type",
         "odata.id",
         "odata.etag",
         "odata.editLink",
-        "Editor@odata.navigationLinkUrl",
-        "Editor",
+        "FileSystemObjectType",
         "Id",
-        "FileLeafRef",
-        "ID",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "mvDocSetNumber",
         "Modified",
-        "FileRef",
-        "FSObjType",
+        "mvManagedById",
+        "mvManagedByStringId",
+        "ID",
+        "CheckoutUserId",
+        "EditorId",
+        "FileLeafRef",
         "LinkFilename",
-        "LinkTitle"
+        "LinkTitle",
+        "FileRef",
+        "FSObjType"
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "781fbdfd-9d74-4763-bfca-14c1f749cf33",
+        "odata.id": "0f0ce9bd-c921-4cf8-9e3a-51bea1840391",
         "odata.etag": "\"1\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "d4a74fdc-f25c-4c4c-be80-f815559ef863",
-          "Title": "Clarvon Outerbridge"
-        },
+        "FileSystemObjectType": 1,
         "Id": 73,
-        "FileLeafRef": "Correspondence",
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "mvDocSetNumber": null,
+        "Modified": "2024-08-06T12:25:44",
+        "mvManagedById": null,
+        "mvManagedByStringId": null,
         "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1,
+        "CheckoutUserId": null,
+        "EditorId": 19,
+        "FileLeafRef": "Correspondence",
         "LinkFilename": "Correspondence",
-        "LinkTitle": "Correspondence"
+        "LinkTitle": "",
+        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
+        "FSObjType": 1
       }
     }
   },
   {
-    "t": "2025-10-27T20:44:50.407Z",
+    "t": "2025-10-27T21:06:08.806Z",
     "type": "CG.row.sample",
     "data": {
-      "count": 4,
+      "count": 18,
       "preview": [
         {
           "LinkFilename": "Correspondence",
@@ -480,7 +250,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:03.596Z",
+    "t": "2025-10-27T21:06:22.967Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -489,7 +259,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:03.596Z",
+    "t": "2025-10-27T21:06:22.967Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -497,7 +267,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:03.747Z",
+    "t": "2025-10-27T21:06:23.111Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 8,
@@ -514,7 +284,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:03.756Z",
+    "t": "2025-10-27T21:06:23.119Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -523,214 +293,109 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:03.878Z",
-    "type": "VS.render.meta",
-    "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": true,
-      "hasOrderBy": true
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:03.878Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.162Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.162Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.337Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.folderHintOnly",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.337Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override",
-      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.524Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.524Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.741Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override.recursiveAll",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:04.877Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.viewOnly",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:05.030Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.withFolder",
-      "rows": 5
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:05.030Z",
+    "t": "2025-10-27T21:06:23.575Z",
     "type": "VS.render.warn",
     "data": {
-      "note": "CAML returned rows but names are blank, falling back to OData probe",
+      "note": "CAML returned rows but names are blank, patching with OData",
       "count": 5
     }
   },
   {
-    "t": "2025-10-27T20:45:05.191Z",
-    "type": "VS.render.probe.items",
-    "data": {
-      "total": 50,
-      "inFolder": 4,
-      "sample": {
-        "odata.type": "SP.Data.1004Item",
-        "odata.id": "06f9d887-7acd-4b73-8fae-65d2737e9e6f",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "c0d8f16f-1c15-40d5-bce9-82d1a0556f10",
-          "Title": "Clarvon Outerbridge"
-        },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1
-      }
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:05.191Z",
+    "t": "2025-10-27T21:06:23.777Z",
     "type": "VS.render.return",
     "data": {
-      "path": "probe.direct",
-      "count": 4
+      "path": "caml.mergedWhere",
+      "count": 5
     }
   },
   {
-    "t": "2025-10-27T20:45:05.196Z",
+    "t": "2025-10-27T21:06:23.786Z",
     "type": "CG.render.ok",
     "data": {
-      "rows": 4,
+      "rows": 5,
       "cols": 4,
       "sampleKeys": [
         "odata.type",
         "odata.id",
         "odata.etag",
         "odata.editLink",
-        "Editor@odata.navigationLinkUrl",
-        "Editor",
+        "FileSystemObjectType",
         "Id",
-        "FileLeafRef",
-        "ID",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "OData__UIVersionString",
+        "mvDocumentType",
+        "mvDocumentAuthorId",
+        "mvDocumentAuthorStringId",
         "Modified",
-        "FileRef",
-        "FSObjType",
+        "CheckoutUserId",
+        "ID",
+        "EditorId",
+        "FileLeafRef",
         "LinkFilename",
-        "LinkTitle"
+        "LinkTitle",
+        "FileRef",
+        "FSObjType"
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "06f9d887-7acd-4b73-8fae-65d2737e9e6f",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "c0d8f16f-1c15-40d5-bce9-82d1a0556f10",
-          "Title": "Clarvon Outerbridge"
+        "odata.id": "645c0ae2-a697-4131-b0dc-04a7ae08d879",
+        "odata.etag": "\"9\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(175)",
+        "FileSystemObjectType": 0,
+        "Id": 175,
+        "ServerRedirectedEmbedUri": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
+        "ServerRedirectedEmbedUrl": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
+        "OData__dlc_DocIdUrl": {
+          "Description": "CAODOC-1940166408-175",
+          "Url": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-175"
         },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1,
-        "LinkFilename": "Correspondence",
-        "LinkTitle": "Correspondence"
+        "OData__UIVersionString": "1.0",
+        "mvDocumentType": null,
+        "mvDocumentAuthorId": 21,
+        "mvDocumentAuthorStringId": "21",
+        "Modified": "2024-09-05T14:40:01",
+        "CheckoutUserId": null,
+        "ID": 175,
+        "EditorId": 21,
+        "FileLeafRef": "",
+        "LinkFilename": "",
+        "LinkTitle": "",
+        "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
+        "FSObjType": 0
       }
     }
   },
   {
-    "t": "2025-10-27T20:45:05.196Z",
+    "t": "2025-10-27T21:06:23.786Z",
     "type": "CG.row.sample",
     "data": {
-      "count": 4,
+      "count": 5,
       "preview": [
         {
-          "LinkFilename": "Correspondence",
-          "FileLeafRef": "Correspondence",
-          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-          "FSObjType": 1
+          "LinkFilename": "",
+          "FileLeafRef": "",
+          "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
+          "FSObjType": 0
         },
         {
-          "LinkFilename": "Draft",
-          "FileLeafRef": "Draft",
-          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Draft",
-          "FSObjType": 1
+          "LinkFilename": "8.1.24-SDT for A.Zinbi.pdf",
+          "FileLeafRef": "8.1.24-SDT for A.Zinbi.pdf",
+          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/8.1.24-SDT for A.Zinbi.pdf",
+          "FSObjType": 0
         },
         {
-          "LinkFilename": "Email",
-          "FileLeafRef": "Email",
-          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Email",
-          "FSObjType": 1
+          "LinkFilename": "",
+          "FileLeafRef": "",
+          "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=62425004-3b0a-4cca-b056-32ae0955f45d",
+          "FSObjType": 0
         }
       ]
     }
   },
   {
-    "t": "2025-10-27T20:45:08.233Z",
+    "t": "2025-10-27T21:06:29.619Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -739,7 +404,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:08.233Z",
+    "t": "2025-10-27T21:06:29.619Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -747,7 +412,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:08.357Z",
+    "t": "2025-10-27T21:06:29.750Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 4,
@@ -760,7 +425,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:08.364Z",
+    "t": "2025-10-27T21:06:29.766Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -769,206 +434,32 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:08.540Z",
-    "type": "VS.render.meta",
+    "t": "2025-10-27T21:06:30.186Z",
+    "type": "VS.render.empty",
     "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": true,
-      "hasOrderBy": true
+      "note": "CAML yielded zero"
     }
   },
   {
-    "t": "2025-10-27T20:45:08.540Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:08.701Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:08.701Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:08.866Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.folderHintOnly",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:08.866Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.055Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.055Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.222Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override.recursiveAll",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.361Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.viewOnly",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.505Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.withFolder",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.683Z",
-    "type": "VS.render.probe.items",
-    "data": {
-      "total": 50,
-      "inFolder": 4,
-      "sample": {
-        "odata.type": "SP.Data.1004Item",
-        "odata.id": "00608b4d-e668-4ec8-9732-6df21dd7efe9",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "fdca41cb-e03c-49c1-8be5-242c2a92df4f",
-          "Title": "Clarvon Outerbridge"
-        },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1
-      }
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.683Z",
-    "type": "VS.render.return",
-    "data": {
-      "path": "probe.direct",
-      "count": 4
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:09.686Z",
+    "t": "2025-10-27T21:06:30.194Z",
     "type": "CG.render.ok",
     "data": {
-      "rows": 4,
+      "rows": 0,
       "cols": 3,
-      "sampleKeys": [
-        "odata.type",
-        "odata.id",
-        "odata.etag",
-        "odata.editLink",
-        "Editor@odata.navigationLinkUrl",
-        "Editor",
-        "Id",
-        "FileLeafRef",
-        "ID",
-        "Modified",
-        "FileRef",
-        "FSObjType",
-        "LinkFilename",
-        "LinkTitle"
-      ],
-      "sample": {
-        "odata.type": "SP.Data.1004Item",
-        "odata.id": "00608b4d-e668-4ec8-9732-6df21dd7efe9",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "fdca41cb-e03c-49c1-8be5-242c2a92df4f",
-          "Title": "Clarvon Outerbridge"
-        },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1,
-        "LinkFilename": "Correspondence",
-        "LinkTitle": "Correspondence"
-      }
+      "sampleKeys": [],
+      "sample": null
     }
   },
   {
-    "t": "2025-10-27T20:45:09.686Z",
+    "t": "2025-10-27T21:06:30.194Z",
     "type": "CG.row.sample",
     "data": {
-      "count": 4,
-      "preview": [
-        {
-          "LinkFilename": "Correspondence",
-          "FileLeafRef": "Correspondence",
-          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-          "FSObjType": 1
-        },
-        {
-          "LinkFilename": "Draft",
-          "FileLeafRef": "Draft",
-          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Draft",
-          "FSObjType": 1
-        },
-        {
-          "LinkFilename": "Email",
-          "FileLeafRef": "Email",
-          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Email",
-          "FSObjType": 1
-        }
-      ]
+      "count": 0,
+      "preview": []
     }
   },
   {
-    "t": "2025-10-27T20:45:11.920Z",
+    "t": "2025-10-27T21:06:33.514Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -977,7 +468,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:11.920Z",
+    "t": "2025-10-27T21:06:33.514Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -985,7 +476,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:12.052Z",
+    "t": "2025-10-27T21:06:33.640Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -1001,7 +492,7 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:12.059Z",
+    "t": "2025-10-27T21:06:33.646Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -1010,195 +501,222 @@
     }
   },
   {
-    "t": "2025-10-27T20:45:12.166Z",
-    "type": "VS.render.meta",
-    "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": false,
-      "hasOrderBy": true
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.166Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.334Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.334Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.529Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.folderHintOnly",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.529Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.704Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.704Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.869Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override.recursiveAll",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:12.992Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.viewOnly",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:13.140Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.withFolder",
-      "rows": 18
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:13.140Z",
+    "t": "2025-10-27T21:06:34.006Z",
     "type": "VS.render.warn",
     "data": {
-      "note": "CAML returned rows but names are blank, falling back to OData probe",
+      "note": "CAML returned rows but names are blank, patching with OData",
       "count": 18
     }
   },
   {
-    "t": "2025-10-27T20:45:13.301Z",
-    "type": "VS.render.probe.items",
-    "data": {
-      "total": 50,
-      "inFolder": 4,
-      "sample": {
-        "odata.type": "SP.Data.1004Item",
-        "odata.id": "e9cc92ad-0c4e-4820-994a-67e92dea416e",
-        "odata.etag": "\"1\"",
-        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "a3b8836c-0402-440d-995c-a1dd5ec72e8f",
-          "Title": "Clarvon Outerbridge"
-        },
-        "Id": 73,
-        "FileLeafRef": "Correspondence",
-        "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1
-      }
-    }
-  },
-  {
-    "t": "2025-10-27T20:45:13.301Z",
+    "t": "2025-10-27T21:06:34.227Z",
     "type": "VS.render.return",
     "data": {
-      "path": "probe.direct",
-      "count": 4
+      "path": "caml.mergedWhere",
+      "count": 18
     }
   },
   {
-    "t": "2025-10-27T20:45:13.304Z",
+    "t": "2025-10-27T21:06:34.243Z",
     "type": "CG.render.ok",
     "data": {
-      "rows": 4,
+      "rows": 18,
       "cols": 4,
       "sampleKeys": [
         "odata.type",
         "odata.id",
         "odata.etag",
         "odata.editLink",
-        "Editor@odata.navigationLinkUrl",
-        "Editor",
+        "FileSystemObjectType",
         "Id",
-        "FileLeafRef",
-        "ID",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "mvDocSetNumber",
         "Modified",
-        "FileRef",
-        "FSObjType",
+        "mvManagedById",
+        "mvManagedByStringId",
+        "ID",
+        "CheckoutUserId",
+        "EditorId",
+        "FileLeafRef",
         "LinkFilename",
-        "LinkTitle"
+        "LinkTitle",
+        "FileRef",
+        "FSObjType"
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "e9cc92ad-0c4e-4820-994a-67e92dea416e",
+        "odata.id": "010b8c19-5ebd-400f-95e3-c0e46c1cf87c",
         "odata.etag": "\"1\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
-        "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
-        "Editor": {
-          "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "a3b8836c-0402-440d-995c-a1dd5ec72e8f",
-          "Title": "Clarvon Outerbridge"
-        },
+        "FileSystemObjectType": 1,
         "Id": 73,
-        "FileLeafRef": "Correspondence",
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "mvDocSetNumber": null,
+        "Modified": "2024-08-06T12:25:44",
+        "mvManagedById": null,
+        "mvManagedByStringId": null,
         "ID": 73,
-        "Modified": "2024-08-06T16:25:44Z",
-        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
-        "FSObjType": 1,
+        "CheckoutUserId": null,
+        "EditorId": 19,
+        "FileLeafRef": "Correspondence",
         "LinkFilename": "Correspondence",
-        "LinkTitle": "Correspondence"
+        "LinkTitle": "",
+        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
+        "FSObjType": 1
       }
     }
   },
   {
-    "t": "2025-10-27T20:45:13.304Z",
+    "t": "2025-10-27T21:06:34.243Z",
     "type": "CG.row.sample",
     "data": {
-      "count": 4,
+      "count": 18,
       "preview": [
         {
           "LinkFilename": "Correspondence",
           "FileLeafRef": "Correspondence",
           "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Correspondence",
+          "FSObjType": 1
+        },
+        {
+          "LinkFilename": "Draft",
+          "FileLeafRef": "Draft",
+          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Draft",
+          "FSObjType": 1
+        },
+        {
+          "LinkFilename": "Email",
+          "FileLeafRef": "Email",
+          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Email",
+          "FSObjType": 1
+        }
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:40.566Z",
+    "type": "CG.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:40.566Z",
+    "type": "VS.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7"
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:40.698Z",
+    "type": "VS.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 7,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "_UIVersionString",
+        "Modified",
+        "mvReceivedTime",
+        "CheckoutUser"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:40.710Z",
+    "type": "VS.render.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:41.153Z",
+    "type": "VS.render.warn",
+    "data": {
+      "note": "CAML returned rows but names are blank, patching with OData",
+      "count": 18
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:41.320Z",
+    "type": "VS.render.return",
+    "data": {
+      "path": "caml.mergedWhere",
+      "count": 18
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:41.329Z",
+    "type": "CG.render.ok",
+    "data": {
+      "rows": 18,
+      "cols": 3,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "OData__dlc_DocIdUrl",
+        "OData__UIVersionString",
+        "Modified",
+        "mvReceivedTime",
+        "CheckoutUserId",
+        "ID",
+        "EditorId",
+        "FileLeafRef",
+        "LinkFilename",
+        "LinkTitle",
+        "FileRef",
+        "FSObjType"
+      ],
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "436eb769-6c1c-440f-aee2-a64481505ea5",
+        "odata.etag": "\"1\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(76)",
+        "FileSystemObjectType": 1,
+        "Id": 76,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "OData__UIVersionString": "1.0",
+        "Modified": "2024-08-06T12:25:46",
+        "mvReceivedTime": null,
+        "CheckoutUserId": null,
+        "ID": 76,
+        "EditorId": 19,
+        "FileLeafRef": "Research",
+        "LinkFilename": "Research",
+        "LinkTitle": "",
+        "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Research",
+        "FSObjType": 1
+      }
+    }
+  },
+  {
+    "t": "2025-10-27T21:06:41.329Z",
+    "type": "CG.row.sample",
+    "data": {
+      "count": 18,
+      "preview": [
+        {
+          "LinkFilename": "Research",
+          "FileLeafRef": "Research",
+          "FileRef": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT/Research",
           "FSObjType": 1
         },
         {
