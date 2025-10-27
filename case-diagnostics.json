@@ -1,1 +1,607 @@
-[]
+[
+  {
+    "t": "2025-10-27T13:48:24.532Z",
+    "type": "CenterGrid.getViews.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.532Z",
+    "type": "ViewService.getViews.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.661Z",
+    "type": "ViewService.getViews.ok",
+    "data": {
+      "count": 7,
+      "titles": [
+        "All Documents",
+        "All Assignments",
+        "Active Assignments",
+        "Assignment Documents Emails",
+        "My Assignments",
+        "Assignment Documents",
+        "Emails"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.680Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.680Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.693Z",
+    "type": "ViewService.getListFieldTitles.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.818Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 7,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.831Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.847Z",
+    "type": "ViewService.getListFieldTitles.ok",
+    "data": {
+      "count": 187
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.852Z",
+    "type": "CenterGrid.getViews.ok",
+    "data": {
+      "count": 7,
+      "selected": "0948eafd-8dd3-409d-b469-db475a257717"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.852Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.852Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:24.952Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": false,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.053Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 7,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "FileSizeDisplay",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.057Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.141Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.175Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": false,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.407Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.408Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.559Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.589Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.747Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:25.749Z",
+    "type": "CenterGrid.render.ok",
+    "data": {
+      "rows": 0,
+      "columns": 4
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:29.491Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:29.491Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:29.615Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 5,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:29.617Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:29.736Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": true,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:29.938Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:30.297Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:30.447Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:30.449Z",
+    "type": "CenterGrid.render.ok",
+    "data": {
+      "rows": 0,
+      "columns": 4
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.056Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.056Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.186Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 5,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "Modified"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.189Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.311Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": true,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.618Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:32.941Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:33.228Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:33.231Z",
+    "type": "CenterGrid.render.ok",
+    "data": {
+      "rows": 0,
+      "columns": 4
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:34.980Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:34.980Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.101Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 7,
+      "names": [
+        "DocIcon",
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.113Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.252Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": true,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.570Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.775Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.995Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:35.997Z",
+    "type": "CenterGrid.render.ok",
+    "data": {
+      "rows": 0,
+      "columns": 6
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:39.475Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:39.475Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:39.614Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 8,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "_dlc_DocIdUrl",
+        "_UIVersionString",
+        "mvDocumentType",
+        "mvDocumentAuthor",
+        "Modified",
+        "CheckoutUser"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:39.624Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:39.746Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": true,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:40.051Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:40.329Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:40.536Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:40.538Z",
+    "type": "CenterGrid.render.ok",
+    "data": {
+      "rows": 0,
+      "columns": 4
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:43.259Z",
+    "type": "CenterGrid.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:43.259Z",
+    "type": "ViewService.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:43.452Z",
+    "type": "ViewService.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 4,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:43.459Z",
+    "type": "ViewService.renderAtFolder.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:43.577Z",
+    "type": "ViewService.renderAtFolder.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": true,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:43.748Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.override",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:44.023Z",
+    "type": "ViewService.renderAtFolder.rldas.ok.original",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:44.207Z",
+    "type": "ViewService.renderAtFolder.caml.ok",
+    "data": {
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T13:48:44.209Z",
+    "type": "CenterGrid.render.ok",
+    "data": {
+      "rows": 0,
+      "columns": 3
+    }
+  }
+]
