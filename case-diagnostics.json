@@ -1,6 +1,6 @@
 [
   {
-    "t": "2025-10-27T17:20:06.841Z",
+    "t": "2025-10-27T17:46:18.667Z",
     "type": "CG.getViews.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -8,14 +8,29 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:06.841Z",
+    "t": "2025-10-27T17:46:18.667Z",
     "type": "VS.getViews.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-27T17:20:06.955Z",
+    "t": "2025-10-27T17:46:18.722Z",
+    "type": "CG.getViews.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:18.722Z",
+    "type": "VS.getViews.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:18.865Z",
     "type": "VS.getViews.ok",
     "data": {
       "count": 7,
@@ -31,7 +46,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:06.963Z",
+    "t": "2025-10-27T17:46:18.877Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -40,7 +55,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:06.963Z",
+    "t": "2025-10-27T17:46:18.877Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -48,17 +63,40 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:06.973Z",
+    "t": "2025-10-27T17:46:18.887Z",
     "type": "VS.getListFieldTitles.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-27T17:20:07.085Z",
+    "t": "2025-10-27T17:46:18.989Z",
+    "type": "VS.getViews.ok",
+    "data": {
+      "count": 7,
+      "titles": [
+        "All Documents",
+        "All Assignments",
+        "Active Assignments",
+        "Assignment Documents Emails",
+        "My Assignments",
+        "Assignment Documents",
+        "Emails"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:18.991Z",
+    "type": "VS.getListFieldTitles.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.050Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
-      "count": 8,
+      "count": 7,
       "names": [
         "DocIcon",
         "LinkFilename",
@@ -66,13 +104,12 @@
         "FileSizeDisplay",
         "mvDocSetNumber",
         "Modified",
-        "mvManagedBy",
-        "FileLeafRef"
+        "mvManagedBy"
       ]
     }
   },
   {
-    "t": "2025-10-27T17:20:07.096Z",
+    "t": "2025-10-27T17:46:19.062Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -81,14 +118,39 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.109Z",
+    "t": "2025-10-27T17:46:19.127Z",
     "type": "VS.getListFieldTitles.ok",
     "data": {
       "count": 187
     }
   },
   {
-    "t": "2025-10-27T17:20:07.111Z",
+    "t": "2025-10-27T17:46:19.203Z",
+    "type": "VS.render.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": false,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.203Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.noScope",
+      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.275Z",
+    "type": "VS.getListFieldTitles.ok",
+    "data": {
+      "count": 187
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.277Z",
     "type": "CG.getViews.ok",
     "data": {
       "count": 7,
@@ -96,7 +158,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.111Z",
+    "t": "2025-10-27T17:46:19.277Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -105,7 +167,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.111Z",
+    "t": "2025-10-27T17:46:19.277Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -113,28 +175,10 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.214Z",
-    "type": "VS.render.meta",
-    "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": false,
-      "hasOrderBy": true
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:07.214Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:07.314Z",
+    "t": "2025-10-27T17:46:19.421Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
-      "count": 8,
+      "count": 7,
       "names": [
         "DocIcon",
         "LinkFilename",
@@ -142,13 +186,12 @@
         "FileSizeDisplay",
         "mvDocSetNumber",
         "Modified",
-        "mvManagedBy",
-        "FileLeafRef"
+        "mvManagedBy"
       ]
     }
   },
   {
-    "t": "2025-10-27T17:20:07.318Z",
+    "t": "2025-10-27T17:46:19.423Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -157,7 +200,24 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.478Z",
+    "t": "2025-10-27T17:46:19.527Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "rldas.noScope",
+      "rows": 0,
+      "keys": []
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.527Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.queryOptions.folder",
+      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.627Z",
     "type": "VS.render.meta",
     "data": {
       "hasXml": true,
@@ -167,7 +227,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.478Z",
+    "t": "2025-10-27T17:46:19.627Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.noScope",
@@ -175,7 +235,23 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.498Z",
+    "t": "2025-10-27T17:46:19.684Z",
+    "type": "VS.render.try.error",
+    "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "label": "rldas.queryOptions.folder"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.686Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.folderHintOnly",
+      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:19.872Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.noScope",
@@ -184,7 +260,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.498Z",
+    "t": "2025-10-27T17:46:19.872Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.queryOptions.folder",
@@ -192,7 +268,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.637Z",
+    "t": "2025-10-27T17:46:19.987Z",
     "type": "VS.render.try.error",
     "data": {
       "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
@@ -200,7 +276,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.640Z",
+    "t": "2025-10-27T17:46:19.987Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.folderHintOnly",
@@ -208,40 +284,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.694Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:07.694Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.queryOptions.folder",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:07.838Z",
-    "type": "VS.render.try.error",
-    "data": {
-      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
-      "label": "rldas.queryOptions.folder"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:07.838Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:07.842Z",
+    "t": "2025-10-27T17:46:19.991Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.folderHintOnly",
@@ -250,7 +293,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:07.842Z",
+    "t": "2025-10-27T17:46:19.991Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override",
@@ -258,7 +301,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.010Z",
+    "t": "2025-10-27T17:46:20.205Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.folderHintOnly",
@@ -267,7 +310,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.010Z",
+    "t": "2025-10-27T17:46:20.205Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override",
@@ -275,7 +318,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.034Z",
+    "t": "2025-10-27T17:46:20.279Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override",
@@ -284,7 +327,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.034Z",
+    "t": "2025-10-27T17:46:20.279Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override.recursiveAll",
@@ -292,7 +335,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.277Z",
+    "t": "2025-10-27T17:46:20.417Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override",
@@ -301,7 +344,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.277Z",
+    "t": "2025-10-27T17:46:20.417Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override.recursiveAll",
@@ -309,7 +352,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.316Z",
+    "t": "2025-10-27T17:46:20.562Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override.recursiveAll",
@@ -318,7 +361,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.457Z",
+    "t": "2025-10-27T17:46:20.600Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override.recursiveAll",
@@ -327,7 +370,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.458Z",
+    "t": "2025-10-27T17:46:20.716Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.viewOnly",
@@ -335,7 +378,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.607Z",
+    "t": "2025-10-27T17:46:20.750Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.viewOnly",
@@ -343,7 +386,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.640Z",
+    "t": "2025-10-27T17:46:20.899Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.withFolder",
@@ -351,7 +394,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.640Z",
+    "t": "2025-10-27T17:46:20.899Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -359,7 +402,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.775Z",
+    "t": "2025-10-27T17:46:20.955Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.withFolder",
@@ -367,7 +410,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.775Z",
+    "t": "2025-10-27T17:46:20.955Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -375,55 +418,58 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:08.803Z",
+    "t": "2025-10-27T17:46:20.978Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 18,
-      "cols": 5
+      "cols": 4
     }
   },
   {
-    "t": "2025-10-27T17:20:17.249Z",
+    "t": "2025-10-27T17:46:30.360Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
       "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-27T17:20:17.249Z",
+    "t": "2025-10-27T17:46:30.360Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38"
     }
   },
   {
-    "t": "2025-10-27T17:20:17.404Z",
+    "t": "2025-10-27T17:46:30.518Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
-      "count": 5,
+      "count": 8,
       "names": [
         "DocIcon",
         "LinkFilename",
-        "mvManagedBy",
-        "DocumentSetDescription",
-        "FileLeafRef"
+        "_dlc_DocIdUrl",
+        "_UIVersionString",
+        "mvDocumentType",
+        "mvDocumentAuthor",
+        "Modified",
+        "CheckoutUser"
       ]
     }
   },
   {
-    "t": "2025-10-27T17:20:17.427Z",
+    "t": "2025-10-27T17:46:30.525Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
       "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-27T17:20:17.545Z",
+    "t": "2025-10-27T17:46:30.705Z",
     "type": "VS.render.meta",
     "data": {
       "hasXml": true,
@@ -433,15 +479,15 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:17.546Z",
+    "t": "2025-10-27T17:46:30.705Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.noScope",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
     }
   },
   {
-    "t": "2025-10-27T17:20:17.717Z",
+    "t": "2025-10-27T17:46:31.003Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.noScope",
@@ -450,15 +496,15 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:17.717Z",
+    "t": "2025-10-27T17:46:31.003Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.queryOptions.folder",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
     }
   },
   {
-    "t": "2025-10-27T17:20:17.847Z",
+    "t": "2025-10-27T17:46:31.137Z",
     "type": "VS.render.try.error",
     "data": {
       "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
@@ -466,15 +512,15 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:17.847Z",
+    "t": "2025-10-27T17:46:31.137Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
     }
   },
   {
-    "t": "2025-10-27T17:20:18.007Z",
+    "t": "2025-10-27T17:46:31.360Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.folderHintOnly",
@@ -483,15 +529,15 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.007Z",
+    "t": "2025-10-27T17:46:31.360Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
     }
   },
   {
-    "t": "2025-10-27T17:20:18.155Z",
+    "t": "2025-10-27T17:46:31.571Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override",
@@ -500,15 +546,15 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.155Z",
+    "t": "2025-10-27T17:46:31.571Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+      "head": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" Content"
     }
   },
   {
-    "t": "2025-10-27T17:20:18.303Z",
+    "t": "2025-10-27T17:46:34.990Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override.recursiveAll",
@@ -517,7 +563,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.439Z",
+    "t": "2025-10-27T17:46:35.257Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.viewOnly",
@@ -525,7 +571,172 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.600Z",
+    "t": "2025-10-27T17:46:35.418Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "caml.mergedWhere.withFolder",
+      "rows": 5
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:35.418Z",
+    "type": "VS.render.return",
+    "data": {
+      "path": "caml.mergedWhere",
+      "count": 5
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:35.436Z",
+    "type": "CG.render.ok",
+    "data": {
+      "rows": 5,
+      "cols": 4
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:45.573Z",
+    "type": "CG.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:45.573Z",
+    "type": "VS.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:45.725Z",
+    "type": "VS.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 4,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:45.734Z",
+    "type": "VS.render.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:45.868Z",
+    "type": "VS.render.meta",
+    "data": {
+      "hasXml": true,
+      "hasVF": true,
+      "hasWhere": true,
+      "hasOrderBy": true
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:45.869Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.noScope",
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.050Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "rldas.noScope",
+      "rows": 0,
+      "keys": []
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.050Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.queryOptions.folder",
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.166Z",
+    "type": "VS.render.try.error",
+    "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "label": "rldas.queryOptions.folder"
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.166Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.folderHintOnly",
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.380Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "rldas.folderHintOnly",
+      "rows": 0,
+      "keys": []
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.380Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.override",
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.565Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "rldas.override",
+      "rows": 0,
+      "keys": []
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.565Z",
+    "type": "VS.render.strategy",
+    "data": {
+      "key": "rldas.override.recursiveAll",
+      "head": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\""
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.763Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "rldas.override.recursiveAll",
+      "rows": 0,
+      "keys": []
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:46.927Z",
+    "type": "VS.render.try.ok",
+    "data": {
+      "label": "caml.mergedWhere.viewOnly",
+      "rows": 0
+    }
+  },
+  {
+    "t": "2025-10-27T17:46:47.114Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.withFolder",
@@ -533,20 +744,20 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.826Z",
+    "t": "2025-10-27T17:46:47.304Z",
     "type": "VS.render.probe.items",
     "data": {
       "total": 50,
       "inFolder": 4,
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "adfcee50-7734-433b-b75e-ed23c66baee9",
+        "odata.id": "66d7659e-b6c8-4ea1-a095-7ab6273c7ea1",
         "odata.etag": "\"1\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
         "Editor@odata.navigationLinkUrl": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)/Editor",
         "Editor": {
           "odata.type": "SP.Data.UserInfoItem",
-          "odata.id": "276c7fca-1d67-40a0-928b-9be9b6972519",
+          "odata.id": "58bf378d-98da-49cf-8b7d-e87c5607de07",
           "Title": "Clarvon Outerbridge"
         },
         "Id": 73,
@@ -559,7 +770,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.826Z",
+    "t": "2025-10-27T17:46:47.304Z",
     "type": "VS.render.return",
     "data": {
       "path": "probe.direct",
@@ -567,184 +778,15 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:18.838Z",
+    "t": "2025-10-27T17:46:47.312Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 4,
-      "cols": 4
+      "cols": 3
     }
   },
   {
-    "t": "2025-10-27T17:20:23.128Z",
-    "type": "CG.render.begin",
-    "data": {
-      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
-      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.128Z",
-    "type": "VS.getViewFieldInternalNames.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.252Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 8,
-      "names": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename",
-        "FileLeafRef"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.271Z",
-    "type": "VS.render.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
-      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.386Z",
-    "type": "VS.render.meta",
-    "data": {
-      "hasXml": true,
-      "hasVF": true,
-      "hasWhere": true,
-      "hasOrderBy": true
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.386Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.noScope",
-      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.642Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.noScope",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.642Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.queryOptions.folder",
-      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.745Z",
-    "type": "VS.render.try.error",
-    "data": {
-      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
-      "label": "rldas.queryOptions.folder"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.745Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.folderHintOnly",
-      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.979Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.folderHintOnly",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:23.979Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override",
-      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.151Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.151Z",
-    "type": "VS.render.strategy",
-    "data": {
-      "key": "rldas.override.recursiveAll",
-      "head": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layo"
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.325Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "rldas.override.recursiveAll",
-      "rows": 0,
-      "keys": []
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.513Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.viewOnly",
-      "rows": 0
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.656Z",
-    "type": "VS.render.try.ok",
-    "data": {
-      "label": "caml.mergedWhere.withFolder",
-      "rows": 9
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.656Z",
-    "type": "VS.render.return",
-    "data": {
-      "path": "caml.mergedWhere",
-      "count": 9
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:24.672Z",
-    "type": "CG.render.ok",
-    "data": {
-      "rows": 9,
-      "cols": 7
-    }
-  },
-  {
-    "t": "2025-10-27T17:20:27.953Z",
+    "t": "2025-10-27T17:46:48.936Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -753,7 +795,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:27.953Z",
+    "t": "2025-10-27T17:46:48.936Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -761,10 +803,10 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.216Z",
+    "t": "2025-10-27T17:46:49.082Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
-      "count": 8,
+      "count": 7,
       "names": [
         "DocIcon",
         "LinkFilename",
@@ -772,13 +814,12 @@
         "FileSizeDisplay",
         "mvDocSetNumber",
         "Modified",
-        "mvManagedBy",
-        "FileLeafRef"
+        "mvManagedBy"
       ]
     }
   },
   {
-    "t": "2025-10-27T17:20:28.227Z",
+    "t": "2025-10-27T17:46:49.097Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -787,7 +828,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.357Z",
+    "t": "2025-10-27T17:46:49.240Z",
     "type": "VS.render.meta",
     "data": {
       "hasXml": true,
@@ -797,7 +838,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.357Z",
+    "t": "2025-10-27T17:46:49.240Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.noScope",
@@ -805,7 +846,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.575Z",
+    "t": "2025-10-27T17:46:49.491Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.noScope",
@@ -814,7 +855,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.575Z",
+    "t": "2025-10-27T17:46:49.491Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.queryOptions.folder",
@@ -822,7 +863,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.672Z",
+    "t": "2025-10-27T17:46:49.641Z",
     "type": "VS.render.try.error",
     "data": {
       "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'QueryOptions' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
@@ -830,7 +871,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.672Z",
+    "t": "2025-10-27T17:46:49.641Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.folderHintOnly",
@@ -838,7 +879,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.840Z",
+    "t": "2025-10-27T17:46:50.025Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.folderHintOnly",
@@ -847,7 +888,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:28.840Z",
+    "t": "2025-10-27T17:46:50.025Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override",
@@ -855,7 +896,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.076Z",
+    "t": "2025-10-27T17:46:50.318Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override",
@@ -864,7 +905,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.076Z",
+    "t": "2025-10-27T17:46:50.318Z",
     "type": "VS.render.strategy",
     "data": {
       "key": "rldas.override.recursiveAll",
@@ -872,7 +913,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.243Z",
+    "t": "2025-10-27T17:46:50.504Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "rldas.override.recursiveAll",
@@ -881,7 +922,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.359Z",
+    "t": "2025-10-27T17:46:50.660Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.viewOnly",
@@ -889,7 +930,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.513Z",
+    "t": "2025-10-27T17:46:50.821Z",
     "type": "VS.render.try.ok",
     "data": {
       "label": "caml.mergedWhere.withFolder",
@@ -897,7 +938,7 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.513Z",
+    "t": "2025-10-27T17:46:50.821Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -905,11 +946,11 @@
     }
   },
   {
-    "t": "2025-10-27T17:20:29.532Z",
+    "t": "2025-10-27T17:46:50.839Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 18,
-      "cols": 5
+      "cols": 4
     }
   }
 ]
