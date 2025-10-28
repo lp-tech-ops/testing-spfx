@@ -1,6 +1,6 @@
 [
   {
-    "t": "2025-10-28T15:20:03.393Z",
+    "t": "2025-10-28T15:32:32.600Z",
     "type": "CG.getViews.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -8,14 +8,14 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.393Z",
+    "t": "2025-10-28T15:32:32.600Z",
     "type": "VS.getViews.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T15:20:03.531Z",
+    "t": "2025-10-28T15:32:32.743Z",
     "type": "VS.getViews.ok",
     "data": {
       "count": 7,
@@ -31,7 +31,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.538Z",
+    "t": "2025-10-28T15:32:32.749Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.538Z",
+    "t": "2025-10-28T15:32:32.749Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -48,14 +48,22 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.545Z",
+    "t": "2025-10-28T15:32:32.756Z",
     "type": "VS.getListFieldTitles.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T15:20:03.684Z",
+    "t": "2025-10-28T15:32:32.883Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "xml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:32.883Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -71,7 +79,19 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.697Z",
+    "t": "2025-10-28T15:32:32.883Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:32.899Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -80,14 +100,14 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.708Z",
+    "t": "2025-10-28T15:32:32.905Z",
     "type": "VS.getListFieldTitles.ok",
     "data": {
       "count": 187
     }
   },
   {
-    "t": "2025-10-28T15:20:03.711Z",
+    "t": "2025-10-28T15:32:32.908Z",
     "type": "CG.getViews.ok",
     "data": {
       "count": 7,
@@ -95,7 +115,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.711Z",
+    "t": "2025-10-28T15:32:32.908Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -104,7 +124,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.711Z",
+    "t": "2025-10-28T15:32:32.908Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -112,7 +132,23 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.955Z",
+    "t": "2025-10-28T15:32:33.034Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "xml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:33.150Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "xml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:33.150Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -128,7 +164,19 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:03.957Z",
+    "t": "2025-10-28T15:32:33.150Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:33.152Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -137,7 +185,41 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:04.135Z",
+    "t": "2025-10-28T15:32:33.270Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "xml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:33.617Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 18,
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "a5ddaf49-4f10-41dc-b4b1-708847e5462a",
+        "odata.etag": "\"1\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
+        "FileSystemObjectType": 1,
+        "Id": 73,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "mvDocSetNumber": null,
+        "Modified": "2024-08-06T12:25:44",
+        "mvManagedById": null,
+        "mvManagedByStringId": null,
+        "ID": 73,
+        "CheckoutUserId": null,
+        "EditorId": 19
+      }
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:33.618Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -145,15 +227,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:04.434Z",
-    "type": "VS.render.return",
-    "data": {
-      "path": "caml.mergedWhere",
-      "count": 18
-    }
-  },
-  {
-    "t": "2025-10-28T15:20:04.476Z",
+    "t": "2025-10-28T15:32:33.656Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 18,
@@ -183,7 +257,7 @@
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "b4ffee68-f621-49fc-ac4f-01b9d3ccf225",
+        "odata.id": "a5ddaf49-4f10-41dc-b4b1-708847e5462a",
         "odata.etag": "\"1\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
         "FileSystemObjectType": 1,
@@ -207,7 +281,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:04.476Z",
+    "t": "2025-10-28T15:32:33.656Z",
     "type": "CG.row.sample",
     "data": {
       "count": 18,
@@ -234,24 +308,66 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:07.990Z",
+    "t": "2025-10-28T15:32:33.978Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 18,
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "1e84ddfd-512a-4892-ae32-93837f2c5142",
+        "odata.etag": "\"1\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
+        "FileSystemObjectType": 1,
+        "Id": 73,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "mvDocSetNumber": null,
+        "Modified": "2024-08-06T12:25:44",
+        "mvManagedById": null,
+        "mvManagedByStringId": null,
+        "ID": 73,
+        "CheckoutUserId": null,
+        "EditorId": 19
+      }
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:33.978Z",
+    "type": "VS.render.return",
+    "data": {
+      "path": "caml.mergedWhere",
+      "count": 18
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:43.350Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
       "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T15:20:07.990Z",
+    "t": "2025-10-28T15:32:43.350Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a"
     }
   },
   {
-    "t": "2025-10-28T15:20:08.193Z",
+    "t": "2025-10-28T15:32:43.499Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "xml": "<View Name=\"{27AB3AB1-EAAE-4A1B-B8C0-45E73B232E2A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"My Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/My Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><And><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assgignment Document Set</Value></Eq><Eq><FieldRef Name=\"mvManagedBy\"/><Value Type=\"Integer\"><UserID Type=\"Integer\"/></Value></Eq></And></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"mvDocSetStatus\"/><FieldRef Name=\"mvManagedBy\"/><FieldRef Name=\"Modified\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:43.499Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 5,
@@ -260,28 +376,56 @@
         "LinkFilename",
         "mvDocSetStatus",
         "mvManagedBy",
-        "DocumentSetDescription"
+        "Modified"
       ]
     }
   },
   {
-    "t": "2025-10-28T15:20:08.204Z",
+    "t": "2025-10-28T15:32:43.499Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "Modified"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:43.508Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
       "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T15:20:08.716Z",
+    "t": "2025-10-28T15:32:43.636Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "27ab3ab1-eaae-4a1b-b8c0-45e73b232e2a",
+      "xml": "<View Name=\"{27AB3AB1-EAAE-4A1B-B8C0-45E73B232E2A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"My Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/My Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><And><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assgignment Document Set</Value></Eq><Eq><FieldRef Name=\"mvManagedBy\"/><Value Type=\"Integer\"><UserID Type=\"Integer\"/></Value></Eq></And></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"mvDocSetStatus\"/><FieldRef Name=\"mvManagedBy\"/><FieldRef Name=\"Modified\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:44.117Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 0
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:44.117Z",
     "type": "VS.render.empty",
     "data": {
       "note": "CAML yielded zero"
     }
   },
   {
-    "t": "2025-10-28T15:20:08.724Z",
+    "t": "2025-10-28T15:32:44.123Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 0,
@@ -291,7 +435,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:08.724Z",
+    "t": "2025-10-28T15:32:44.123Z",
     "type": "CG.row.sample",
     "data": {
       "count": 0,
@@ -299,7 +443,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.380Z",
+    "t": "2025-10-28T15:32:46.108Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -308,7 +452,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.380Z",
+    "t": "2025-10-28T15:32:46.108Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -316,7 +460,15 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.509Z",
+    "t": "2025-10-28T15:32:46.241Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "xml": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document</Value></Eq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"_UIVersionString\"/><FieldRef Name=\"mvDocumentType\"/><FieldRef Name=\"mvDocumentAuthor\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"CheckoutUser\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:46.241Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 8,
@@ -333,7 +485,19 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.514Z",
+    "t": "2025-10-28T15:32:46.241Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvDocumentType",
+        "mvDocumentAuthor",
+        "Modified"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:46.248Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -342,7 +506,45 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.976Z",
+    "t": "2025-10-28T15:32:46.387Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "xml": "<View Name=\"{3B0E608D-4E15-424F-8FDC-C9FB05858C38}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document</Value></Eq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"_UIVersionString\"/><FieldRef Name=\"mvDocumentType\"/><FieldRef Name=\"mvDocumentAuthor\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"CheckoutUser\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:46.712Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 5,
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "0c323691-ea00-4386-a2b3-65d6e87def8d",
+        "odata.etag": "\"9\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(175)",
+        "FileSystemObjectType": 0,
+        "Id": 175,
+        "ServerRedirectedEmbedUri": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
+        "ServerRedirectedEmbedUrl": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
+        "OData__dlc_DocIdUrl": {
+          "Description": "CAODOC-1940166408-175",
+          "Url": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-175"
+        },
+        "OData__UIVersionString": "1.0",
+        "mvDocumentType": null,
+        "mvDocumentAuthorId": 21,
+        "mvDocumentAuthorStringId": "21",
+        "Modified": "2024-09-05T14:40:01",
+        "CheckoutUserId": null,
+        "ID": 175,
+        "EditorId": 21
+      }
+    }
+  },
+  {
+    "t": "2025-10-28T15:32:46.712Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -350,7 +552,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.986Z",
+    "t": "2025-10-28T15:32:46.721Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 5,
@@ -381,7 +583,7 @@
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "b5031c02-87d7-4e59-bc80-dbdba4cf9b51",
+        "odata.id": "0c323691-ea00-4386-a2b3-65d6e87def8d",
         "odata.etag": "\"9\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(175)",
         "FileSystemObjectType": 0,
@@ -409,7 +611,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:13.986Z",
+    "t": "2025-10-28T15:32:46.721Z",
     "type": "CG.row.sample",
     "data": {
       "count": 5,
@@ -436,7 +638,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:35.423Z",
+    "t": "2025-10-28T15:33:02.723Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -445,7 +647,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:35.423Z",
+    "t": "2025-10-28T15:33:02.723Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -453,7 +655,15 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:35.580Z",
+    "t": "2025-10-28T15:33:02.855Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "xml": "<View Name=\"{46B421B5-6DBE-4F49-9183-EAD9C0407FD3}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document Set</Value></Eq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"mvDocSetStatus\"/><FieldRef Name=\"mvManagedBy\"/><FieldRef Name=\"DocumentSetDescription\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:02.856Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 5,
@@ -467,7 +677,19 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:35.585Z",
+    "t": "2025-10-28T15:33:02.856Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvDocSetStatus",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:02.861Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -476,14 +698,30 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:36.035Z",
+    "t": "2025-10-28T15:33:02.991Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
+      "xml": "<View Name=\"{46B421B5-6DBE-4F49-9183-EAD9C0407FD3}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document Set</Value></Eq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"mvDocSetStatus\"/><FieldRef Name=\"mvManagedBy\"/><FieldRef Name=\"DocumentSetDescription\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:03.312Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 0
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:03.312Z",
     "type": "VS.render.empty",
     "data": {
       "note": "CAML yielded zero"
     }
   },
   {
-    "t": "2025-10-28T15:20:36.040Z",
+    "t": "2025-10-28T15:33:03.318Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 0,
@@ -493,7 +731,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:36.040Z",
+    "t": "2025-10-28T15:33:03.318Z",
     "type": "CG.row.sample",
     "data": {
       "count": 0,
@@ -501,7 +739,106 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:37.884Z",
+    "t": "2025-10-28T15:33:04.844Z",
+    "type": "CG.render.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:04.844Z",
+    "type": "VS.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:04.983Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "xml": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><And><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document Set</Value></Eq><Eq><FieldRef Name=\"mvDocSetStatus\"/><Value Type=\"Text\">Active</Value></Eq></And></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"mvManagedBy\"/><FieldRef Name=\"DocumentSetDescription\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:04.983Z",
+    "type": "VS.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 4,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:04.983Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:04.988Z",
+    "type": "VS.render.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:05.111Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "xml": "<View Name=\"{C79922CE-426B-4537-A5F4-126CBB2A048A}\" MobileView=\"TRUE\" Type=\"HTML\" DisplayName=\"Active Assignments\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"LinkFilename\"/></OrderBy><Where><And><Eq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document Set</Value></Eq><Eq><FieldRef Name=\"mvDocSetStatus\"/><Value Type=\"Text\">Active</Value></Eq></And></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"mvManagedBy\"/><FieldRef Name=\"DocumentSetDescription\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:05.421Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 0
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:05.421Z",
+    "type": "VS.render.empty",
+    "data": {
+      "note": "CAML yielded zero"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:05.423Z",
+    "type": "CG.render.ok",
+    "data": {
+      "rows": 0,
+      "cols": 3,
+      "sampleKeys": [],
+      "sample": null
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:05.423Z",
+    "type": "CG.row.sample",
+    "data": {
+      "count": 0,
+      "preview": []
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:07.300Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -510,7 +847,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:37.884Z",
+    "t": "2025-10-28T15:33:07.300Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -518,7 +855,15 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:38.030Z",
+    "t": "2025-10-28T15:33:07.443Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
+      "xml": "<View Name=\"{6F41D2F1-BE32-44A2-A9AD-A90809DC4AE7}\" MobileView=\"TRUE\" DefaultViewForContentType=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy><Where><Neq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document Set</Value></Neq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"_UIVersionString\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvReceivedTime\"/><FieldRef Name=\"CheckoutUser\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:07.443Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -534,7 +879,18 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:38.036Z",
+    "t": "2025-10-28T15:33:07.443Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "Modified",
+        "mvReceivedTime"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:07.447Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -543,7 +899,40 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:38.554Z",
+    "t": "2025-10-28T15:33:07.585Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "6f41d2f1-be32-44a2-a9ad-a90809dc4ae7",
+      "xml": "<View Name=\"{6F41D2F1-BE32-44A2-A9AD-A90809DC4AE7}\" MobileView=\"TRUE\" DefaultViewForContentType=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Assignment Documents Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Assignment Documents Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x0120D5200091B0F31107B6C84FACE65B1E20F366DF0051380E66152D98409E5C8E2E06A64936\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"Modified\" Ascending=\"FALSE\"/></OrderBy><Where><Neq><FieldRef Name=\"ContentType\"/><Value Type=\"Computed\">Assignment Document Set</Value></Neq></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"_UIVersionString\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvReceivedTime\"/><FieldRef Name=\"CheckoutUser\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:07.894Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 18,
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "acc1fdb8-20c6-4cae-aa93-f373f8d62a63",
+        "odata.etag": "\"1\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(76)",
+        "FileSystemObjectType": 1,
+        "Id": 76,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "OData__UIVersionString": "1.0",
+        "Modified": "2024-08-06T12:25:46",
+        "mvReceivedTime": null,
+        "CheckoutUserId": null,
+        "ID": 76,
+        "EditorId": 19
+      }
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:07.895Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -551,7 +940,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:38.568Z",
+    "t": "2025-10-28T15:33:07.914Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 18,
@@ -580,7 +969,7 @@
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "54c0d642-960f-41f0-97e5-a59f04ed0f18",
+        "odata.id": "acc1fdb8-20c6-4cae-aa93-f373f8d62a63",
         "odata.etag": "\"1\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(76)",
         "FileSystemObjectType": 1,
@@ -603,7 +992,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:38.568Z",
+    "t": "2025-10-28T15:33:07.914Z",
     "type": "CG.row.sample",
     "data": {
       "count": 18,
@@ -630,71 +1019,197 @@
     }
   },
   {
-    "t": "2025-10-28T15:20:49.932Z",
+    "t": "2025-10-28T15:33:10.116Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T15:20:49.932Z",
+    "t": "2025-10-28T15:33:10.116Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
     }
   },
   {
-    "t": "2025-10-28T15:20:50.085Z",
+    "t": "2025-10-28T15:33:10.269Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "xml": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"mvReceivedTime\" Ascending=\"FALSE\"/></OrderBy><Where><Or><Contains><FieldRef Name=\"FileLeafRef\"/><Value Type=\"File\">.MSG</Value></Contains><Contains><FieldRef Name=\"FileLeafRef\"/><Value Type=\"File\">.EML</Value></Contains></Or></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"mvAttachmentIcon\"/><FieldRef Name=\"mvSubject\"/><FieldRef Name=\"mvTo\"/><FieldRef Name=\"mvFrom\"/><FieldRef Name=\"mvReceivedTime\"/><FieldRef Name=\"LinkFilename\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:10.269Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
-      "count": 4,
+      "count": 7,
       "names": [
         "DocIcon",
-        "LinkFilename",
-        "mvManagedBy",
-        "DocumentSetDescription"
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
       ]
     }
   },
   {
-    "t": "2025-10-28T15:20:50.093Z",
+    "t": "2025-10-28T15:33:10.269Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:10.305Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T15:20:50.649Z",
-    "type": "VS.render.empty",
+    "t": "2025-10-28T15:33:10.436Z",
+    "type": "VS.viewXml",
     "data": {
-      "note": "CAML yielded zero"
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "xml": "<View Name=\"{9D4C4E73-4E92-4337-922C-4E7BFF791CD8}\" MobileView=\"TRUE\" Type=\"HTML\" Scope=\"Recursive\" DisplayName=\"Emails\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/Emails.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"mvReceivedTime\" Ascending=\"FALSE\"/></OrderBy><Where><Or><Contains><FieldRef Name=\"FileLeafRef\"/><Value Type=\"File\">.MSG</Value></Contains><Contains><FieldRef Name=\"FileLeafRef\"/><Value Type=\"File\">.EML</Value></Contains></Or></Where></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"mvAttachmentIcon\"/><FieldRef Name=\"mvSubject\"/><FieldRef Name=\"mvTo\"/><FieldRef Name=\"mvFrom\"/><FieldRef Name=\"mvReceivedTime\"/><FieldRef Name=\"LinkFilename\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
     }
   },
   {
-    "t": "2025-10-28T15:20:50.656Z",
+    "t": "2025-10-28T15:33:10.735Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 9,
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "3ab3d814-c43c-4ab3-9641-8d9e510c7859",
+        "odata.etag": "\"16\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(168)",
+        "FileSystemObjectType": 0,
+        "Id": 168,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "mvAttachmentIcon": "",
+        "mvSubject": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+        "mvTo": "Adrienne Fine",
+        "mvFrom": "Brandi Valentine",
+        "mvReceivedTime": "2024-08-29T10:29:12",
+        "ID": 168,
+        "Modified": "2024-09-05T14:39:29",
+        "CheckoutUserId": null,
+        "EditorId": 21
+      }
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:10.735Z",
+    "type": "VS.render.return",
+    "data": {
+      "path": "caml.mergedWhere",
+      "count": 9
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:10.753Z",
     "type": "CG.render.ok",
     "data": {
-      "rows": 0,
-      "cols": 3,
-      "sampleKeys": [],
-      "sample": null
+      "rows": 9,
+      "cols": 6,
+      "sampleKeys": [
+        "odata.type",
+        "odata.id",
+        "odata.etag",
+        "odata.editLink",
+        "FileSystemObjectType",
+        "Id",
+        "ServerRedirectedEmbedUri",
+        "ServerRedirectedEmbedUrl",
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "ID",
+        "Modified",
+        "CheckoutUserId",
+        "EditorId",
+        "FileLeafRef",
+        "LinkFilename",
+        "LinkTitle",
+        "FileRef",
+        "FSObjType"
+      ],
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "3ab3d814-c43c-4ab3-9641-8d9e510c7859",
+        "odata.etag": "\"16\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(168)",
+        "FileSystemObjectType": 0,
+        "Id": 168,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "mvAttachmentIcon": "",
+        "mvSubject": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+        "mvTo": "Adrienne Fine",
+        "mvFrom": "Brandi Valentine",
+        "mvReceivedTime": "2024-08-29T10:29:12",
+        "ID": 168,
+        "Modified": "2024-09-05T14:39:29",
+        "CheckoutUserId": null,
+        "EditorId": 21,
+        "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+        "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+        "LinkTitle": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+        "FileRef": "",
+        "FSObjType": 0
+      }
     }
   },
   {
-    "t": "2025-10-28T15:20:50.656Z",
+    "t": "2025-10-28T15:33:10.753Z",
     "type": "CG.row.sample",
     "data": {
-      "count": 0,
-      "preview": []
+      "count": 9,
+      "preview": [
+        {
+          "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+          "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+          "FileRef": "",
+          "FSObjType": 0
+        },
+        {
+          "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+          "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+          "FileRef": "",
+          "FSObjType": 0
+        },
+        {
+          "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+          "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
+          "FileRef": "",
+          "FSObjType": 0
+        }
+      ]
     }
   },
   {
-    "t": "2025-10-28T15:21:01.509Z",
+    "t": "2025-10-28T15:33:13.015Z",
     "type": "CG.render.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -703,7 +1218,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:21:01.509Z",
+    "t": "2025-10-28T15:33:13.015Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -711,7 +1226,15 @@
     }
   },
   {
-    "t": "2025-10-28T15:21:01.684Z",
+    "t": "2025-10-28T15:33:13.165Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "xml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:13.165Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -727,7 +1250,19 @@
     }
   },
   {
-    "t": "2025-10-28T15:21:01.690Z",
+    "t": "2025-10-28T15:33:13.165Z",
+    "type": "CG.columns.order",
+    "data": {
+      "order": [
+        "LinkFilename",
+        "mvDocSetNumber",
+        "Modified",
+        "mvManagedBy"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:13.176Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -736,7 +1271,41 @@
     }
   },
   {
-    "t": "2025-10-28T15:21:02.186Z",
+    "t": "2025-10-28T15:33:13.312Z",
+    "type": "VS.viewXml",
+    "data": {
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "xml": "<View Name=\"{0948EAFD-8DD3-409D-B469-DB475A257717}\" DefaultView=\"TRUE\" MobileView=\"TRUE\" MobileDefaultView=\"TRUE\" Type=\"HTML\" DisplayName=\"All Documents\" Url=\"/sites/CAO-CaseManagementSite/1004/Forms/All Documents.aspx\" Level=\"1\" BaseViewID=\"1\" ContentTypeID=\"0x\" ImageUrl=\"/_layouts/15/images/dlicon.png?rev=48\" ><Query><OrderBy><FieldRef Name=\"FileLeafRef\"/></OrderBy></Query><ViewFields><FieldRef Name=\"DocIcon\"/><FieldRef Name=\"LinkFilename\"/><FieldRef Name=\"_dlc_DocIdUrl\"/><FieldRef Name=\"FileSizeDisplay\"/><FieldRef Name=\"mvDocSetNumber\"/><FieldRef Name=\"Modified\"/><FieldRef Name=\"mvManagedBy\"/></ViewFields><RowLimit Paged=\"TRUE\">30</RowLimit><Aggregations Value=\"Off\">Off</Aggregations><JSLink>clienttemplates.js</JSLink><XslLink Default=\"TRUE\">main.xsl</XslLink><Toolbar Type=\"Standard\"/></View>"
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:13.632Z",
+    "type": "VS.camlRows.raw",
+    "data": {
+      "label": "caml.mergedWhere",
+      "count": 18,
+      "sample": {
+        "odata.type": "SP.Data.1004Item",
+        "odata.id": "d50df5e5-ea17-4b91-9d8e-be7b81f511d7",
+        "odata.etag": "\"1\"",
+        "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
+        "FileSystemObjectType": 1,
+        "Id": 73,
+        "ServerRedirectedEmbedUri": null,
+        "ServerRedirectedEmbedUrl": "",
+        "OData__dlc_DocIdUrl": null,
+        "mvDocSetNumber": null,
+        "Modified": "2024-08-06T12:25:44",
+        "mvManagedById": null,
+        "mvManagedByStringId": null,
+        "ID": 73,
+        "CheckoutUserId": null,
+        "EditorId": 19
+      }
+    }
+  },
+  {
+    "t": "2025-10-28T15:33:13.632Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
@@ -744,7 +1313,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:21:02.201Z",
+    "t": "2025-10-28T15:33:13.647Z",
     "type": "CG.render.ok",
     "data": {
       "rows": 18,
@@ -774,7 +1343,7 @@
       ],
       "sample": {
         "odata.type": "SP.Data.1004Item",
-        "odata.id": "10a89993-734d-4a65-8d2b-5e8c97450d67",
+        "odata.id": "d50df5e5-ea17-4b91-9d8e-be7b81f511d7",
         "odata.etag": "\"1\"",
         "odata.editLink": "Web/Lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/Items(73)",
         "FileSystemObjectType": 1,
@@ -798,7 +1367,7 @@
     }
   },
   {
-    "t": "2025-10-28T15:21:02.201Z",
+    "t": "2025-10-28T15:33:13.647Z",
     "type": "CG.row.sample",
     "data": {
       "count": 18,
