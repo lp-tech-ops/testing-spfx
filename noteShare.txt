@@ -1,57 +1,21 @@
-PS E:\powershell scripts for office365> Get-PnPView -List "ACFD - FIRE" -Identity "Active Assignments" | Format-List *
+(async () => {
+  const listId = "c106a81b-5013-43d6-9639-5c0f4e51f677"; // replace with your list GUID
+  const sp = window.sp; // often exposed by SPFx/PnPjs
 
-Aggregations              :
-AggregationsStatus        :
-AssociatedContentTypeId   :
-BaseViewId                :
-CalendarViewStyles        :
-ColumnWidth               :
-ContentTypeId             :
-CustomFormatter           :
-DefaultView               : False
-DefaultViewForContentType :
-EditorModified            :
-Formats                   :
-GridLayout                :
-Hidden                    :
-HtmlSchemaXml             :
-Id                        : c79922ce-426b-4537-a5f4-126cbb2a048a
-ImageUrl                  :
-IncludeRootFolder         :
-ViewJoins                 :
-JSLink                    :
-ListViewXml               :
-Method                    :
-MobileDefaultView         :
-MobileView                :
-ModerationType            :
-NewDocumentTemplates      :
-OrderedView               :
-Paged                     :
-PageRenderType            :
-PersonalView              : False
-ViewProjectedFields       :
-ViewQuery                 :
-ReadOnlyView              :
-RequiresClientIntegration :
-RowLimit                  :
-Scope                     :
-ServerRelativePath        :
-ServerRelativeUrl         : /sites/CAO-CaseManagementSite/1004/Forms/Active Assignments.aspx
-StyleId                   :
-TabularView               :
-Threaded                  :
-Title                     : Active Assignments
-Toolbar                   :
-ToolbarTemplateName       :
-ViewType                  :
-ViewData                  :
-ViewFields                : {DocIcon, LinkFilename, mvManagedBy, DocumentSetDescription}
-ViewType2                 :
-VisualizationInfo         :
-Context                   : PnP.Framework.PnPClientContext
-Tag                       :
-Path                      : Microsoft.SharePoint.Client.ObjectPathIdentity
-ObjectVersion             :
-ServerObjectIsNull        : False
-TypedObject               : Microsoft.SharePoint.Client.View
+  const items = await sp.web.lists.getById(listId).items
+    .top(10)
+    .select(
+      "Id",
+      "FileRef",
+      "FileLeafRef",
+      "LinkFilename",
+      "Title",
+      "ContentTypeId",
+      "ContentType/Name",
+      "OData__dlc_DocIdUrl",
+      "mvSubject"
+    )
+    .expand("ContentType")();
+
+  console.log(items);
+})();
