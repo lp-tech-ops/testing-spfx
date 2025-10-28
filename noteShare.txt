@@ -1,1 +1,7 @@
-https://<yourtenant>.sharepoint.com/sites/CAO-CaseManagementSite/_api/web/lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/items?$top=5&$select=Id,FileRef,FileLeafRef,LinkFilename,Title,ContentTypeId,ContentType/Name,OData__dlc_DocIdUrl,mvSubject&$expand=ContentType
+Assignment Documents: Name, Document ID, Version, Document Type, Document Author, Modified, Checkd Out To
+Active Assignments: Name, Assignment Managed By, Description
+All Assignments: Assignments Status, Assignment Managed By, Description
+All Documents: Name, Document ID, File Size, Assignment Number, Modified, Assignment Managed By
+Assignment Documents Emails: Name, Document ID, Version, Modified, Received Time, Checked Out To
+Emails: {This views columns are visible correctly}
+My Assignments: Name, Assignments Status, Assignment Managed By, Modified
