@@ -1,17 +1,17 @@
 (async () => {
-  const webUrl   = _spPageContextInfo?.webAbsoluteUrl || location.origin; // works on SPO pages
-  const listId   = "GUID-HERE";   // e.g. "c6b1a3c6-....-....-....-............"
-  const viewId   = "GUID-HERE";   // selected view Id
-  const folderUrl = "/sites/CAO-CaseManagementSite/.../1511-Abdelaziz Zinbi -SDT"; // server-relative
+  const webUrl    = _spPageContextInfo?.webAbsoluteUrl || location.origin;
+  const listId    = "c106a81b-5013-43d6-9639-5c0f4e51f677";
+  const viewId    = "c79922ce-426b-4537-a5f4-126cbb2a048a"; // All Documents
+  const folderUrl = "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT";
 
-  // Get a request digest
-  const ctx = await fetch(`${webUrl}/_api/contextinfo`, { method: "POST", headers: { "accept": "application/json;odata=nometadata" } });
-  const digest = (await ctx.json()).FormDigestValue;
+  // request digest
+  const digest = (await (await fetch(`${webUrl}/_api/contextinfo`, {
+    method: "POST",
+    headers: { accept: "application/json;odata=nometadata" }
+  })).json()).FormDigestValue;
 
-  // Build endpoint: call RLDaS on the *view* (honors view fields/filters)
+  // RLDaS on the *view* (honors view filters/columns); do NOT include ViewId in body
   const url = `${webUrl}/_api/web/lists(guid'${listId}')/views(guid'${viewId}')/renderlistdataasstream`;
-
-  // Payload: pass parameters -> include folder scope
   const body = JSON.stringify({
     parameters: {
       AddRequiredFields: true,
@@ -23,7 +23,7 @@
   const res = await fetch(url, {
     method: "POST",
     headers: {
-      "accept": "application/json;odata=nometadata",
+      accept: "application/json;odata=nometadata",
       "content-type": "application/json;odata=verbose",
       "x-requestdigest": digest
     },
@@ -36,7 +36,7 @@
   }
 
   const data = await res.json();
-  console.log("RLDaS full payload:", data);                 // EVERYTHING
+  console.log("RLDaS FULL payload:", data);
   const rows = data?.Row || data?.ListData?.Row || [];
   console.log("Row count:", rows.length);
   console.log("First row keys:", rows[0] ? Object.keys(rows[0]) : []);
