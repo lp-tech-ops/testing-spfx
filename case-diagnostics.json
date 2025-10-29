@@ -1,24 +1,24 @@
 [
   {
-    "t": "2025-10-28T21:09:40.358Z",
+    "t": "2025-10-29T16:10:19.652Z",
     "type": "CG.getViews.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T21:09:40.359Z",
+    "t": "2025-10-29T16:10:19.652Z",
     "type": "VS.getViews.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T21:09:40.360Z",
+    "t": "2025-10-29T16:10:19.652Z",
     "type": "CG.load.skip.noView"
   },
   {
-    "t": "2025-10-28T21:09:40.497Z",
+    "t": "2025-10-29T16:10:19.816Z",
     "type": "VS.getViews.ok",
     "data": {
       "count": 7,
@@ -34,7 +34,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:40.503Z",
+    "t": "2025-10-29T16:10:19.827Z",
     "type": "CG.load.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -43,7 +43,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:40.503Z",
+    "t": "2025-10-29T16:10:19.827Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -51,7 +51,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:40.508Z",
+    "t": "2025-10-29T16:10:19.831Z",
     "type": "CG.getViews.ok",
     "data": {
       "count": 7,
@@ -59,7 +59,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:40.645Z",
+    "t": "2025-10-29T16:10:20.090Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
@@ -75,21 +75,21 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:40.645Z",
+    "t": "2025-10-29T16:10:20.090Z",
     "type": "VS.getListFieldTitles.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T21:09:40.861Z",
+    "t": "2025-10-29T16:10:20.268Z",
     "type": "VS.getListFieldTitles.ok",
     "data": {
       "count": 187
     }
   },
   {
-    "t": "2025-10-28T21:09:40.861Z",
+    "t": "2025-10-29T16:10:20.269Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -98,423 +98,25 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:40.861Z",
-    "type": "VS.getViewFieldInternalNames.begin",
+    "t": "2025-10-29T16:10:20.456Z",
+    "type": "VS.rldas.error",
     "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717"
+      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T21:09:40.996Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 7,
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:41.465Z",
-    "type": "VS.fetch.ok",
-    "data": {
-      "hint": "raw rows before normalize",
-      "count": 18,
-      "sample0": {
-        "Id": 73,
-        "FileLeafRef": null,
-        "LinkFilename": null,
-        "Title": null,
-        "FileRef": null,
-        "FSObjType": 1
-      },
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:41.466Z",
-    "type": "VS.normalize.probe",
-    "data": {
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ],
-      "pre": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 73,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:44"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 74,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:45"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 75,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:45"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 76,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:46"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 84,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-84\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-84\"}"
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "string",
-              "preview": "1511"
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:00"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        }
-      ],
-      "post": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 73,
-            "FileLeafRef": "Unnamed Item (73)",
-            "LinkFilename": "Unnamed Item (73)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (73)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:44",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 74,
-            "FileLeafRef": "Unnamed Item (74)",
-            "LinkFilename": "Unnamed Item (74)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (74)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:45",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 75,
-            "FileLeafRef": "Unnamed Item (75)",
-            "LinkFilename": "Unnamed Item (75)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (75)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:45",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 76,
-            "FileLeafRef": "Unnamed Item (76)",
-            "LinkFilename": "Unnamed Item (76)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (76)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:46",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 84,
-            "FileLeafRef": "CAODOC-1940166408-84",
-            "LinkFilename": "CAODOC-1940166408-84",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=477163cb-8fea-410f-a032-4d5290950d6d",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-84",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-84",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "1511",
-          "Modified": "2024-09-05T14:40:00",
-          "mvManagedBy": ""
-        }
-      ],
-      "total": 18
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:41.466Z",
+    "t": "2025-10-29T16:10:20.978Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
-      "count": 18,
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
+      "count": 18
     }
   },
   {
-    "t": "2025-10-28T21:09:41.466Z",
+    "t": "2025-10-29T16:10:20.978Z",
     "type": "CG.view.meta",
     "data": {
       "orderFromView": [
@@ -529,7 +131,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:41.466Z",
+    "t": "2025-10-29T16:10:20.978Z",
     "type": "CG.order.final",
     "data": {
       "order": [
@@ -543,7 +145,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:41.509Z",
+    "t": "2025-10-29T16:10:21.024Z",
     "type": "CG.load.ok",
     "data": {
       "rowCount": 18,
@@ -551,656 +153,15 @@
     }
   },
   {
-    "t": "2025-10-28T21:09:55.841Z",
+    "t": "2025-10-29T16:10:28.485Z",
     "type": "CG.view.change",
     "data": {
       "from": "0948eafd-8dd3-409d-b469-db475a257717",
-      "to": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:55.848Z",
-    "type": "CG.load.begin",
-    "data": {
-      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
-      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:55.848Z",
-    "type": "VS.getViewFieldInternalNames.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:55.988Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 7,
-      "names": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:55.988Z",
-    "type": "VS.getListFieldTitles.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.193Z",
-    "type": "VS.getListFieldTitles.ok",
-    "data": {
-      "count": 187
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.193Z",
-    "type": "VS.render.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
-      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.193Z",
-    "type": "VS.getViewFieldInternalNames.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.361Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 7,
-      "names": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.859Z",
-    "type": "VS.fetch.ok",
-    "data": {
-      "hint": "raw rows before normalize",
-      "count": 9,
-      "sample0": {
-        "Id": 168,
-        "FileLeafRef": null,
-        "LinkFilename": null,
-        "Title": null,
-        "FileRef": null,
-        "FSObjType": 0
-      },
-      "fields": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.859Z",
-    "type": "VS.normalize.probe",
-    "data": {
-      "fields": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ],
-      "pre": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 168,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvAttachmentIcon": {
-              "key": "mvAttachmentIcon",
-              "type": "string",
-              "preview": ""
-            },
-            "mvSubject": {
-              "key": "mvSubject",
-              "type": "string",
-              "preview": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County"
-            },
-            "mvTo": {
-              "key": "mvTo",
-              "type": "string",
-              "preview": "Adrienne Fine"
-            },
-            "mvFrom": {
-              "key": "mvFrom",
-              "type": "string",
-              "preview": "Brandi Valentine"
-            },
-            "mvReceivedTime": {
-              "key": "mvReceivedTime",
-              "type": "string",
-              "preview": "2024-08-29T10:29:12"
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 169,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvAttachmentIcon": {
-              "key": "mvAttachmentIcon",
-              "type": "string",
-              "preview": "📎"
-            },
-            "mvSubject": {
-              "key": "mvSubject",
-              "type": "string",
-              "preview": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County"
-            },
-            "mvTo": {
-              "key": "mvTo",
-              "type": "string",
-              "preview": "Brandi Valentine"
-            },
-            "mvFrom": {
-              "key": "mvFrom",
-              "type": "string",
-              "preview": "Adrienne Fine"
-            },
-            "mvReceivedTime": {
-              "key": "mvReceivedTime",
-              "type": "string",
-              "preview": "2024-08-29T10:03:00"
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 172,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvAttachmentIcon": {
-              "key": "mvAttachmentIcon",
-              "type": "string",
-              "preview": "📎"
-            },
-            "mvSubject": {
-              "key": "mvSubject",
-              "type": "string",
-              "preview": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County"
-            },
-            "mvTo": {
-              "key": "mvTo",
-              "type": "string",
-              "preview": "jgiordano@semmes.com"
-            },
-            "mvFrom": {
-              "key": "mvFrom",
-              "type": "string",
-              "preview": "Adrienne Fine"
-            },
-            "mvReceivedTime": {
-              "key": "mvReceivedTime",
-              "type": "string",
-              "preview": "2024-08-29T10:02:00"
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 166,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvAttachmentIcon": {
-              "key": "mvAttachmentIcon",
-              "type": "string",
-              "preview": ""
-            },
-            "mvSubject": {
-              "key": "mvSubject",
-              "type": "string",
-              "preview": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24"
-            },
-            "mvTo": {
-              "key": "mvTo",
-              "type": "string",
-              "preview": "Adrienne Fine"
-            },
-            "mvFrom": {
-              "key": "mvFrom",
-              "type": "string",
-              "preview": "Brandi Valentine"
-            },
-            "mvReceivedTime": {
-              "key": "mvReceivedTime",
-              "type": "string",
-              "preview": "2024-08-14T07:56:17"
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 165,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvAttachmentIcon": {
-              "key": "mvAttachmentIcon",
-              "type": "string",
-              "preview": ""
-            },
-            "mvSubject": {
-              "key": "mvSubject",
-              "type": "string",
-              "preview": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24"
-            },
-            "mvTo": {
-              "key": "mvTo",
-              "type": "string",
-              "preview": "Brandi Valentine"
-            },
-            "mvFrom": {
-              "key": "mvFrom",
-              "type": "string",
-              "preview": "Adrienne Fine"
-            },
-            "mvReceivedTime": {
-              "key": "mvReceivedTime",
-              "type": "string",
-              "preview": "2024-08-13T15:11:00"
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        }
-      ],
-      "post": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 168,
-            "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-            "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "mvAttachmentIcon": "",
-          "mvSubject": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-          "mvTo": "Adrienne Fine",
-          "mvFrom": "Brandi Valentine",
-          "mvReceivedTime": "2024-08-29T10:29:12",
-          "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County"
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 169,
-            "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-            "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "mvAttachmentIcon": "📎",
-          "mvSubject": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-          "mvTo": "Brandi Valentine",
-          "mvFrom": "Adrienne Fine",
-          "mvReceivedTime": "2024-08-29T10:03:00",
-          "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County"
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 172,
-            "FileLeafRef": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-            "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "mvAttachmentIcon": "📎",
-          "mvSubject": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County",
-          "mvTo": "jgiordano@semmes.com",
-          "mvFrom": "Adrienne Fine",
-          "mvReceivedTime": "2024-08-29T10:02:00",
-          "LinkFilename": "Zinbi v. Crown Plaza Reagan National - Subpoena to Arlington County"
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 166,
-            "FileLeafRef": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24",
-            "LinkFilename": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "mvAttachmentIcon": "",
-          "mvSubject": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24",
-          "mvTo": "Adrienne Fine",
-          "mvFrom": "Brandi Valentine",
-          "mvReceivedTime": "2024-08-14T07:56:17",
-          "LinkFilename": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24"
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 165,
-            "FileLeafRef": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24",
-            "LinkFilename": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "mvAttachmentIcon": "",
-          "mvSubject": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24",
-          "mvTo": "Brandi Valentine",
-          "mvFrom": "Adrienne Fine",
-          "mvReceivedTime": "2024-08-13T15:11:00",
-          "LinkFilename": "Worker's Compensation SDT - A Zinbi - response requested by 8/20/24"
-        }
-      ],
-      "total": 9
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.859Z",
-    "type": "VS.render.return",
-    "data": {
-      "path": "caml.mergedWhere",
-      "count": 9,
-      "fields": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.859Z",
-    "type": "CG.view.meta",
-    "data": {
-      "orderFromView": [
-        "DocIcon",
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.859Z",
-    "type": "CG.order.final",
-    "data": {
-      "order": [
-        "mvAttachmentIcon",
-        "mvSubject",
-        "mvTo",
-        "mvFrom",
-        "mvReceivedTime",
-        "LinkFilename"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:56.888Z",
-    "type": "CG.load.ok",
-    "data": {
-      "rowCount": 9,
-      "colCount": 6
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.688Z",
-    "type": "CG.view.change",
-    "data": {
-      "from": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
-      "to": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.697Z",
-    "type": "CG.load.begin",
-    "data": {
-      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
-      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.697Z",
-    "type": "VS.getViewFieldInternalNames.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.838Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 5,
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "DocumentSetDescription"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.838Z",
-    "type": "VS.getListFieldTitles.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.989Z",
-    "type": "VS.getListFieldTitles.ok",
-    "data": {
-      "count": 187
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.990Z",
-    "type": "VS.render.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
-      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
-    }
-  },
-  {
-    "t": "2025-10-28T21:09:59.990Z",
-    "type": "VS.getViewFieldInternalNames.begin",
-    "data": {
-      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "46b421b5-6dbe-4f49-9183-ead9c0407fd3"
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:00.147Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 5,
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "DocumentSetDescription"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:00.619Z",
-    "type": "VS.render.empty",
-    "data": {
-      "note": "CAML yielded zero"
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:00.619Z",
-    "type": "CG.view.meta",
-    "data": {
-      "orderFromView": [
-        "DocIcon",
-        "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "DocumentSetDescription"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:00.619Z",
-    "type": "CG.order.final",
-    "data": {
-      "order": [
-        "LinkFilename",
-        "mvDocSetStatus",
-        "mvManagedBy",
-        "DocumentSetDescription"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:00.635Z",
-    "type": "CG.load.ok",
-    "data": {
-      "rowCount": 0,
-      "colCount": 4
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:02.264Z",
-    "type": "CG.view.change",
-    "data": {
-      "from": "46b421b5-6dbe-4f49-9183-ead9c0407fd3",
       "to": "3b0e608d-4e15-424f-8fdc-c9fb05858c38"
     }
   },
   {
-    "t": "2025-10-28T21:10:02.269Z",
+    "t": "2025-10-29T16:10:28.496Z",
     "type": "CG.load.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -1209,7 +170,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:02.269Z",
+    "t": "2025-10-29T16:10:28.496Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -1217,7 +178,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:02.409Z",
+    "t": "2025-10-29T16:10:28.642Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 8,
@@ -1234,21 +195,21 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:02.409Z",
+    "t": "2025-10-29T16:10:28.642Z",
     "type": "VS.getListFieldTitles.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T21:10:02.564Z",
+    "t": "2025-10-29T16:10:28.842Z",
     "type": "VS.getListFieldTitles.ok",
     "data": {
       "count": 187
     }
   },
   {
-    "t": "2025-10-28T21:10:02.564Z",
+    "t": "2025-10-29T16:10:28.843Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
@@ -1257,457 +218,25 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:02.565Z",
-    "type": "VS.getViewFieldInternalNames.begin",
+    "t": "2025-10-29T16:10:28.987Z",
+    "type": "VS.rldas.error",
     "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38"
+      "viewId": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T21:10:02.713Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 8,
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "_UIVersionString",
-        "mvDocumentType",
-        "mvDocumentAuthor",
-        "Modified",
-        "CheckoutUser"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:03.200Z",
-    "type": "VS.fetch.ok",
-    "data": {
-      "hint": "raw rows before normalize",
-      "count": 5,
-      "sample0": {
-        "Id": 175,
-        "FileLeafRef": null,
-        "LinkFilename": null,
-        "Title": null,
-        "FileRef": null,
-        "FSObjType": 0
-      },
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "_UIVersionString",
-        "mvDocumentType",
-        "mvDocumentAuthor",
-        "Modified",
-        "CheckoutUser"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:03.200Z",
-    "type": "VS.normalize.probe",
-    "data": {
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "_UIVersionString",
-        "mvDocumentType",
-        "mvDocumentAuthor",
-        "Modified",
-        "CheckoutUser"
-      ],
-      "pre": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 175,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-175\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-175\"}"
-            },
-            "_UIVersionString": {
-              "key": "OData__UIVersionString",
-              "type": "string",
-              "preview": "1.0"
-            },
-            "mvDocumentType": {
-              "key": "mvDocumentType",
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocumentAuthor": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:01"
-            },
-            "CheckoutUser": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 84,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-84\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-84\"}"
-            },
-            "_UIVersionString": {
-              "key": "OData__UIVersionString",
-              "type": "string",
-              "preview": "2.0"
-            },
-            "mvDocumentType": {
-              "key": "mvDocumentType",
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocumentAuthor": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:00"
-            },
-            "CheckoutUser": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 173,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-173\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-173\"}"
-            },
-            "_UIVersionString": {
-              "key": "OData__UIVersionString",
-              "type": "string",
-              "preview": "1.0"
-            },
-            "mvDocumentType": {
-              "key": "mvDocumentType",
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocumentAuthor": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:00"
-            },
-            "CheckoutUser": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 174,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-174\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-174\"}"
-            },
-            "_UIVersionString": {
-              "key": "OData__UIVersionString",
-              "type": "string",
-              "preview": "1.0"
-            },
-            "mvDocumentType": {
-              "key": "mvDocumentType",
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocumentAuthor": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:00"
-            },
-            "CheckoutUser": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 176,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-176\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-176\"}"
-            },
-            "_UIVersionString": {
-              "key": "OData__UIVersionString",
-              "type": "string",
-              "preview": "1.0"
-            },
-            "mvDocumentType": {
-              "key": "mvDocumentType",
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocumentAuthor": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:00"
-            },
-            "CheckoutUser": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        }
-      ],
-      "post": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 175,
-            "FileLeafRef": "CAODOC-1940166408-175",
-            "LinkFilename": "CAODOC-1940166408-175",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=acaf65d7-3292-4bfb-a084-d6641df5f48b",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-175",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-175",
-          "_UIVersionString": "1.0",
-          "mvDocumentType": "",
-          "mvDocumentAuthor": "",
-          "Modified": "2024-09-05T14:40:01",
-          "CheckoutUser": ""
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 84,
-            "FileLeafRef": "CAODOC-1940166408-84",
-            "LinkFilename": "CAODOC-1940166408-84",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=477163cb-8fea-410f-a032-4d5290950d6d",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-84",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-84",
-          "_UIVersionString": "2.0",
-          "mvDocumentType": "",
-          "mvDocumentAuthor": "",
-          "Modified": "2024-09-05T14:40:00",
-          "CheckoutUser": ""
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 173,
-            "FileLeafRef": "CAODOC-1940166408-173",
-            "LinkFilename": "CAODOC-1940166408-173",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=62425004-3b0a-4cca-b056-32ae0955f45d",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-173",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-173",
-          "_UIVersionString": "1.0",
-          "mvDocumentType": "",
-          "mvDocumentAuthor": "",
-          "Modified": "2024-09-05T14:40:00",
-          "CheckoutUser": ""
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 174,
-            "FileLeafRef": "CAODOC-1940166408-174",
-            "LinkFilename": "CAODOC-1940166408-174",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=ac062ce3-1a80-4603-8215-8e3c4d54a3c7",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-174",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-174",
-          "_UIVersionString": "1.0",
-          "mvDocumentType": "",
-          "mvDocumentAuthor": "",
-          "Modified": "2024-09-05T14:40:00",
-          "CheckoutUser": ""
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 176,
-            "FileLeafRef": "CAODOC-1940166408-176",
-            "LinkFilename": "CAODOC-1940166408-176",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=27e19ee0-4b41-4a24-b64c-90460ddce8e6",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-176",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-176",
-          "_UIVersionString": "1.0",
-          "mvDocumentType": "",
-          "mvDocumentAuthor": "",
-          "Modified": "2024-09-05T14:40:00",
-          "CheckoutUser": ""
-        }
-      ],
-      "total": 5
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:03.200Z",
+    "t": "2025-10-29T16:10:29.475Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
-      "count": 5,
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "_UIVersionString",
-        "mvDocumentType",
-        "mvDocumentAuthor",
-        "Modified",
-        "CheckoutUser"
-      ]
+      "count": 5
     }
   },
   {
-    "t": "2025-10-28T21:10:03.200Z",
+    "t": "2025-10-29T16:10:29.475Z",
     "type": "CG.view.meta",
     "data": {
       "orderFromView": [
@@ -1723,7 +252,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:03.200Z",
+    "t": "2025-10-29T16:10:29.475Z",
     "type": "CG.order.final",
     "data": {
       "order": [
@@ -1738,7 +267,7 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:03.219Z",
+    "t": "2025-10-29T16:10:29.490Z",
     "type": "CG.load.ok",
     "data": {
       "rowCount": 5,
@@ -1746,520 +275,231 @@
     }
   },
   {
-    "t": "2025-10-28T21:10:14.280Z",
+    "t": "2025-10-29T16:10:34.716Z",
     "type": "CG.view.change",
     "data": {
       "from": "3b0e608d-4e15-424f-8fdc-c9fb05858c38",
-      "to": "0948eafd-8dd3-409d-b469-db475a257717"
+      "to": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
     }
   },
   {
-    "t": "2025-10-28T21:10:14.285Z",
+    "t": "2025-10-29T16:10:34.725Z",
     "type": "CG.load.begin",
     "data": {
       "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T21:10:14.285Z",
+    "t": "2025-10-29T16:10:34.725Z",
     "type": "VS.getViewFieldInternalNames.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717"
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8"
     }
   },
   {
-    "t": "2025-10-28T21:10:14.432Z",
+    "t": "2025-10-29T16:10:34.875Z",
     "type": "VS.getViewFieldInternalNames.ok",
     "data": {
       "count": 7,
       "names": [
         "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
       ]
     }
   },
   {
-    "t": "2025-10-28T21:10:14.432Z",
+    "t": "2025-10-29T16:10:34.875Z",
     "type": "VS.getListFieldTitles.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
     }
   },
   {
-    "t": "2025-10-28T21:10:14.582Z",
+    "t": "2025-10-29T16:10:35.039Z",
     "type": "VS.getListFieldTitles.ok",
     "data": {
       "count": 187
     }
   },
   {
-    "t": "2025-10-28T21:10:14.582Z",
+    "t": "2025-10-29T16:10:35.039Z",
     "type": "VS.render.begin",
     "data": {
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717",
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
       "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T21:10:14.582Z",
-    "type": "VS.getViewFieldInternalNames.begin",
+    "t": "2025-10-29T16:10:35.172Z",
+    "type": "VS.rldas.error",
     "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
       "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
-      "viewId": "0948eafd-8dd3-409d-b469-db475a257717"
+      "viewId": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
     }
   },
   {
-    "t": "2025-10-28T21:10:14.711Z",
-    "type": "VS.getViewFieldInternalNames.ok",
-    "data": {
-      "count": 7,
-      "names": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:15.147Z",
-    "type": "VS.fetch.ok",
-    "data": {
-      "hint": "raw rows before normalize",
-      "count": 18,
-      "sample0": {
-        "Id": 73,
-        "FileLeafRef": null,
-        "LinkFilename": null,
-        "Title": null,
-        "FileRef": null,
-        "FSObjType": 1
-      },
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ]
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:15.147Z",
-    "type": "VS.normalize.probe",
-    "data": {
-      "fields": [
-        "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
-      ],
-      "pre": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 73,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:44"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 74,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:45"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 75,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:45"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 76,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 1
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "null",
-              "preview": ""
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "null",
-              "preview": ""
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-08-06T12:25:46"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 84,
-            "FileLeafRef": null,
-            "LinkFilename": null,
-            "Title": null,
-            "FileRef": null,
-            "FSObjType": 0
-          },
-          "probe": {
-            "DocIcon": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "LinkFilename": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "_dlc_DocIdUrl": {
-              "key": "OData__dlc_DocIdUrl",
-              "type": "object",
-              "preview": "{\"Description\":\"CAODOC-1940166408-84\",\"Url\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/DocIdRedir.aspx?ID=CAODOC-1940166408-84\"}"
-            },
-            "FileSizeDisplay": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            },
-            "mvDocSetNumber": {
-              "key": "mvDocSetNumber",
-              "type": "string",
-              "preview": "1511"
-            },
-            "Modified": {
-              "key": "Modified",
-              "type": "string",
-              "preview": "2024-09-05T14:40:00"
-            },
-            "mvManagedBy": {
-              "key": null,
-              "type": "null",
-              "preview": ""
-            }
-          }
-        }
-      ],
-      "post": [
-        {
-          "i": 0,
-          "mini": {
-            "Id": 73,
-            "FileLeafRef": "Unnamed Item (73)",
-            "LinkFilename": "Unnamed Item (73)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (73)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:44",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 1,
-          "mini": {
-            "Id": 74,
-            "FileLeafRef": "Unnamed Item (74)",
-            "LinkFilename": "Unnamed Item (74)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (74)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:45",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 2,
-          "mini": {
-            "Id": 75,
-            "FileLeafRef": "Unnamed Item (75)",
-            "LinkFilename": "Unnamed Item (75)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (75)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:45",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 3,
-          "mini": {
-            "Id": 76,
-            "FileLeafRef": "Unnamed Item (76)",
-            "LinkFilename": "Unnamed Item (76)",
-            "Title": null,
-            "FileRef": "",
-            "FSObjType": 1
-          },
-          "DocIcon": "",
-          "LinkFilename": "Unnamed Item (76)",
-          "_dlc_DocIdUrl": "",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "",
-          "Modified": "2024-08-06T12:25:46",
-          "mvManagedBy": ""
-        },
-        {
-          "i": 4,
-          "mini": {
-            "Id": 84,
-            "FileLeafRef": "CAODOC-1940166408-84",
-            "LinkFilename": "CAODOC-1940166408-84",
-            "Title": null,
-            "FileRef": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_layouts/15/Embed.aspx?UniqueId=477163cb-8fea-410f-a032-4d5290950d6d",
-            "FSObjType": 0
-          },
-          "DocIcon": "",
-          "LinkFilename": "CAODOC-1940166408-84",
-          "_dlc_DocIdUrl": "CAODOC-1940166408-84",
-          "FileSizeDisplay": "",
-          "mvDocSetNumber": "1511",
-          "Modified": "2024-09-05T14:40:00",
-          "mvManagedBy": ""
-        }
-      ],
-      "total": 18
-    }
-  },
-  {
-    "t": "2025-10-28T21:10:15.147Z",
+    "t": "2025-10-29T16:10:35.555Z",
     "type": "VS.render.return",
     "data": {
       "path": "caml.mergedWhere",
-      "count": 18,
-      "fields": [
+      "count": 9
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:35.555Z",
+    "type": "CG.view.meta",
+    "data": {
+      "orderFromView": [
         "DocIcon",
-        "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
       ]
     }
   },
   {
-    "t": "2025-10-28T21:10:15.147Z",
+    "t": "2025-10-29T16:10:35.555Z",
+    "type": "CG.order.final",
+    "data": {
+      "order": [
+        "mvAttachmentIcon",
+        "mvSubject",
+        "mvTo",
+        "mvFrom",
+        "mvReceivedTime",
+        "LinkFilename"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:35.577Z",
+    "type": "CG.load.ok",
+    "data": {
+      "rowCount": 9,
+      "colCount": 6
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.175Z",
+    "type": "CG.view.change",
+    "data": {
+      "from": "9d4c4e73-4e92-4337-922c-4e7bff791cd8",
+      "to": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.182Z",
+    "type": "CG.load.begin",
+    "data": {
+      "listId": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folder": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.182Z",
+    "type": "VS.getViewFieldInternalNames.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.350Z",
+    "type": "VS.getViewFieldInternalNames.ok",
+    "data": {
+      "count": 4,
+      "names": [
+        "DocIcon",
+        "LinkFilename",
+        "mvManagedBy",
+        "DocumentSetDescription"
+      ]
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.350Z",
+    "type": "VS.getListFieldTitles.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.503Z",
+    "type": "VS.getListFieldTitles.ok",
+    "data": {
+      "count": 187
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.504Z",
+    "type": "VS.render.begin",
+    "data": {
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:40.654Z",
+    "type": "VS.rldas.error",
+    "data": {
+      "error": "Error making HttpClient request in queryable [400]  ::> {\"odata.error\":{\"code\":\"-1, Microsoft.Data.OData.ODataException\",\"message\":{\"lang\":\"en-US\",\"value\":\"The property 'ViewId' does not exist on type 'SP.RenderListDataParameters'. Make sure to only use property names that are defined by the type.\"}}}",
+      "listIdOrTitle": "c106a81b-5013-43d6-9639-5c0f4e51f677",
+      "viewId": "c79922ce-426b-4537-a5f4-126cbb2a048a",
+      "folderUrl": "/sites/CAO-CaseManagementSite/1004/1511-Abdelaziz Zinbi - SDT"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:41.139Z",
+    "type": "VS.render.empty",
+    "data": {
+      "note": "CAML yielded zero"
+    }
+  },
+  {
+    "t": "2025-10-29T16:10:41.139Z",
     "type": "CG.view.meta",
     "data": {
       "orderFromView": [
         "DocIcon",
         "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
+        "mvManagedBy",
+        "DocumentSetDescription"
       ]
     }
   },
   {
-    "t": "2025-10-28T21:10:15.147Z",
+    "t": "2025-10-29T16:10:41.139Z",
     "type": "CG.order.final",
     "data": {
       "order": [
         "LinkFilename",
-        "_dlc_DocIdUrl",
-        "FileSizeDisplay",
-        "mvDocSetNumber",
-        "Modified",
-        "mvManagedBy"
+        "mvManagedBy",
+        "DocumentSetDescription"
       ]
     }
   },
   {
-    "t": "2025-10-28T21:10:15.168Z",
+    "t": "2025-10-29T16:10:41.148Z",
     "type": "CG.load.ok",
     "data": {
-      "rowCount": 18,
-      "colCount": 6
+      "rowCount": 0,
+      "colCount": 3
     }
   }
 ]
