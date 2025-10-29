@@ -1,7 +1,44 @@
-Assignment Documents: Name, Document ID, Version, Document Type, Document Author, Modified, Checkd Out To
-Active Assignments: Name, Assignment Managed By, Description
-All Assignments: Assignments Status, Assignment Managed By, Description
-All Documents: Name, Document ID, File Size, Assignment Number, Modified, Assignment Managed By
-Assignment Documents Emails: Name, Document ID, Version, Modified, Received Time, Checked Out To
-Emails: {This views columns are visible correctly}
-My Assignments: Name, Assignments Status, Assignment Managed By, Modified
+(async () => {
+  const webUrl   = _spPageContextInfo?.webAbsoluteUrl || location.origin; // works on SPO pages
+  const listId   = "GUID-HERE";   // e.g. "c6b1a3c6-....-....-....-............"
+  const viewId   = "GUID-HERE";   // selected view Id
+  const folderUrl = "/sites/CAO-CaseManagementSite/.../1511-Abdelaziz Zinbi -SDT"; // server-relative
+
+  // Get a request digest
+  const ctx = await fetch(`${webUrl}/_api/contextinfo`, { method: "POST", headers: { "accept": "application/json;odata=nometadata" } });
+  const digest = (await ctx.json()).FormDigestValue;
+
+  // Build endpoint: call RLDaS on the *view* (honors view fields/filters)
+  const url = `${webUrl}/_api/web/lists(guid'${listId}')/views(guid'${viewId}')/renderlistdataasstream`;
+
+  // Payload: pass parameters -> include folder scope
+  const body = JSON.stringify({
+    parameters: {
+      AddRequiredFields: true,
+      DatesInUtc: true,
+      FolderServerRelativeUrl: folderUrl
+    }
+  });
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "accept": "application/json;odata=nometadata",
+      "content-type": "application/json;odata=verbose",
+      "x-requestdigest": digest
+    },
+    body
+  });
+
+  if (!res.ok) {
+    console.error("RLDaS HTTP error", res.status, await res.text());
+    return;
+  }
+
+  const data = await res.json();
+  console.log("RLDaS full payload:", data);                 // EVERYTHING
+  const rows = data?.Row || data?.ListData?.Row || [];
+  console.log("Row count:", rows.length);
+  console.log("First row keys:", rows[0] ? Object.keys(rows[0]) : []);
+  console.log("First row:", rows[0]);
+})();
