@@ -1,1 +1,3 @@
 https://res-1.cdn.office.net/files/fabric-cdn-prod_20251008.001/assets/item-types-experiment/20/email.svg
+
+https://res-1.cdn.office.net/files/fabric-cdn-prod_20251008.001/assets/item-types-experiment/20/txt.svg
