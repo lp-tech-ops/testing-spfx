@@ -12,6 +12,7 @@
                 "mvCaseDisposition",
                 "mvDateOpened",
                 "mvDateClosed",
+                "DocumentSetDescription",
                 // people fields – select subfields
                 "mvDepartmentContact/Id",
                 "mvDepartmentContact/Title",
@@ -20,7 +21,7 @@
                 "mvManagedBy/Title",
                 "mvManagedBy/EMail",
                 // description field (renamed)
-                "DocumentSetDescription",
+                
               ].join(",") +
               // expand the people fields
               `&$expand=mvDepartmentContact,mvManagedBy`;
@@ -32,9 +33,3 @@
               SPHttpClient.configurations.v1,
               { headers: { Accept: "application/json;odata=nometadata" } }
             );
-            const full = (await resp.json()) as any;
-
-            log("CG.editProps.fetchItem.ok", {
-              id: full?.Id,
-              name: full?.mvDocSetName || full?.Title,
-            });
