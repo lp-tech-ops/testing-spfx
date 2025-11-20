@@ -1,21 +1,40 @@
-  {
-    "t": "2025-11-20T16:45:08.219Z",
-    "type": "CG.ctx.editProps",
-    "data": {
-      "name": "1005-testing2"
-    }
-  },
-  {
-    "t": "2025-11-20T16:45:08.221Z",
-    "type": "CG.editProps.fetchItem.begin",
-    "data": {
-      "url": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/_api/web/lists(guid'c106a81b-5013-43d6-9639-5c0f4e51f677')/items(4)?$select=Id,Title,FileRef,mvDocSetName,mvDocSetNumber,mvDocSetType,mvDocSetStatus,mvCaseDisposition,mvDateOpened,mvDateClosed,mvDepartmentContact/Id,mvDepartmentContact/Title,mvDepartmentContact/EMail,mvManagedBy/Id,mvManagedBy/Title,mvManagedBy/EMail,DocumentSetDescription&$expand=mvDepartmentContact,mvManagedBy"
-    }
-  },
-  {
-    "t": "2025-11-20T16:45:08.509Z",
-    "type": "CG.editProps.fetchItem.error",
-    "data": {
-      "error": "Unexpected token '<', \"<?xml vers\"... is not valid JSON"
-    }
-  },
+            const url =
+              `${webUrl}/_api/web/lists(guid'${listGuid}')/items(${id})` +
+              `?$select=` +
+              [
+                "Id",
+                "Title",
+                "FileRef",
+                "mvDocSetName",
+                "mvDocSetNumber",
+                "mvDocSetType",
+                "mvDocSetStatus",
+                "mvCaseDisposition",
+                "mvDateOpened",
+                "mvDateClosed",
+                // people fields – select subfields
+                "mvDepartmentContact/Id",
+                "mvDepartmentContact/Title",
+                "mvDepartmentContact/EMail",
+                "mvManagedBy/Id",
+                "mvManagedBy/Title",
+                "mvManagedBy/EMail",
+                // description field (renamed)
+                "DocumentSetDescription",
+              ].join(",") +
+              // expand the people fields
+              `&$expand=mvDepartmentContact,mvManagedBy`;
+
+            log("CG.editProps.fetchItem.begin", { url });
+
+            const resp: SPHttpClientResponse = await spHttpClient.get(
+              url,
+              SPHttpClient.configurations.v1,
+              { headers: { Accept: "application/json;odata=nometadata" } }
+            );
+            const full = (await resp.json()) as any;
+
+            log("CG.editProps.fetchItem.ok", {
+              id: full?.Id,
+              name: full?.mvDocSetName || full?.Title,
+            });
