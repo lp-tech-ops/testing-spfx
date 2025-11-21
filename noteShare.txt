@@ -6,7 +6,7 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
     "content-type": "application/json;odata=nometadata",
     "if-match": "*",
     "odata-version": "4.0",
-    "originalcorrelationid": "eda4dba1-b0c1-a000-a955-cab674a64c08",
+    "originalcorrelationid": "bda9dba1-a0a7-a000-d682-0ce18f5e6b68",
     "priority": "u=1, i",
     "sdkversion": "SPFx/CaseMacroViewWebPart/e5b4a3c1-8b68-4c6f-9c5c-4c2e3a1f0a11/Is3PRequest:1",
     "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
@@ -16,10 +16,10 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
     "x-http-method": "MERGE",
-    "x-requestdigest": "0x3C8900177597A0D8E1BAA5D40C8689C25352F2920D2C2E7ACB3F9FA9306253510E18F83A355860C6764421A9648DB07FDF93640171D650014F438A20BE8B1A7E,21 Nov 2025 20:36:33 -0000"
+    "x-requestdigest": "0x83D9FF1F7BBEA2F08DA83FB9A89A7EE774D25DDA047767B56EB951B272B44AB414A767BC370F71FD815960C1C9ED083221CEE2EF26DF5FD7D05C15B904F46E46,21 Nov 2025 22:00:39 -0000"
   },
   "referrer": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/SitePages/Test-CMS.aspx?caseDebug=on&env=Embedded",
-  "body": "{\"mvDocSetName\":\"testing2\",\"mvDocSetNumber\":\"1005\",\"DocumentSetDescription\":\"test\",\"mvDateOpened\":\"2023-12-12T05:00:00.000Z\",\"mvDateClosed\":\"2025-11-27T05:00:00.000Z\",\"mvDocSetType\":\"Child Protective Services|1b1c33aa-5aae-462a-a3f0-71004c21e388\",\"mvDocSetStatus\":\"Active|c81a06d0-464a-4efb-b93f-aee9920f60ca\",\"mvCaseDisposition\":\"Settlement|8bcadced-6b26-4a1b-8e04-cdb84b941dc3\",\"mvManagedById\":{\"results\":[12]},\"mvManagedById@odata.type\":\"Collection(Edm.Int32)\",\"mvDepartmentContactId\":6,\"mvDepartmentContactId@odata.type\":\"Edm.Int32\"}",
+  "body": "{\"mvDocSetName\":\"testing2\",\"mvDocSetNumber\":\"1005\",\"DocumentSetDescription\":\"test\",\"mvDateOpened\":\"2023-12-12T05:00:00.000Z\",\"mvDateClosed\":\"2025-11-27T05:00:00.000Z\",\"mvDocSetType\":{\"__metadata\":{\"type\":\"SP.Taxonomy.TaxonomyFieldValue\"},\"Label\":\"Child Protective Services\",\"TermGuid\":\"1b1c33aa-5aae-462a-a3f0-71004c21e388\",\"WssId\":-1},\"mvDocSetStatus\":{\"__metadata\":{\"type\":\"SP.Taxonomy.TaxonomyFieldValue\"},\"Label\":\"Active\",\"TermGuid\":\"c81a06d0-464a-4efb-b93f-aee9920f60ca\",\"WssId\":-1},\"mvCaseDisposition\":{\"__metadata\":{\"type\":\"SP.Taxonomy.TaxonomyFieldValue\"},\"Label\":\"Settlement\",\"TermGuid\":\"8bcadced-6b26-4a1b-8e04-cdb84b941dc3\",\"WssId\":-1},\"mvManagedById\":{\"results\":[12]},\"mvManagedById@odata.type\":\"Collection(Edm.Int32)\",\"mvDepartmentContactId\":6,\"mvDepartmentContactId@odata.type\":\"Edm.Int32\"}",
   "method": "POST",
   "mode": "cors",
   "credentials": "include"
@@ -28,6 +28,6 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
 {
     "error": {
         "code": "-1, Microsoft.SharePoint.Client.InvalidClientQueryException",
-        "message": "An unexpected 'PrimitiveValue' node was found when reading from the JSON reader. A 'StartObject' node was expected."
+        "message": "The property '__metadata' does not exist on type 'SP.Taxonomy.TaxonomyFieldValue'. Make sure to only use property names that are defined by the type."
     }
 }
