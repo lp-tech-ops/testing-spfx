@@ -1,33 +1,81 @@
 fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)", {
-  "headers": {
+  method: "POST",
+  credentials: "include",
+  headers: {
     "accept": "application/json;odata=nometadata",
-    "accept-language": "en-US,en;q=0.9",
-    "cache-control": "max-age=0",
     "content-type": "application/json;odata=nometadata",
-    "if-match": "*",
     "odata-version": "4.0",
-    "originalcorrelationid": "0a66dca1-80fe-a000-e614-c489fac88d67",
-    "priority": "u=1, i",
-    "sdkversion": "SPFx/CaseMacroViewWebPart/e5b4a3c1-8b68-4c6f-9c5c-4c2e3a1f0a11/Is3PRequest:1",
-    "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Windows\"",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
+    "if-match": "*",
     "x-http-method": "MERGE",
-    "x-requestdigest": "0xE5D74321F80E46A7582516E240A98746E21F61FE12E684A99ADF299FB640C6889C7C0ACB548B2FCF508E02B806AE2298D0EF4E62130B25BE7110F6BBD3901C3B,24 Nov 2025 04:51:28 -0000"
+    "x-requestdigest": "<paste current value from page>"
   },
-  "referrer": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/SitePages/Test-CMS.aspx?caseDebug=on&env=Embedded",
-  "body": "{\"mvDocSetName\":\"testing2\",\"mvDocSetNumber\":\"1005\",\"DocumentSetDescription\":\"test\",\"mvDateOpened\":\"2023-12-12T05:00:00.000Z\",\"mvDateClosed\":\"2025-11-27T05:00:00.000Z\",\"mvDocSetType\":\"Civil Rights|4d8a7766-3389-45c9-8bd0-633761a179ca\",\"mvDocSetStatus\":\"Archived|6e3a00cf-8f91-41c9-af5e-0d34d695e821\",\"mvCaseDisposition\":\"Settlement|8bcadced-6b26-4a1b-8e04-cdb84b941dc3\",\"mvManagedById\":{\"results\":[12]},\"mvManagedById@odata.type\":\"Collection(Edm.Int32)\",\"mvDepartmentContactId\":6,\"mvDepartmentContactId@odata.type\":\"Edm.Int32\"}",
-  "method": "POST",
-  "mode": "cors",
-  "credentials": "include"
+  body: JSON.stringify({
+    // change one simple text field only
+    DocumentSetDescription: "Test via console"
+  })
+}).then(r => {
+  console.log("status", r.status);
+  return r.text();
+}).then(console.log).catch(console.error);
+
+
+
+
+fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)", {
+  method: "POST",
+  credentials: "include",
+  headers: {
+    "accept": "application/json;odata=nometadata",
+    "content-type": "application/json;odata=nometadata",
+    "odata-version": "4.0",
+    "if-match": "*",
+    "x-http-method": "MERGE",
+    "x-requestdigest": "<paste current value from page>"
+  },
+  body: JSON.stringify({
+    mvDocSetType: {
+      Label: "Civil Rights",
+      TermGuid: "4d8a7766-3389-45c9-8bd0-633761a179ca",
+      WssId: -1
+    }
+  })
+}).then(r => {
+  console.log("status", r.status);
+  return r.text();
+}).then(console.log).catch(console.error);
+
+
+
+
+
+body: JSON.stringify({
+  mvDocSetType: {
+    Label: "Civil Rights",
+    TermGuid: "4d8a7766-3389-45c9-8bd0-633761a179ca",
+    WssId: -1
+  },
+  mvDocSetStatus: {
+    Label: "Archived",
+    TermGuid: "6e3a00cf-8f91-41c9-af5e-0d34d695e821",
+    WssId: -1
+  },
+  mvCaseDisposition: {
+    Label: "Settlement",
+    TermGuid: "8bcadced-6b26-4a1b-8e04-cdb84b941dc3",
+    WssId: -1
+  }
 });
 
-{
-    "error": {
-        "code": "-1, Microsoft.SharePoint.Client.InvalidClientQueryException",
-        "message": "An unexpected 'PrimitiveValue' node was found when reading from the JSON reader. A 'StartObject' node was expected."
+
+
+
+
+mvCaseDisposition: {
+  results: [
+    {
+      Label: "Settlement",
+      TermGuid: "8bcadced-6b26-4a1b-8e04-cdb84b941dc3",
+      WssId: -1
     }
+  ]
 }
