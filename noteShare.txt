@@ -135,3 +135,26 @@ mvCaseDisposition: {
     }
   ]
 }
+
+
+
+
+
+(async () => {
+  const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
+
+  const resp = await fetch(
+    `${webUrl}/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)?$select=mvDocSetType`,
+    {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "accept": "application/json;odata.metadata=full"
+      }
+    }
+  );
+
+  console.log("GET status", resp.status);
+  console.log(await resp.json());
+})();
+
