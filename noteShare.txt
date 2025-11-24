@@ -158,3 +158,80 @@ mvCaseDisposition: {
   console.log(await resp.json());
 })();
 
+
+
+
+
+
+
+(async () => {
+  const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
+
+  const resp = await fetch(
+    `${webUrl}/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)`,
+    {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "accept": "application/json;odata.metadata=none",
+        "content-type": "application/json;odata.metadata=none",
+        "odata-version": "4.0",
+        "if-match": "*",
+        "x-http-method": "MERGE",
+        "x-requestdigest": window.__freshDigest
+      },
+      body: JSON.stringify({
+        __metadata: { type: "SP.Data.1004Item" },   // from <category term="SP.Data.1004Item">
+
+        mvDocSetType: {
+          __metadata: { type: "SP.Taxonomy.TaxonomyFieldValue" },
+          Label: "3", // what you currently see in XML for this term
+          TermGuid: "1b1c33aa-5aae-462a-a3f0-71004c21e388",
+          WssId: -1  // let SharePoint resolve the proper WssId
+        }
+      })
+    }
+  );
+
+  console.log("merge status", resp.status);
+  console.log(await resp.text());
+})();
+
+
+
+
+
+
+
+(async () => {
+  const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
+
+  const resp = await fetch(
+    `${webUrl}/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)/validateUpdateListItem`,
+    {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "accept": "application/json;odata.metadata=none",
+        "content-type": "application/json;odata.metadata=none",
+        "odata-version": "4.0",
+        "x-requestdigest": window.__freshDigest
+      },
+      body: JSON.stringify({
+        formValues: [
+          {
+            FieldName: "mvDocSetType",
+            FieldValue: "Civil Rights|4d8a7766-3389-45c9-8bd0-633761a179ca",
+            HasException: false,
+            ErrorMessage: null
+          }
+        ]
+      })
+    }
+  );
+
+  console.log("validateUpdate status", resp.status);
+  console.log(await resp.text());
+})();
+
+
