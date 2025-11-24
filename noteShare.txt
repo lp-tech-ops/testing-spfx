@@ -1,3 +1,53 @@
+(async () => {
+  const webUrl = _spPageContextInfo.webAbsoluteUrl; // should be your /sites/CAO-CaseManagementSite-Dev
+
+  const digestResp = await fetch(`${webUrl}/_api/contextinfo`, {
+    method: "POST",
+    headers: {
+      "accept": "application/json;odata=nometadata"
+    },
+    credentials: "include"
+  });
+
+  console.log("contextinfo status", digestResp.status);
+  const digestJson = await digestResp.json();
+  console.log(digestJson);
+
+  window.__freshDigest = digestJson.FormDigestValue;
+  console.log("Fresh digest:", window.__freshDigest);
+})();
+
+
+
+
+(async () => {
+  const webUrl = _spPageContextInfo.webAbsoluteUrl;
+
+  const resp = await fetch(`${webUrl}/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)`, {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "accept": "application/json;odata=nometadata",
+      "content-type": "application/json;odata=nometadata",
+      "odata-version": "4.0",
+      "if-match": "*",
+      "x-http-method": "MERGE",
+      "x-requestdigest": window.__freshDigest
+    },
+    body: JSON.stringify({
+      // keep it simple first: change a single text field
+      DocumentSetDescription: "Test via console with fresh digest"
+    })
+  });
+
+  console.log("merge status", resp.status);
+  console.log(await resp.text());
+})();
+
+
+
+
+
 fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)", {
   method: "POST",
   credentials: "include",
