@@ -6,7 +6,7 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
     "content-type": "application/json;odata=nometadata",
     "if-match": "*",
     "odata-version": "4.0",
-    "originalcorrelationid": "1cabdba1-20ef-a000-b620-2bbb71ba57b2",
+    "originalcorrelationid": "0a66dca1-80fe-a000-e614-c489fac88d67",
     "priority": "u=1, i",
     "sdkversion": "SPFx/CaseMacroViewWebPart/e5b4a3c1-8b68-4c6f-9c5c-4c2e3a1f0a11/Is3PRequest:1",
     "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
@@ -16,15 +16,14 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
     "x-http-method": "MERGE",
-    "x-requestdigest": "0x090BC8038511DC5675B5EB94884AEF713532B075D34D8FC8FBDC75C770A333A9EBA00051B4DC246A0D9C47EEB0DA70EA8BB18405E72226CED95944D50A14DEBE,21 Nov 2025 22:24:38 -0000"
+    "x-requestdigest": "0xE5D74321F80E46A7582516E240A98746E21F61FE12E684A99ADF299FB640C6889C7C0ACB548B2FCF508E02B806AE2298D0EF4E62130B25BE7110F6BBD3901C3B,24 Nov 2025 04:51:28 -0000"
   },
   "referrer": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/SitePages/Test-CMS.aspx?caseDebug=on&env=Embedded",
-  "body": "{\"mvDocSetName\":\"testing2\",\"mvDocSetNumber\":\"1005\",\"DocumentSetDescription\":\"test\",\"mvDateOpened\":\"2023-12-12T05:00:00.000Z\",\"mvDateClosed\":\"2025-11-27T05:00:00.000Z\",\"mvDocSetType\":\"Child Protective Services|1b1c33aa-5aae-462a-a3f0-71004c21e388\",\"mvDocSetStatus\":\"Active|c81a06d0-464a-4efb-b93f-aee9920f60ca\",\"mvCaseDisposition\":\"Settlement|8bcadced-6b26-4a1b-8e04-cdb84b941dc3\",\"mvManagedById\":{\"results\":[12]},\"mvManagedById@odata.type\":\"Collection(Edm.Int32)\",\"mvDepartmentContactId\":6,\"mvDepartmentContactId@odata.type\":\"Edm.Int32\"}",
+  "body": "{\"mvDocSetName\":\"testing2\",\"mvDocSetNumber\":\"1005\",\"DocumentSetDescription\":\"test\",\"mvDateOpened\":\"2023-12-12T05:00:00.000Z\",\"mvDateClosed\":\"2025-11-27T05:00:00.000Z\",\"mvDocSetType\":\"Civil Rights|4d8a7766-3389-45c9-8bd0-633761a179ca\",\"mvDocSetStatus\":\"Archived|6e3a00cf-8f91-41c9-af5e-0d34d695e821\",\"mvCaseDisposition\":\"Settlement|8bcadced-6b26-4a1b-8e04-cdb84b941dc3\",\"mvManagedById\":{\"results\":[12]},\"mvManagedById@odata.type\":\"Collection(Edm.Int32)\",\"mvDepartmentContactId\":6,\"mvDepartmentContactId@odata.type\":\"Edm.Int32\"}",
   "method": "POST",
   "mode": "cors",
   "credentials": "include"
 });
-
 
 {
     "error": {
