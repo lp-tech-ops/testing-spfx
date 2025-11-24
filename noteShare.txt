@@ -17,47 +17,16 @@
   console.log("Fresh digest:", window.__freshDigest);
 })();
 
-(async () => {
-  const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
-
-  const resp = await fetch(
-    `${webUrl}/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)/validateUpdateListItem`,
-    {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "accept": "application/json;odata.metadata=none",
-        "content-type": "application/json;odata.metadata=none",
-        "odata-version": "4.0",
-        "x-requestdigest": window.__freshDigest
-      },
-      body: JSON.stringify({
-        formValues: [
-          {
-            FieldName: "mvDocSetType",
-            FieldValue: "Civil Rights|4d8a7766-3389-45c9-8bd0-633761a179ca",
-            HasException: false,
-            ErrorMessage: null
-          }
-        ]
-      })
-    }
-  );
-
-  console.log("validateUpdate status", resp.status);
-  console.log(await resp.text());
-})();
 
 
 
-
-fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(3)/validateUpdateListItem", {
+fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/AddValidateUpdateItemUsingPath", {
   "headers": {
     "accept": "application/json;odata.metadata=none",
     "accept-language": "en-US,en;q=0.9",
     "content-type": "application/json;odata.metadata=none",
     "odata-version": "4.0",
-    "originalcorrelationid": "a186dca1-205c-a000-d682-0796823d037d",
+    "originalcorrelationid": "b08ddca1-2089-a000-e614-c8ae651bd3ad",
     "priority": "u=1, i",
     "sdkversion": "SPFx/CaseMacroViewWebPart/e5b4a3c1-8b68-4c6f-9c5c-4c2e3a1f0a11/Is3PRequest:1",
     "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
@@ -66,38 +35,18 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
-    "x-requestdigest": "0x98C1C86C17425E51ED4BE8B4B4EE8B2692343F79CA19BF09E1ADFADAB8269AF050A93851B8102C895176A63F1BD7F1CDD716FD6DC3E574D006C2A637DAA1E43E,24 Nov 2025 14:20:58 -0000"
+    "x-requestdigest": "0xB664B3E2475862557E17CF259F7ECB16BD88EE65559CAFA1815638C19F2ED4C50FF903EE1546140B2B8B7D4D81D80CCCF3A820E0E82D0A6CFABAAED2888A2909,24 Nov 2025 16:24:21 -0000"
   },
-  "referrer": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/SitePages/Test-CMS.aspx?caseDebug=on&env=Embedded",
-  "body": "{\"formValues\":[{\"FieldName\":\"mvDocSetName\",\"FieldValue\":\"testing2\"},{\"FieldName\":\"mvDocSetNumber\",\"FieldValue\":\"1005\"},{\"FieldName\":\"DocumentSetDescription\",\"FieldValue\":\"Test via console (no _spPageContextInfo)\"},{\"FieldName\":\"mvDateOpened\",\"FieldValue\":\"2023-12-11T21:43:40.000Z\"},{\"FieldName\":\"mvDateClosed\",\"FieldValue\":\"2025-11-27T05:00:00.000Z\"},{\"FieldName\":\"mvDocSetType\",\"FieldValue\":\"Child Protective Services|1b1c33aa-5aae-462a-a3f0-71004c21e388\"},{\"FieldName\":\"mvDocSetStatus\",\"FieldValue\":\"Active|c81a06d0-464a-4efb-b93f-aee9920f60ca\"},{\"FieldName\":\"mvCaseDisposition\",\"FieldValue\":\"Settlement|8bcadced-6b26-4a1b-8e04-cdb84b941dc3\"},{\"FieldName\":\"mvManagedBy\",\"FieldValue\":\"[{\\\"Key\\\":\\\"couterbridge@arlingtonva.us\\\"}]\"},{\"FieldName\":\"mvDepartmentContact\",\"FieldValue\":\"[{\\\"Key\\\":\\\"Kgunnam@arlingtonva.us\\\"}]\"}],\"bNewDocumentUpdate\":false}",
+  "referrer": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/SitePages/Test-CMS.aspx?caseDebug=on",
+  "body": "{\"listItemCreateInfo\":{\"FolderPath\":{\"DecodedUrl\":\"/sites/CAO-CaseManagementSite-Dev/1004\"},\"UnderlyingObjectType\":1},\"formValues\":[{\"FieldName\":\"HTML_x0020_File_x0020_Type\",\"FieldValue\":\"SharePoint.DocumentSet\"},{\"FieldName\":\"ContentTypeId\",\"FieldValue\":\"0x0120D520A8080000-REPLACE-ME-WITH-REAL-ID\"},{\"FieldName\":\"FileLeafRef\",\"FieldValue\":\"test\"},{\"FieldName\":\"mvDocSetName\",\"FieldValue\":\"test\"},{\"FieldName\":\"mvDocSetType\",\"FieldValue\":\"Child Protective Services|1b1c33aa-5aae-462a-a3f0-71004c21e388\"},{\"FieldName\":\"mvDocSetStatus\",\"FieldValue\":\"Archived|6e3a00cf-8f91-41c9-af5e-0d34d695e821\"},{\"FieldName\":\"mvCaseDisposition\",\"FieldValue\":\"\"},{\"FieldName\":\"mvManagedBy\",\"FieldValue\":\"[]\"},{\"FieldName\":\"mvDepartmentContact\",\"FieldValue\":\"[]\"}],\"bNewDocumentUpdate\":false,\"datesInUTC\":true}",
   "method": "POST",
   "mode": "cors",
   "credentials": "include"
 });
 
-
-  {
-    "t": "2025-11-24T14:21:21.098Z",
-    "type": "CG.editProps.update.fieldErrors",
-    "data": {
-      "errors": [
-        {
-          "field": "mvDateOpened",
-          "message": "You must specify a valid date within the range of 1/1/1900 and 12/31/8900."
-        },
-        {
-          "field": "mvDateClosed",
-          "message": "You must specify a valid date within the range of 1/1/1900 and 12/31/8900."
-        }
-      ]
+{
+    "error": {
+        "code": "-2147024809, System.ArgumentException",
+        "message": "Value does not fall within the expected range."
     }
-  },
-  {
-    "t": "2025-11-24T14:21:21.098Z",
-    "type": "CG.editProps.update.error",
-    "data": {
-      "error": "One or more fields could not be saved: mvDateOpened: You must specify a valid date within the range of 1/1/1900 and 12/31/8900.; mvDateClosed: You must specify a valid date within the range of 1/1/1900 and 12/31/8900."
-    }
-  }
-
-
+}
