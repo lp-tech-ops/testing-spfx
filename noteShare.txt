@@ -1,42 +1,7 @@
 const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
 const digest = await getDigest(webUrl); // via _api/contextinfo
 
-await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
-  method: "POST",
-  credentials: "include",
-  headers: {
-    "accept": "application/json;odata=verbose",
-    "content-type": "application/json;odata=verbose",
-    "odata-version": "4.0",
-    "x-requestdigest": digest,
-  },
-  body: JSON.stringify({
-    srcPath: {
-      "__metadata": { type: "SP.ResourcePath" },
-      AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
-    },
-    destPath: {
-      "__metadata": { type: "SP.ResourcePath" },
-      AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
-    },
-    options: {
-      "__metadata": { type: "SP.MoveCopyOptions" },
-      KeepBoth: true,
-      ResetAuthorAndCreatedOnCopy: false,
-      ShouldBypassSharedLocks: true,
-      RetainEditorAndModifiedOnMove: false
-    }
-  }),
-});
-
-
-
-
-
-const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
-const digest = await getDigest(webUrl); // via _api/contextinfo
-
-await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
+const res = await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
   method: "POST",
   credentials: "include",
   headers: {
@@ -47,10 +12,10 @@ await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
   },
   body: JSON.stringify({
     srcPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
+      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/Shared Documents/TestSource"
     },
     destPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
+      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/Shared Documents/TestDest"
     },
     options: {
       KeepBoth: true,
@@ -60,3 +25,7 @@ await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
     }
   }),
 });
+
+console.log("Status:", res.status);
+const text = await res.text();
+console.log("Response body:", text);
