@@ -13,7 +13,6 @@ await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
   body: JSON.stringify({
     srcPath: {
       "__metadata": { type: "SP.ResourcePath" },
-      // Use AbsoluteUrl when passing full URLs
       AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
     },
     destPath: {
@@ -22,6 +21,38 @@ await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
     },
     options: {
       "__metadata": { type: "SP.MoveCopyOptions" },
+      KeepBoth: true,
+      ResetAuthorAndCreatedOnCopy: false,
+      ShouldBypassSharedLocks: true,
+      RetainEditorAndModifiedOnMove: false
+    }
+  }),
+});
+
+
+
+
+
+const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
+const digest = await getDigest(webUrl); // via _api/contextinfo
+
+await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
+  method: "POST",
+  credentials: "include",
+  headers: {
+    "accept": "application/json;odata.metadata=none",
+    "content-type": "application/json;odata.metadata=none",
+    "odata-version": "4.0",
+    "x-requestdigest": digest,
+  },
+  body: JSON.stringify({
+    srcPath: {
+      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
+    },
+    destPath: {
+      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
+    },
+    options: {
       KeepBoth: true,
       ResetAuthorAndCreatedOnCopy: false,
       ShouldBypassSharedLocks: true,
