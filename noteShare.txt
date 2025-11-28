@@ -1,31 +1,28 @@
 const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
 
+const digest = document.getElementById("__REQUESTDIGEST").value;
+
 fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
   method: "POST",
   credentials: "include",
   headers: {
     "accept": "application/json;odata.metadata=none",
-    "content-type": "application/json;odata.metadata=none",
+    "content-type": "application/json;odata=verbose",
     "odata-version": "4.0",
-    "x-requestdigest": "<YOUR-DIGEST-HERE>",
+    "x-requestdigest": digest,
   },
   body: JSON.stringify({
     srcPath: {
-      "__metadata": { type: "SP.ResourcePath" },
-      DecodedUrl:
-        webUrl + "/1004/2025-CAO-006-test 1/Case Notes",
+      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
     },
     destPath: {
-      "__metadata": { type: "SP.ResourcePath" },
-      DecodedUrl:
-        webUrl + "/1004/2025-CAO-006-test 1/Correspondence/Case Notes",
+      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
     },
     options: {
-      "__metadata": { type: "SP.MoveCopyOptions" },
       KeepBoth: true,
       ResetAuthorAndCreatedOnCopy: false,
       ShouldBypassSharedLocks: true,
-      RetainEditorAndModifiedOnMove: false,
-    },
+      RetainEditorAndModifiedOnMove: false
+    }
   }),
 });
