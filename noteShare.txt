@@ -1,31 +1,11 @@
-const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
-const digest = await getDigest(webUrl); // via _api/contextinfo
-
-const res = await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
-  method: "POST",
-  credentials: "include",
-  headers: {
-    "accept": "application/json;odata.metadata=none",
-    "content-type": "application/json;odata.metadata=none",
-    "odata-version": "4.0",
-    "x-requestdigest": digest,
-  },
-  body: JSON.stringify({
-    srcPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/Shared Documents/TestSource"
-    },
-    destPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/Shared Documents/TestDest"
-    },
-    options: {
-      KeepBoth: true,
-      ResetAuthorAndCreatedOnCopy: false,
-      ShouldBypassSharedLocks: true,
-      RetainEditorAndModifiedOnMove: false
-    }
-  }),
-});
-
-console.log("Status:", res.status);
-const text = await res.text();
-console.log("Response body:", text);
+VM956:5   POST https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath 500 (Internal Server Error)
+(anonymous) @ VM956:5
+VM956:30 Status: 500
+VM956:32 Response body: {"error":{"code":"-1, System.UriFormatException","message":"Invalid URI: The format of the URI could not be determined."}}
+undefined
+VM950:4   POST https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath 500 (Internal Server Error)
+(anonymous) @ VM950:4
+Response {type: 'basic', url: 'https://arlingtonva.sharepoint.com/sites/CAO-CaseM…entSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath', redirected: false, status: 500, ok: false, …}
+VM953:4   POST https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath 500 (Internal Server Error)
+(anonymous) @ VM953:4
+Response {type: 'basic', url: 'https://arlingtonva.sharepoint.com/sites/CAO-CaseM…entSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath', redirected: false, status: 500, ok: false, …}
