@@ -21,3 +21,10 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
   "mode": "cors",
   "credentials": "include"
 });
+
+{
+    "error": {
+        "code": "-1, Microsoft.SharePoint.Client.ClientServiceException",
+        "message": "The HTTP header ACCEPT is missing or its value is invalid."
+    }
+}
