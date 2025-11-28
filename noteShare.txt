@@ -13,11 +13,12 @@ await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
   body: JSON.stringify({
     srcPath: {
       "__metadata": { type: "SP.ResourcePath" },
-      DecodedUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
+      // Use AbsoluteUrl when passing full URLs
+      AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
     },
     destPath: {
       "__metadata": { type: "SP.ResourcePath" },
-      DecodedUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
+      AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
     },
     options: {
       "__metadata": { type: "SP.MoveCopyOptions" },
