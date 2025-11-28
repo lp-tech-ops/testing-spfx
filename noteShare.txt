@@ -1,8 +1,17 @@
+async function getDigest(webUrl) {
+  const res = await fetch(webUrl + "/_api/contextinfo", {
+    method: "POST",
+    headers: { "accept": "application/json;odata=verbose" },
+    credentials: "include"
+  });
+  const data = await res.json();
+  return data.d.GetContextWebInformation.FormDigestValue;
+}
+
 const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
+const digest = await getDigest(webUrl);
 
-const digest = document.getElementById("__REQUESTDIGEST").value;
-
-fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
+await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
   method: "POST",
   credentials: "include",
   headers: {
