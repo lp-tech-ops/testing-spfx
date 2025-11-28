@@ -1,37 +1,35 @@
-async function getDigest(webUrl) {
-  const res = await fetch(webUrl + "/_api/contextinfo", {
-    method: "POST",
-    headers: { "accept": "application/json;odata=verbose" },
-    credentials: "include"
-  });
-  const data = await res.json();
-  return data.d.GetContextWebInformation.FormDigestValue;
-}
 
-const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
-const digest = await getDigest(webUrl);
 
-await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
-  method: "POST",
-  credentials: "include",
-  headers: {
-    "accept": "application/json;odata.metadata=none",
-    "content-type": "application/json;odata=verbose",
-    "odata-version": "4.0",
-    "x-requestdigest": digest,
-  },
-  body: JSON.stringify({
-    srcPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Case%20Notes"
-    },
-    destPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test%201/Correspondence/Case%20Notes"
-    },
-    options: {
-      KeepBoth: true,
-      ResetAuthorAndCreatedOnCopy: false,
-      ShouldBypassSharedLocks: true,
-      RetainEditorAndModifiedOnMove: false
-    }
-  }),
-});
+POST https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath 500 (Internal Server Error)
+Response {type: 'basic', url: 'https://arlingtonva.sharepoint.com/sites/CAO-CaseM…entSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath', redirected: false, status: 500, ok: false, …}
+body
+bodyUsed
+: 
+false
+headers
+: 
+Headers
+[[Prototype]]
+: 
+Headers
+ok
+: 
+false
+redirected
+: 
+false
+status
+: 
+500
+statusText
+: 
+""
+type
+: 
+"basic"
+url
+: 
+"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath"
+[[Prototype]]
+: 
+Response
