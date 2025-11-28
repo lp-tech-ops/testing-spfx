@@ -1,65 +1,27 @@
 const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
-const digest = await getDigest(webUrl);
 
-const res = await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
+const body = {
+  srcPath: {
+    DecodedUrl: webUrl + "/Shared Documents/TestSource"
+  },
+  destPath: {
+    DecodedUrl: webUrl + "/Shared Documents/TestDest"
+  },
+  options: {
+    KeepBoth: true,
+    ResetAuthorAndCreatedOnCopy: false,
+    ShouldBypassSharedLocks: true,
+    RetainEditorAndModifiedOnMove: false
+  }
+};
+
+const res = await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath()", {
   method: "POST",
   credentials: "include",
   headers: {
-    "accept": "application/json;odata.metadata=none",
-    "content-type": "application/json;odata.metadata=none",
-    "odata-version": "4.0",
+    "accept": "application/json;odata=nometadata",
+    "content-type": "application/json;odata=nometadata",
     "x-requestdigest": digest,
   },
-  body: JSON.stringify({
-    srcPath: {
-      // DecodedUrl expects UNENCODED spaces
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/Shared Documents/TestSource"
-    },
-    destPath: {
-      DecodedUrl: "/sites/CAO-CaseManagementSite-Dev/Shared Documents/TestDest"
-    },
-    options: {
-      KeepBoth: true,
-      ResetAuthorAndCreatedOnCopy: false,
-      ShouldBypassSharedLocks: true,
-      RetainEditorAndModifiedOnMove: false
-    }
-  }),
+  body: JSON.stringify(body),
 });
-console.log("Status:", res.status);
-console.log("Body:", await res.text());
-
-
-
-
-const webUrl = "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev";
-const digest = await getDigest(webUrl);
-
-const res = await fetch(webUrl + "/_api/SP.MoveCopyUtil.CopyFolderByPath", {
-  method: "POST",
-  credentials: "include",
-  headers: {
-    "accept": "application/json;odata=verbose",
-    "content-type": "application/json;odata=verbose",
-    "x-requestdigest": digest,
-  },
-  body: JSON.stringify({
-    srcPath: {
-      "__metadata": { type: "SP.ResourcePath" },
-      AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/Shared%20Documents/TestSource"
-    },
-    destPath: {
-      "__metadata": { type: "SP.ResourcePath" },
-      AbsoluteUrl: "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/Shared%20Documents/TestDest"
-    },
-    options: {
-      "__metadata": { type: "SP.MoveCopyOptions" },
-      KeepBoth: true,
-      ResetAuthorAndCreatedOnCopy: false,
-      ShouldBypassSharedLocks: true,
-      RetainEditorAndModifiedOnMove: false
-    }
-  }),
-});
-console.log("Status:", res.status);
-console.log("Body:", await res.text());
