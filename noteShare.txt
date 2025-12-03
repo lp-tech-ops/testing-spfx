@@ -1,10 +1,12 @@
-fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/SP.MoveCopyUtil.CopyFolderByPath()", {
+fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/web/lists(guid'4e3ff674-76dc-422d-9063-6c6dbe676ac4')/items(99)", {
   "headers": {
     "accept": "application/json;odata=nometadata",
     "accept-language": "en-US,en;q=0.9",
-    "content-type": "application/json;odata=nometadata",
+    "cache-control": "max-age=0",
+    "content-type": "application/json;charset=utf-8",
+    "if-match": "*",
     "odata-version": "4.0",
-    "originalcorrelationid": "75e6dda1-80e3-a000-e614-cb63bfc4baf8",
+    "originalcorrelationid": "416cdfa1-10b6-a000-e614-cb1bafae715e",
     "priority": "u=1, i",
     "sdkversion": "SPFx/CaseMacroViewWebPart/e5b4a3c1-8b68-4c6f-9c5c-4c2e3a1f0a11/Is3PRequest:1",
     "sec-ch-ua": "\"Chromium\";v=\"142\", \"Microsoft Edge\";v=\"142\", \"Not_A Brand\";v=\"99\"",
@@ -13,11 +15,19 @@ fetch("https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
-    "x-requestdigest": "0xD53505C6E53ADE010F1AD29B7864752FBE3C388B24C365680E272E2B7F55F0F8067F2A420B9E05F366E3A24F947E2F940D3788230E5F673E1158B5266F9F0082,28 Nov 2025 20:49:39 -0000"
+    "x-http-method": "DELETE",
+    "x-requestdigest": "0xA9FB2131F5A22BC82EF3CA1BDAC57026639E508CC7D17E26773B569AD382384794C78164075E3940C66E113869875B2869DEACAA70F591FC79387C6CA5150578,03 Dec 2025 14:21:50 -0000"
   },
   "referrer": "https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/SitePages/Test-CMS.aspx?caseDebug=on&env=Embedded",
-  "body": "{\"srcPath\":{\"DecodedUrl\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test 1/Correspondence\"},\"destPath\":{\"DecodedUrl\":\"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/1004/2025-CAO-006-test 1/Discovery/Correspondence\"},\"options\":{\"KeepBoth\":true,\"ResetAuthorAndCreatedOnCopy\":false,\"ShouldBypassSharedLocks\":true,\"RetainEditorAndModifiedOnMove\":false}}",
+  "body": null,
   "method": "POST",
   "mode": "cors",
   "credentials": "include"
 });
+
+{
+    "error": {
+        "code": "-1, Microsoft.SharePoint.Client.ClientServiceException",
+        "message": "The HTTP header ACCEPT is missing or its value is invalid."
+    }
+}
