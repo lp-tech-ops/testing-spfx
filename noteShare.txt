@@ -1,1 +1,31 @@
-Error: ISPHttpClientConfiguration.jsonRequest is enabled, which requires the "OData-Version" header to be 3.0 or 4.0
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword)
+$session = New-SFTPSession -ComputerName "Files.calero.com" -Port 22 -Credential $credential
+Set-SFTPItem -Path "C:\Temp\TeamsNumbers_All.csv" `
+            -Destination "/ToCalero/Teams/TeamsNumbers_All.csv" `
+            -SessionId $session.SessionId
+
+I'm getting below error:
+Set-SFTPItem: /ToCalero/Teams/TeamsNumbers_All.csv does not exist.
+
+PS C:\Windows\System32> Get-SFTPChildItem -SessionId $session.SessionId -Path "/ToCalero"
+FullName       : /ToCalero/HR
+LastAccessTime : 12/5/2025 1:10:06 AM
+LastWriteTime  : 12/5/2025 1:10:06 AM
+Length         : 0
+UserId         : -1
+
+FullName       : /ToCalero/Teams
+LastAccessTime : 12/4/2025 10:09:18 AM
+LastWriteTime  : 12/4/2025 10:09:18 AM
+Length         : 0
+UserId         : -1
+
+FullName       : /ToCalero/Archived
+LastAccessTime : 7/9/2025 10:33:14 AM
+LastWriteTime  : 7/9/2025 10:33:14 AM
+Length         : 0
+UserId         : -1
+
+PS C:\Windows\System32> Test-SFTPPath -SessionId $session.SessionId -Path "/ToCalero/Teams"
+TrueNew
