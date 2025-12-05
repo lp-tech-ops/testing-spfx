@@ -1,31 +1,111 @@
+I'm using below script to previosuly get and send email. 
+
+#Get Teams Report
+Connect-MicrosoftTeams
+
+$all = @()
+$top = 500
+$skip = 0
+
+do {
+    $page = Get-CsPhoneNumberAssignment -Top $top -Skip $skip -ErrorAction Stop
+    $count = $page.Count
+    if ($count -gt 0) { $all += $page }
+    $skip += $count
+} while ($count -ge $top)
+
+$ColumnMap = @{
+    ActivationState       = $false
+    AssignedPstnTargetId  = $true
+    AssignmentCategory    = $true
+    Capability            = $false
+    City                  = $true
+    CivicAddressId        = $true
+    IsoCountryCode        = $false
+    IsoSubdivision        = $true
+    LocationId            = $true
+    LocationUpdateSupported = $false
+    NetworkSiteId         = $false
+    NumberSource          = $false
+    NumberType            = $true
+    OperatorId            = $false
+    PortInOrderStatus     = $true
+    PstnAssignmentStatus  = $true
+    PstnPartnerId         = $false
+    PstnPartnerName       = $false
+    ReverseNumberLookup   = $false
+    TelephoneNumber       = $true
+}
+
+$SelectedColumns = $ColumnMap.GetEnumerator() |
+    Where-Object { $_.Value -eq $true } |
+    Select-Object -ExpandProperty Key
+
+$all = $all | Select-Object $SelectedColumns
+
+#Get User details, export to csv
+Connect-MgGraph
+
+$UserIds = $all.AssignedPstnTargetId | Where-Object { $_ } | Select-Object -Unique
+
+$UserLookup = foreach ($id in $UserIds) {
+    Get-MgUser -UserId $id -ErrorAction SilentlyContinue |
+        Select-Object Id, DisplayName, UserPrincipalName
+}
+
+$UserTable = $UserLookup | Group-Object -Property Id -AsHashTable -AsString
+
+$Enriched = $all | Select-Object *,
+    @{Name='UserDisplayName';Expression={ $UserTable[$_.AssignedPstnTargetId.ToString()].DisplayName }},
+    @{Name='UserEmail';Expression={ $UserTable[$_.AssignedPstnTargetId.ToString()].UserPrincipalName }}
+
+$Enriched | Export-Csv -Path "C:\Temp\TeamsNumbers_All.csv" -NoTypeInformation
+
+#Send email
+Connect-MgGraph
+
+$from = ''
+$to   = ''
+$subject = 'Teams phone numbers report'
+$body = @{ contentType = "Text"; content = "Attached is the latest Teams numbers report." }
+
+$path = 'C:\temp\TeamsNumbers_All.csv'
+$bytes = [System.IO.File]::ReadAllBytes($path)
+$content = [System.Convert]::ToBase64String($bytes)
+
+$attachment = @{
+  '@odata.type' = "#microsoft.graph.fileAttachment"
+  name = [System.IO.Path]::GetFileName($path)
+  contentBytes = $content
+}
+
+$message = @{
+  subject = $subject
+  body = $body
+  toRecipients = @(@{ emailAddress = @{ address = $to } })
+  attachments = @($attachment)
+}
+
+$bodyParam = @{ message = $message }
+
+Send-MgUserMail -UserId $from -BodyParameter $bodyParam
+
+
+But now instead of email I want to use below toupload the file.
+Import-Module Posh-SSH
+
+$username = ""
+$password = ""
+
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+
 $credential = New-Object System.Management.Automation.PSCredential ($username, $securePassword)
+
 $session = New-SFTPSession -ComputerName "Files.calero.com" -Port 22 -Credential $credential
-Set-SFTPItem -Path "C:\Temp\TeamsNumbers_All.csv" `
-            -Destination "/ToCalero/Teams/TeamsNumbers_All.csv" `
-            -SessionId $session.SessionId
 
-I'm getting below error:
-Set-SFTPItem: /ToCalero/Teams/TeamsNumbers_All.csv does not exist.
+Set-SFTPItem -Path "C:\Temp\TeamsNumbers_All.csv" -Destination "/ToCalero/Teams" -SessionId $session.SessionId -Force
 
-PS C:\Windows\System32> Get-SFTPChildItem -SessionId $session.SessionId -Path "/ToCalero"
-FullName       : /ToCalero/HR
-LastAccessTime : 12/5/2025 1:10:06 AM
-LastWriteTime  : 12/5/2025 1:10:06 AM
-Length         : 0
-UserId         : -1
+Remove-SFTPSession -SessionId $session.SessionId
 
-FullName       : /ToCalero/Teams
-LastAccessTime : 12/4/2025 10:09:18 AM
-LastWriteTime  : 12/4/2025 10:09:18 AM
-Length         : 0
-UserId         : -1
 
-FullName       : /ToCalero/Archived
-LastAccessTime : 7/9/2025 10:33:14 AM
-LastWriteTime  : 7/9/2025 10:33:14 AM
-Length         : 0
-UserId         : -1
-
-PS C:\Windows\System32> Test-SFTPPath -SessionId $session.SessionId -Path "/ToCalero/Teams"
-TrueNew
+Can you replace that email logic with this? And I want a try catch block for entire code. If any error rises send an email.
