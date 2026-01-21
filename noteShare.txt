@@ -1,1 +1,252 @@
-"AAA - Admin Resources","AAA - CAO Service Acceptance","AAA - CAO Shared Resources","ACFD - Collective Bargaining","ACFD - Fire","ACFD - Fire Marshal","ACFD - Personnel Matters","ACPD - Collective Bargaining","ACPD - Personnel Matters","ACPD - Police","ACPD - Unclaimed Bodies","AED - Arts","AED - Economic Development","AMG","CAO - Collective Bargaining","CAO - Lit Holds","CAO - Subpoena Tracking","CBO - County Board Office","CMO - Collective Bargaining","CMO - County Manager\u0027s Office","CMO - Personnel Matter","Constitutionals Personnel Matters","Court Services","CPHD - Code Enforcement","CPHD - Code Inspection","CPHD - Historic Preservation","CPHD - Housing","CPHD - Neighborhood Services Division","CPHD - Personnel Matters","CPHD - Planning (Comp)","CPHD - Planning (Current)","CPHD - Restrictive Covenants for ACZO Compliance","CPHD - Zoning","CPHD-Fee Schedules","DES - Collective Bargaining","DES - Engineering and Capital Projects","DES - Environmental Services","DES - Personnel Matters","DES - Real Estate Bureau","DES - Solid Waste Bureau","DES - Stormwater","DES - Transportation","DES - Water Polution Control Plant","DES - Water, Sewer, Streets","DES- Development Services","DHS - Adult Protective Services","DHS - Aging and Disability Services","DHS - Behavioral Health Services","DHS - Child Protective Services","DHS - Compliance","DHS - CSB","DHS - Human Services","DHS - Personnel Matter","DHS - Public Health","DHS- Economic Independence","DHS- Housing Bureau","DMF - CAO Invoices","DMF - Finance","DMF - Personnel Matters","DMF - Purchasing","DMF - Risk Management","DocuSign Executed Agreements","DPR - Parks and Recreation","DPR - Personnel Matters","DREA - Real Estate Assessments","DTS - Personnel Matters","DTS - Technology Services","ECC - Personnel Matters","HRD - Collective Bargaining","HRD - Human Resources","HRD - Personnel Issues","HRD - Retirement","HRD - Worker\u0027s Compensation","LIB - Libraries","LIB - Personnel Matters","OEM - Administration and Public Affairs","OEM - Public Saftey Communications","OHR - Human Rights","OHR - Personnel Matters","Pending Attorney Assignment","REG - Registrar","RET - Personnel Matters","RET - Retirement Board","VMS"
+Write-Output "Getting environment info..."
+$environment = m365 flow environment list --query '[?properties.isDefault==`true`].name' --output json | ConvertFrom-JSON
+
+Write-Output "Getting Flows info..."
+$flows = m365 flow list --environmentName $environment --asAdmin --output json | ConvertFrom-JSON
+
+$total = $flows.Count
+Write-Output "Found $($total) Flows to export..."
+
+
+$folder = "ExportedFlows"
+$filename = "ErrorLog.txt"
+$exportErrorPath = Join-Path $folder "$filename`_$timestamp"
+
+
+$i = 0
+foreach ($f in $flows) {
+    $i++
+    $flowId = $f.name
+    $displayName = $f.properties.displayName
+
+    $filename = $f.properties.displayName.Replace(" ","")
+    $timestamp = Get-Date -Format "yyyymmddhhmmss"
+    $exportPath = Join-Path $folder "$filename`_$timestamp"
+
+    $percent = [int](($i / $total) * 100)
+    Write-Progress -Activity "Adding co-owner to flows" -Status "Processing $i of $($total): $displayName" -PercentComplete $percent
+
+    try {
+        m365 flow owner ensure --environmentName $environment --flowName $flowId --userName "PowerAutomate_Admin@test.onmicrosoft.com" --roleName CanEdit --asAdmin
+        Start-Sleep -Seconds 1
+    }
+    catch {
+        $message = $($_.Exception.Message) -replace "`r`n"," " -replace "`n"," " -replace "`t"," "
+        $errLine = "Error in $displayName / $flowId : $message"
+        $errLine | Out-File -FilePath $exportErrorPath -Append -Encoding utf8
+    }
+}
+
+Write-Progress -Activity "Adding co-owner to flows" -Completed
+
+
+
+
+
+
+
+
+
+'''
+$flows | ForEach-Object {
+    Write-Output "Exporting as ZIP & JSON... $($_.displayName)"
+    $filename = $_.properties.displayName.Replace(" ","")
+    $timestamp = Get-Date -Format "yyyymmddhhmmss"
+    $folder = "ExportedFlows"
+    $exportPath = Join-Path $folder "$filename`_$timestamp"
+    $flowId = $_.name
+    
+    try{
+        m365 flow export --name $flowId --environmentName $environment --packageDisplayName $_.properties.displayName --path "$exportPath.zip"
+        m365 flow export --name $flowId --environmentName $environment --format json --path "$exportPath.json"
+    }
+    catch{
+        m365 flow export --name $flowId --environmentName $environment --packageDisplayName $_.properties.displayName --path "$exportPath.zip"
+        m365 flow export --name $flowId --environmentName $environment --format json --path "$exportPath.json"
+    }
+    
+}
+
+Write-Output "Complete"
+'''
+
+
+
+
+
+
+$environment = "Default"
+$targetUser  = "PowerAutomate_Admin@test.onmicrosoft.com"
+$exportPath  = Join-Path $PWD "ExportedFlows\errors.txt"
+
+# ensure export folder exists
+$exportDir = Split-Path -Path $exportPath -Parent
+if (-not (Test-Path $exportDir)) { New-Item -Path $exportDir -ItemType Directory -Force | Out-Null }
+
+$flows = m365 flow list --environmentName $environment --asAdmin --output json | ConvertFrom-Json
+$total = $flows.Count
+if ($total -eq 0) { Write-Host "No flows found in environment $environment"; return }
+
+# Progress tracking
+$startTime = Get-Date
+$i = 0
+$successCount = 0
+$failureCount = 0
+$lastError = ""
+
+foreach ($f in $flows) {
+    $i++
+    $flowId = $f.name
+    $displayName = $f.properties.displayName
+
+    # compute progress metrics
+    $percent = [int](($i / $total) * 100)
+    $elapsed = (Get-Date) - $startTime
+    $avgPerItem = if ($i -gt 0) { [math]::Round($elapsed.TotalSeconds / $i, 2) } else { 0 }
+    $remainingItems = $total - $i
+    $etaSeconds = [math]::Round($avgPerItem * $remainingItems)
+    $eta = (Get-Date).AddSeconds($etaSeconds)
+
+    # Main progress (single-line summary)
+    Write-Progress -Id 1 `
+                   -Activity "Adding co-owner to flows" `
+                   -Status "Processed $i of $total ($percent%) — Success: $successCount  Failures: $failureCount" `
+                   -PercentComplete $percent
+
+    # Detailed progress (second line with ETA and current flow)
+    $detailStatus = "Current: $displayName  |  FlowId: $flowId"
+    $detailStatus += "  |  Elapsed: $([math]::Round($elapsed.TotalMinutes,2))m"
+    $detailStatus += "  |  Avg/item: ${avgPerItem}s  |  ETA: $($eta.ToString('yyyy-MM-dd HH:mm:ss'))"
+    if ($lastError) { $detailStatus += "  |  LastError: $lastError" }
+
+    Write-Progress -Id 2 `
+                   -Activity "Details" `
+                   -Status $detailStatus `
+                   -PercentComplete $percent
+
+    try {
+        m365 flow owner ensure --environmentName $environment --flowName $flowId --userName $targetUser --roleName CanEdit --asAdmin
+        $successCount++
+        $lastError = ""
+    } catch {
+        $failureCount++
+        $message = $($_.Exception.Message) -replace "`r`n"," " -replace "`n"," " -replace "`t"," "
+        $lastError = $message
+        $errLine = "Error in $displayName / $flowId : $message"
+        $errLine | Out-File -FilePath $exportPath -Append -Encoding utf8
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+# Complete progress bars
+Write-Progress -Id 1 -Activity "Adding co-owner to flows" -Completed
+Write-Progress -Id 2 -Activity "Details" -Completed
+
+Write-Host "Done. Total: $total  Success: $successCount  Failures: $failureCount"
+if ($failureCount -gt 0) { Write-Host "See errors: $exportPath" }
+
+
+
+
+
+B:
+$environment = "Default"
+$targetUser  = "PowerAutomate_Admin@test.onmicrosoft.com"
+$exportPath  = Join-Path $PWD "ExportedFlows\errors.txt"
+
+# ensure export folder exists
+$exportDir = Split-Path -Path $exportPath -Parent
+if (-not (Test-Path $exportDir)) { New-Item -Path $exportDir -ItemType Directory -Force | Out-Null }
+
+$flows = m365 flow list --environmentName $environment --asAdmin --output json | ConvertFrom-Json
+$total = $flows.Count
+if ($total -eq 0) { Write-Host "No flows found in environment $environment"; return }
+
+$i = 0
+$successCount = 0
+$failureCount = 0
+foreach ($f in $flows) {
+    $i++
+    $flowId = $f.name
+    $displayName = $f.properties.displayName
+
+    $percent = [int](($i / $total) * 100)
+    Write-Progress -Activity "Adding co-owner to flows" -Status "Processing $i of $($total): $displayName" -PercentComplete $percent
+
+    $argString = "flow owner ensure --environmentName `"$environment`" --flowName `"$flowId`" --userName `"$targetUser`" --roleName CanEdit --asAdmin"
+    $proc = Start-Process -FilePath "m365" -ArgumentList $argString -NoNewWindow -Wait -PassThru -RedirectStandardOutput ([System.IO.Path]::GetTempFileName()) -RedirectStandardError ([System.IO.Path]::GetTempFileName())
+
+    $stdout = Get-Content -Path $proc.StandardOutput -Raw -ErrorAction SilentlyContinue
+    $stderr = Get-Content -Path $proc.StandardError -Raw -ErrorAction SilentlyContinue
+
+    if ($proc.ExitCode -ne 0) {
+        $failureCount++
+        $msg = if ($stderr) { $stderr } else { $stdout }
+        $errLine = "Error in $displayName / $flowId : $msg"
+        $errLine | Out-File -FilePath $exportPath -Append -Encoding utf8
+    } else {
+        $successCount++
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+Write-Progress -Activity "Adding co-owner to flows" -Completed
+Write-Host "Done. Total: $total  Success: $successCount  Failures: $failureCount"
+if ($failureCount -gt 0) { Write-Host "See errors: $exportPath" }
+
+
+
+
+
+A:
+$environment = "Default"
+$targetUser  = "PowerAutomate_Admin@test.onmicrosoft.com"
+$exportPath  = Join-Path $PWD "ExportedFlows\errors.txt"
+
+# ensure export folder exists
+$exportDir = Split-Path -Path $exportPath -Parent
+if (-not (Test-Path $exportDir)) { New-Item -Path $exportDir -ItemType Directory -Force | Out-Null }
+
+$flows = m365 flow list --environmentName $environment --asAdmin --output json | ConvertFrom-Json
+$total = $flows.Count
+if ($total -eq 0) { Write-Host "No flows found in environment $environment"; return }
+
+$i = 0
+$successCount = 0
+$failureCount = 0
+foreach ($f in $flows) {
+    $i++
+    $flowId = $f.name
+    $displayName = $f.properties.displayName
+
+    $percent = [int](($i / $total) * 100)
+    Write-Progress -Activity "Adding co-owner to flows" -Status "Processing $i of $($total): $displayName" -PercentComplete $percent
+
+    # Run m365 and capture both stdout and stderr
+    $args = @(
+      "flow", "owner", "ensure",
+      "--environmentName", $environment,
+      "--flowName", $flowId,
+      "--userName", $targetUser,
+      "--roleName", "CanEdit",
+      "--asAdmin"
+    )
+    $output = & m365 @args 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        $failureCount++
+        $msg = $output -join "`n"
+        $errLine = "Error in $displayName / $flowId : $msg"
+        $errLine | Out-File -FilePath $exportPath -Append -Encoding utf8
+    } else {
+        $successCount++
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+Write-Progress -Activity "Adding co-owner to flows" -Completed
+Write-Host "Done. Total: $total  Success: $successCount  Failures: $failureCount"
+if ($failureCount -gt 0) { Write-Host "See errors: $exportPath" }
+
