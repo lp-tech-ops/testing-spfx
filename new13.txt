@@ -1,0 +1,85 @@
+Brief overview
+
+CMAP stands for Community Messages and Actions Platform. It’s the County’s internal CRM for constituent services — the behind‑the‑scenes system staff use every day to make sure residents are heard, responded to, and that every interaction is documented and auditable. CMAP launched in 2023 to replace older tools and is now mission‑critical for the County Board Office, County Manager’s Office, Constituent Services Office, and departmental STARR coordinators.
+
+Why CMAP was needed
+
+Before CMAP, we relied on legacy systems like GRAMS / IQ. Those systems became increasingly difficult to maintain, offered limited reporting, and didn’t connect well with modern tools such as Outlook and Dynamics. Staff were facing real operational problems:
+
+Emails scattered across inboxes with no single source of truth
+
+Limited visibility into who was handling which requests
+
+Duplicate or lost requests and manual tracking for sensitive issues
+
+Cumbersome reporting for leadership and audits
+
+The County needed one reliable platform that could capture every constituent interaction, track follow‑ups across departments, preserve records for FOIA and audits, and scale to support the Board, CMO, and CSO. That requirement is what became CMAP.
+
+What CMAP is at its core
+
+At its core, CMAP is an internal case management and CRM system tailored for constituent services. It is not a public‑facing app. The platform’s purpose is simple and focused:
+
+Ensure timely, consistent responses to residents
+
+Centralize contact records so each person’s history is available to staff
+
+Provide audit trails and role‑based access for security and compliance
+
+Enable leadership reporting so decision makers can see trends and pressure points
+
+Because it replaced fragmented inboxes and spreadsheets, CMAP is now the single place staff go to manage constituent work.
+
+How CMAP is built
+
+We built CMAP on Microsoft Dynamics 365, using it as the backbone rather than building from scratch. That approach let us leverage enterprise security and audit capabilities while customizing the system to match Arlington County workflows. Key elements of the build:
+
+Dynamics entities, security, and workflows form the foundation
+
+Custom forms, fields, and processes reflect County business rules
+
+Data migration moved years of IQ data into Dynamics in waves (contacts, services, form letters, batches, emails)
+
+Integrations with Outlook and web forms bring interactions into CMAP automatically
+
+This architecture gives us a platform that can evolve over time while meeting audit, FOIA, and role‑based permission requirements.
+
+How CMAP works day to day
+
+CMAP’s value is clearest in everyday use. The workflow is straightforward and repeatable:
+
+A constituent reaches out by email, phone, walk‑in, or web form.
+
+Staff identify the contact in CMAP so the Contact record becomes the single source of truth for that person and their history.
+
+The interaction is logged as an Activity (email, phone call, walk‑in) capturing the ask, who handled it, actions taken, priority, and issue codes.
+
+If the issue needs coordination or is sensitive, it becomes a STARR (Staff Action or Response Requested) — a formal case with ownership, workflow stages, assignments, deadlines, and full documentation.
+
+Work proceeds across queues and departments, with visibility into what’s pending, overdue, or completed. Nothing lives only in an inbox.
+
+Reporting and dashboards provide leadership with trend analysis, volume metrics, and hot‑topic tracking.
+
+That structure turns ad hoc inbox management into accountable, auditable case management.
+
+Additional capabilities and ongoing improvement
+
+CMAP has grown beyond basic case tracking. We’ve layered on capabilities such as batch emails, knowledge articles and form letters, Board and Commission application processing, seat tracking for advisory bodies, and daily email summaries. All of this evolved through iterative, Agile delivery.
+
+Sustaining CMAP is an ongoing effort. Current and planned work includes:
+
+UX simplification to make the system easier for staff to use
+
+STARR workflow refinements to reduce handoffs and delays
+
+Enhanced reporting and analytics for better leadership insight
+
+Integration planning with other systems like QAlert and Report a Problem
+
+Evaluation of automation and AI assistance to speed routine tasks
+
+We treat CMAP as a living system: formal assessments, user feedback, and a roadmap guide continuous improvement so the platform remains aligned with County needs.
+
+Closing summary
+
+CMAP solved a practical, operational problem: it replaced fragmented, hard‑to‑report legacy tools with a single, auditable, and secure platform that captures every constituent interaction and supports coordinated County responses. Built on Dynamics 365 and refined through real‑world use, CMAP delivers visibility, accountability, and the reporting leaders need — and it continues to improve as the County’s needs evolve.
