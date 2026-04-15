@@ -6,3 +6,6 @@ document.querySelectorAll('#spSiteHeader, #spCommandBar, #spLeftNav, #sp-appBar'
     s.remove();
   }
 });
+
+
+Error: Error making HttpClient request in queryable [500] ::> {"odata.error":{"code":"-2147024860, Microsoft.SharePoint.SPQueryThrottledException","message":{"lang":"en-US","value":"The attempted operation is prohibited because it exceeds the list view threshold."}}}
