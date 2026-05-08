@@ -1,88 +1,63 @@
 (function () {
   'use strict';
 
-  if (window.__MainPlantDailyLogHistoryLoaded) {
-    return;
-  }
-  window.__MainPlantDailyLogHistoryLoaded = true;
+  var WEBPART_ID = 'mainPlantDailyLogHistoryWp';
+  var currlogdate = null;
 
-  var hostScript = document.currentScript;
+  function getRootElement() {
+    var root = document.getElementById(WEBPART_ID);
 
-  var tenantRoot = 'https://arlingtonva.sharepoint.com';
-  var formsRoot = tenantRoot + '/sites/wpcb/forms';
-  var assetsBase = formsRoot + '/SiteAssets/MissingItemsReport/js';
+    if (root) {
+      return root;
+    }
 
-  var jqueryUrl = assetsBase + '/jquery.min.js';
-  var jqueryUiUrl = assetsBase + '/jquery-ui.js';
-  var spServicesUrl = tenantRoot + '/teams/sys/master/scripts/jquery.SPServices-2014.01.min.js';
-  var microsoftAjaxUrl = 'https://ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js';
-  var spJsUrl = tenantRoot + '/_layouts/15/sp.js';
-  var spUiDialogUrl = tenantRoot + '/_layouts/15/sp.ui.dialog.js';
+    root = document.createElement('div');
+    root.id = WEBPART_ID;
 
-  var currlogdate;
+    var script = document.currentScript;
+    if (script && script.parentNode && script.parentNode.tagName.toLowerCase() !== 'head') {
+      script.parentNode.insertBefore(root, script);
+    } else {
+      document.body.appendChild(root);
+    }
 
-  function loadScript(url, testFn) {
-    return new Promise(function (resolve, reject) {
-      try {
-        if (typeof testFn === 'function' && testFn()) {
-          resolve(url);
-          return;
-        }
-      } catch (ignore) {}
-
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = url;
-      script.async = true;
-
-      script.onload = function () {
-        resolve(url);
-      };
-
-      script.onerror = function () {
-        reject(new Error('Failed to load script: ' + url));
-      };
-
-      document.head.appendChild(script);
-    });
+    return root;
   }
 
-  function loadOptionalScript(url, testFn) {
-    return loadScript(url, testFn).catch(function (err) {
-      console.warn(err.message);
-      return null;
-    });
-  }
+  function waitForDependencies(callback) {
+    var attempts = 0;
+    var maxAttempts = 80;
 
-  function loadDependencies() {
-    return loadScript(jqueryUrl, function () {
-      return !!window.jQuery;
-    })
-      .then(function () {
-        return loadScript(jqueryUiUrl, function () {
-          return !!(window.jQuery && window.jQuery.ui && window.jQuery.ui.datepicker);
+    var timer = window.setInterval(function () {
+      attempts++;
+
+      var hasJQuery = !!window.jQuery;
+      var hasDatePicker = !!(window.jQuery && window.jQuery.fn && window.jQuery.fn.datepicker);
+      var hasSPServices = !!(window.jQuery && window.jQuery.fn && window.jQuery.fn.SPServices);
+
+      if (hasJQuery && hasDatePicker && hasSPServices) {
+        window.clearInterval(timer);
+        callback();
+        return;
+      }
+
+      if (attempts >= maxAttempts) {
+        window.clearInterval(timer);
+
+        var root = getRootElement();
+        root.innerHTML =
+          '<div style="padding:12px;border:1px solid #d83b01;color:#a80000;background:#fff4ce;">' +
+          '<b>Main Plant Daily Log History could not load.</b><br />' +
+          'Required scripts did not finish loading. Please verify jQuery, jQuery UI, and SPServices script URLs.' +
+          '</div>';
+
+        console.error('Main Plant Daily Log History dependencies missing.', {
+          jQuery: hasJQuery,
+          datepicker: hasDatePicker,
+          SPServices: hasSPServices
         });
-      })
-      .then(function () {
-        return loadScript(spServicesUrl, function () {
-          return !!(window.jQuery && window.jQuery.fn && window.jQuery.fn.SPServices);
-        });
-      })
-      .then(function () {
-        return loadOptionalScript(microsoftAjaxUrl, function () {
-          return typeof window.Sys !== 'undefined';
-        });
-      })
-      .then(function () {
-        return loadOptionalScript(spJsUrl, function () {
-          return !!(window.SP && window.SP.ClientContext);
-        });
-      })
-      .then(function () {
-        return loadOptionalScript(spUiDialogUrl, function () {
-          return !!(window.SP && window.SP.UI && window.SP.UI.ModalDialog);
-        });
-      });
+      }
+    }, 250);
   }
 
   function injectCss() {
@@ -91,13 +66,15 @@
     }
 
     var css =
-      ".ui-state-default { color: red; }" +
-      ".ui-datepicker-calendar { background-color: white; }" +
-      "#mainPlantDailyLogHistoryWp .wpcb-log-toolbar { padding-bottom: 1cm; padding-top: 0.5cm; }" +
-      "#mainPlantDailyLogHistoryWp .wpcb-log-datepicker-area { float: right; }" +
-      "#mainPlantDailyLogHistoryWp .wpcb-log-link { cursor: pointer; }" +
-      "#mainPlantDailyLogHistoryWp .wpcb-toggle-hide, " +
-      "#mainPlantDailyLogHistoryWp .wpcb-toggle-show { cursor: pointer; text-decoration: none; }";
+      '.ui-state-default { color: red; }' +
+      '.ui-datepicker-calendar { background-color: white; }' +
+      '#mainPlantDailyLogHistoryWp .wpcb-log-title { text-align:center; }' +
+      '#mainPlantDailyLogHistoryWp .wpcb-log-toolbar { padding-bottom:1cm; padding-top:0.5cm; overflow:auto; }' +
+      '#mainPlantDailyLogHistoryWp .wpcb-log-datepicker-area { float:right; }' +
+      '#mainPlantDailyLogHistoryWp .wpcb-toggle-hide, ' +
+      '#mainPlantDailyLogHistoryWp .wpcb-toggle-show, ' +
+      '#mainPlantDailyLogHistoryWp .wpcb-log-link { cursor:pointer; }' +
+      '#mainPlantDailyLogHistoryWp table.wpcb-log-table { margin-bottom:16px; }';
 
     var style = document.createElement('style');
     style.id = 'mainPlantDailyLogHistoryCss';
@@ -107,37 +84,32 @@
   }
 
   function renderMarkup() {
-    if (document.getElementById('mainPlantDailyLogHistoryWp')) {
-      return;
-    }
+    var root = getRootElement();
 
-    var html =
-      '<div id="mainPlantDailyLogHistoryWp">' +
-        '<div align="center" class="ms-rteFontSize-4 ms-rteThemeForeColor-7-0"><u><b>Main Plant Daily Log History</b></u></div>' +
-        '<div style="padding-top: 0cm" id="formslogdate" class="ms-rteFontSize-4 ms-rteThemeForeColor-7-0"></div>' +
-        '<div class="wpcb-log-toolbar">' +
-          '<span><input id="wpcbPrevDayBtn" type="button" value="Previous day" /></span> ' +
-          '<span><input id="wpcbTodayBtn" type="button" value="Today" /></span> ' +
-          '<span><input id="wpcbNextDayBtn" type="button" value="Next day" /></span> ' +
-          '<span class="wpcb-log-datepicker-area">' +
-            '<input type="text" id="datepicker" /> ' +
-            '<input id="wpcbGetLogsBtn" type="button" value="Get Logs" />' +
-          '</span>' +
-        '</div>' +
-        '<div id="wpcbopdirlog"></div>' +
-        '<div id="wpcbprimarylog"></div>' +
-        '<div id="wpcbsecondarylog"></div>' +
-        '<div id="wpcbawtlog"></div>' +
-        '<div id="wpcbdwblog"></div>' +
-        '<div id="wpcbliftlog"></div>' +
-        '<div id="wpcbsupdirlog"></div>' +
-      '</div>';
+    root.innerHTML =
+      '<div class="wpcb-log-title ms-rteFontSize-4 ms-rteThemeForeColor-7-0">' +
+        '<u><b>Main Plant Daily Log History</b></u>' +
+      '</div>' +
 
-    if (hostScript && hostScript.parentNode) {
-      hostScript.insertAdjacentHTML('beforebegin', html);
-    } else {
-      document.body.insertAdjacentHTML('beforeend', html);
-    }
+      '<div style="padding-top:0cm" id="formslogdate" class="ms-rteFontSize-4 ms-rteThemeForeColor-7-0"></div>' +
+
+      '<div class="wpcb-log-toolbar">' +
+        '<span><input id="wpcbPrevDayBtn" type="button" value="Previous day" /></span> ' +
+        '<span><input id="wpcbTodayBtn" type="button" value="Today" /></span> ' +
+        '<span><input id="wpcbNextDayBtn" type="button" value="Next day" /></span> ' +
+        '<span class="wpcb-log-datepicker-area">' +
+          '<input type="text" id="datepicker" /> ' +
+          '<input id="wpcbGetLogsBtn" type="button" value="Get Logs" />' +
+        '</span>' +
+      '</div>' +
+
+      '<div id="wpcbopdirlog"></div>' +
+      '<div id="wpcbprimarylog"></div>' +
+      '<div id="wpcbsecondarylog"></div>' +
+      '<div id="wpcbawtlog"></div>' +
+      '<div id="wpcbdwblog"></div>' +
+      '<div id="wpcbliftlog"></div>' +
+      '<div id="wpcbsupdirlog"></div>';
   }
 
   function bindEvents() {
@@ -187,15 +159,12 @@
     var currentdate = new Date();
     currentdate.setDate(currentdate.getDate() - offset);
 
-    var datetime =
-      currentdate.getFullYear() + '-' +
+    return currentdate.getFullYear() + '-' +
       (currentdate.getMonth() + 1) + '-' +
       currentdate.getDate() + 'T' +
       currentdate.getHours() + ':' +
       currentdate.getMinutes() + ':' +
       currentdate.getSeconds();
-
-    return datetime;
   }
 
   function nextdaylog() {
@@ -223,16 +192,10 @@
 
   function getdaylog() {
     var $ = window.jQuery;
-    var selectedDate = null;
-
-    if ($ && $.fn && $.fn.datepicker) {
-      selectedDate = $('#datepicker').datepicker('getDate');
-    }
+    var selectedDate = $('#datepicker').datepicker('getDate');
 
     if (!selectedDate) {
-      var datepicker = document.getElementById('datepicker');
-      var datestring = datepicker ? datepicker.value : '';
-
+      var datestring = document.getElementById('datepicker').value;
       var match = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(datestring);
 
       if (!match) {
@@ -240,11 +203,11 @@
         return;
       }
 
-      var mon1 = parseInt(match[1], 10);
-      var dt1 = parseInt(match[2], 10);
-      var yr1 = parseInt(match[3], 10);
-
-      selectedDate = new Date(yr1, mon1 - 1, dt1);
+      selectedDate = new Date(
+        parseInt(match[3], 10),
+        parseInt(match[1], 10) - 1,
+        parseInt(match[2], 10)
+      );
     }
 
     currlogdate = selectedDate;
@@ -258,14 +221,8 @@
       currlogdate = new Date();
     }
 
-    var dateLabel = document.getElementById('formslogdate');
-    if (dateLabel) {
-      dateLabel.innerHTML = 'Log Date: ' + currlogdate.toDateString();
-    }
-
-    if ($ && $.fn && $.fn.datepicker && document.getElementById('datepicker')) {
-      $('#datepicker').datepicker('setDate', currlogdate);
-    }
+    $('#formslogdate').html('Log Date: ' + currlogdate.toDateString());
+    $('#datepicker').datepicker('setDate', currlogdate);
 
     var stationQuery =
       '<Query>' +
@@ -377,21 +334,6 @@
     }
   }
 
-  function ensureLogContainer(htmlid) {
-    var existing = document.getElementById(htmlid);
-
-    if (existing) {
-      return existing;
-    }
-
-    var container = document.getElementById('mainPlantDailyLogHistoryWp') || document.body;
-    var div = document.createElement('div');
-    div.id = htmlid;
-    container.appendChild(div);
-
-    return div;
-  }
-
   function htmlEncode(value) {
     if (value === null || typeof value === 'undefined') {
       return '';
@@ -416,12 +358,10 @@
   function showwpcblogevents(siteurl, listname, wptitle, htmlid, myQuery, expand) {
     var $ = window.jQuery;
 
-    if (!$ || !$.fn || !$.fn.SPServices) {
-      console.error('SPServices is not available. Cannot load log events for ' + wptitle);
+    if (!$.fn.SPServices) {
+      console.error('SPServices is not available. Cannot load: ' + wptitle);
       return;
     }
-
-    ensureLogContainer(htmlid);
 
     $().SPServices({
       operation: 'GetListItems',
@@ -481,7 +421,7 @@
         var liHtml =
           "<table width='100%' class='ms-viewlsts wpcb-log-table'>" +
             "<thead>" +
-              "<tr style='background-color: #0072c6; color: white; font-weight: bold;'>" +
+              "<tr style='background-color:#0072c6;color:white;font-weight:bold;'>" +
                 "<td height='30px' colspan='2'><b>" + htmlEncode(wptitle) + "</b></td>" +
               "</tr>" +
             "</thead>" +
@@ -503,21 +443,18 @@
 
               currtitle = item.titlecolumn;
 
-              var rowOpen;
-
               if ((titlecount % 2) === 0) {
-                rowOpen = "<tr class='ms-alternatingstrong'>";
+                liHtml += "<tr class='ms-alternatingstrong'>";
               } else {
-                rowOpen = "<tr style='background-color: white; color: #284775;'>";
+                liHtml += "<tr style='background-color:white;color:#284775;'>";
               }
 
               var minusDisplay = expand ? 'block' : 'none';
               var plusDisplay = expand ? 'none' : 'block';
               var eventDisplay = expand ? 'block' : 'none';
 
-              liHtml += rowOpen;
               liHtml +=
-                "<td style='width: 30px; vertical-align: top;'>" +
+                "<td style='width:30px;vertical-align:top;'>" +
                   "<a href='#' class='wpcb-toggle-hide' style='display:" + minusDisplay + "'><b>-</b></a>" +
                   "<a href='#' class='wpcb-toggle-show' style='display:" + plusDisplay + "'><b>+</b></a>" +
                 "</td>";
@@ -566,30 +503,18 @@
     injectCss();
     renderMarkup();
 
-    loadDependencies()
-      .then(function () {
-        var $ = window.jQuery;
+    waitForDependencies(function () {
+      var $ = window.jQuery;
 
-        $('#pageTitle').hide();
+      $('#pageTitle').hide();
 
-        if ($.fn && $.fn.datepicker) {
-          $('#datepicker').datepicker({
-            dateFormat: 'mm/dd/yy'
-          });
-        }
-
-        bindEvents();
-        todaylog();
-      })
-      .catch(function (err) {
-        console.error('Main Plant Daily Log History failed to initialize.', err);
-
-        var dateLabel = document.getElementById('formslogdate');
-        if (dateLabel) {
-          dateLabel.innerHTML =
-            'Main Plant Daily Log History failed to load required scripts. Please check the browser console.';
-        }
+      $('#datepicker').datepicker({
+        dateFormat: 'mm/dd/yy'
       });
+
+      bindEvents();
+      todaylog();
+    });
   }
 
   window.getmodifieddate = getmodifieddate;
@@ -603,18 +528,9 @@
   window.eventsshow = eventsshow;
   window.showwpcblogevents = showwpcblogevents;
 
-  window.MainPlantDailyLogHistory = {
-    nextdaylog: nextdaylog,
-    prevdaylog: prevdaylog,
-    todaylog: todaylog,
-    getdaylog: getdaylog,
-    loadlogdata: loadlogdata,
-    showwpcblogevents: showwpcblogevents
-  };
-
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    setTimeout(init, 0);
-  } else {
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
