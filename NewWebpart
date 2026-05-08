@@ -1,0 +1,102 @@
+Below is code of another webpart. This is a bit more complex because it also calls another js file. I attached it.<script type="text/javascript" src="/sites/wpcb/forms/SiteAssets/MissingItemsReport/js/jquery.min.js"></script>
+<script type="text/javascript" src="/sites/wpcb/forms/SiteAssets/MissingItemsReport/js/jquery-ui.js"></script>
+<script src="/teams/sys/master/scripts/jquery.SPServices-2014.01.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>
+<style type="text/css">
+    .ui-state-default
+    {
+     color: red;
+    }
+    .ui-datepicker-calendar
+    {
+     background-color: white;
+    }
+</style>
+<script language="javascript" type="text/javascript">
+var currlogdate;
+function getmodifieddate(cdate) 
+{ 
+var tdate;
+var dd = cdate.getDate(); 
+var mm = cdate.getMonth()+1; 
+var yyyy = cdate.getFullYear(); 
+if(dd<10) 
+{ 
+dd='0'+dd 
+} 
+if(mm<10) 
+{ 
+mm='0'+mm 
+} 
+tdate =  yyyy+'-'+mm+'-'+ dd +'T12:00:00Z'; 
+return tdate; 
+} 
+
+function nextdaylog() 
+{ 
+currlogdate.setDate(currlogdate.getDate() + 1);
+loadlogdata(currlogdate);
+}
+function getdaylog() 
+{ 
+
+var datestring = document.getElementById('datepicker').value;
+var mon1 = parseInt(datestring.substring(0,2));
+var dt1    = parseInt(datestring.substring(3,5));
+var yr1   = parseInt(datestring.substring(6,10));
+currlogdate = new Date(yr1,mon1-1,dt1);
+//currlogdate.setDate(document.getElementById('datepicker').value);
+loadlogdata(currlogdate);
+}
+
+function prevdaylog() 
+{ 
+currlogdate.setDate(currlogdate.getDate() - 1);
+loadlogdata(currlogdate);
+}
+function todaylog() 
+{ 
+currlogdate = new Date();
+loadlogdata(currlogdate);
+} 
+function loadlogdata()
+{
+document.getElementById("formslogdate").innerHTML= "Log Date: " + currlogdate.toDateString();
+var stationQuery = "<Query><OrderBy><FieldRef Name=\"Created\"/></OrderBy><Where><Eq><FieldRef Name='Created' /><Value Type='DateTime'>"+getmodifieddate(currlogdate)+"</Value></Eq></Where></Query>";
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms","{DEC6CAF6-944C-45FA-A14F-9AF71D797452}","Operational Directives Log","wpcbopdirlog",stationQuery ,false);
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms/primary","{85154071-be7b-4318-9881-be10c8b5f950}","Primary Station Events Log","wpcbprimarylog",stationQuery,false);
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms/secondary","{4b77c1a4-ddf3-4f73-8031-8e8ddb1afaf2}","Secondary Station Events Log","wpcbsecondarylog",stationQuery,false);
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms/awt","{cd663a51-7318-4ca1-8bc4-f456bf25d094}","AWT Station Log","wpcbawtlog",stationQuery,false);
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms/dwb","{b98af892-663a-42d6-b251-fea332f1601d}","Dewater Building Station Events Log","wpcbdwblog",stationQuery,false);
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms/lift","{c2f60dcf-486e-4e0c-acab-46354f04a9d1}","Lift Station Events Log","wpcbliftlog",stationQuery,false);
+showwpcblogevents("https://arlingtonva.sharepoint.com/sites/wpcb/forms","{584ebdcd-9498-4fd2-ba47-34ca838a904b}","Supervisors Events Log","wpcbsupdirlog",stationQuery,false);
+}
+ $(document).ready(function() {
+ //$('#datepicker').datepicker();
+$("#pageTitle").hide();
+$.getScript("https://arlingtonva.sharepoint.com/sites/wpcb/forms/SiteAssets/mainloghelper.js").done(function(data,textstatus,jqxhr
+{
+ todaylog()
+});
+});
+$(function()
+{
+//currentlogdate = Date.parse(datepicker.toString());
+$('#datepicker').datepicker();
+});
+</script>
+<div align="center" class="ms-rteFontSize-4 ms-rteThemeForeColor-7-0" ><u><b>Main Plant Daily Log History</b></u></div>
+<div style="padding-top: 0cm" id="formslogdate" class="ms-rteFontSize-4 ms-rteThemeForeColor-7-0" ></div>
+<div style="padding-bottom: 1cm;padding-top: 0.5cm">
+<span> <input onclick="prevdaylog();" type="button" value="Previous day"/> </span>
+<span><input onclick="todaylog();" type="button" value="Today"/> </span>
+<span><input onclick="nextdaylog();" type="button" value="Next day"/> </span>
+<span style='float:right'><input type="text" id="datepicker"><input onclick="getdaylog();" type="button" value="Get Logs"/></span>
+</div>
+<div id="wpcbopdirlog"></div>
+<div id="wpcbprimarylog"></div>
+<div id="wpcbsecondarylog"></div>
+<div id="wpcbawtlog"></div>
+<div id="wpcbdwblog"></div>
+<div id="wpcbliftlog"></div>
+<div id="wpcbsupdirlog"></div>
