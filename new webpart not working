@@ -1,0 +1,209 @@
+<script src="https://arlingtonva.sharepoint.com/teams/sys/master/scripts/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="https://arlingtonva.sharepoint.com/teams/sys/master/scripts/jquery.SPServices-2014.01.min.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+
+function getModifiedDateString(date)
+{
+    var dateUTC;
+
+	if ( typeof date === "string" ) {
+
+		// Convert UTC string to date object
+		var d = new Date();
+		var year = date.split('-')[0];
+		var month = date.split('-')[1] - 1;
+		var day;
+		var hour;
+		var minute;
+		var second;
+		day = date.split('-')[2].split('T')[0];
+		hour = date.split('T')[1].split(':')[0];
+		minute = date.split('T')[1].split(':')[1].split(':')[0];
+		second = date.split('T')[1].split(':')[2].split('Z')[0];
+		dateUTC = new Date( Date.UTC( year, month, day, hour, minute, second ) );
+	}
+	else if ( typeof date === "object" ) {
+		dateUTC = date;
+	}
+	else {
+		alert( "Date is not a valid string or date object." );
+	}
+	//dateUTC.addHours(-3);
+	var rc = "";
+	/*rc += (date.getMonth()+1).toString();
+	rc += "/";
+	rc += date.getDate().toString();
+	rc += "/";
+	rc += date.getFullYear().toString();
+	rc += " at ";*/
+	if(DST(dateUTC))
+	{
+	//dateUTC.addHours(-1);
+	}
+	if(dateUTC.getHours() > 11)
+	{
+		if(dateUTC.getHours() > 12)
+	    rc += (dateUTC.getHours() - 12).toString();
+	    else
+	    rc += dateUTC.getHours().toString();
+		rc += ":";
+		if(dateUTC.getMinutes() > 10)
+		{
+		rc += dateUTC.getMinutes().toString();
+		}
+		else
+		{
+		rc += "00";
+		}		
+		rc += " PM";
+	}
+	else
+	{
+		rc += dateUTC.getHours().toString();
+		rc += ":";
+		if(dateUTC.getMinutes() > 10)
+		{
+		rc += dateUTC.getMinutes().toString();
+		}
+		else
+		{
+		rc += "00";
+		}
+		rc += " AM";
+	}
+	return rc;
+}
+
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
+}
+
+function DST(dateUTC){
+var yr = dateUTC.getFullYear();
+var dst_start = new Date("March 14, "+yr+" 02:00:00"); // 2nd Sunday in March can't occur after the 14th 
+var dst_end = new Date("November 07, "+yr+" 02:00:00"); // 1st Sunday in November can't occur after the 7th
+var day = dst_start.getDay(); // day of week of 14th
+dst_start.setDate(14-day); // Calculate 2nd Sunday in March of this year
+day = dst_end.getDay(); // day of the week of 7th
+dst_end.setDate(7-day); // Calculate first Sunday in November of this year
+if (dateUTC >= dst_start && dateUTC < dst_end){ //does dateUTC fall inside of DST period?
+return true; //if so then return true
+}
+return false; //if not then return false
+}
+
+var myQueryOptions = "<QueryOptions><DateInUtc>TRUE</DateInUtc></QueryOptions>";
+var myQuery = "<Query><OrderBy><FieldRef Name=\"RequestorDivision\" Ascending='True'/><FieldRef Name=\"Title\" Ascending='True'/></OrderBy><Where><And><Leq><FieldRef Name=\"StartDateTime\"/><Value Type=\"DateTime\" IncludeTimeValue=\"FALSE\"><Today/></Value></Leq><Geq><FieldRef Name='EndDateTime' /><Value Type='DateTime' IncludeTimeValue='FALSE'><Today /></Value></Geq></And></Where></Query>";
+var i = 1;
+var itmsexist = 0;
+var tstartdate;
+var tdate;
+var cdate = new Date();
+$(document).ready(function() {
+  $().SPServices({
+    webURL: "/sites/wpcb/apps/",
+    operation: "GetListItems",
+    async: false,
+    listName: "PersonnelStatusCalendar",
+    CAMLViewFields: "<ViewFields><FieldRef Name='Title' /><FieldRef Name='StartDateTime' /><FieldRef Name='EndDateTime' /><FieldRef Name='RequestorDivision' /><FieldRef Name='RequestType' /><FieldRef Name='AllDayEvent' /></ViewFields>",
+	CAMLQuery: myQuery,
+	CAMLRowLimit: 100,
+	CAMLQueryOptions: myQueryOptions,
+    completefunc: function (xData, Status) {
+    //alert(xData.responseText);
+		var liHtml = "<table width='100%' class='ms-viewlsts' id='#myTable'><thead><tr style='background-color: #5d7b9d; color: white; font-weight: bold;'><td>Requestor</td><td>Division</td><td>Request Type</td><td>Time</td></tr></tdead><tbody>"
+		responseXML = $.parseXML(xData.responseText);
+		$XML = $(responseXML);
+		var resultsLength = $XML.find('z\\:row, row').length;
+		var arrayResults = [];
+		var count = 0;		
+		$XML.find('z\\:row, row').each(function(){     		
+			itmsexist = 1;
+			tstartdate = $(this).attr('ows_StartDateTime');
+			tdate = tstartdate.substr(0,tstartdate.indexOf('T')).split("-");
+			try
+			{
+				if((new Date(tdate[0],tdate[1]-1,tdate[2])).getTime() <= (new Date(cdate.getFullYear(),cdate.getMonth(),cdate.getDate())).getTime())
+				{
+
+					//alert( $(this).attr("ows_Requestor_x0020_Name") );
+					var currrequestor = $(this).attr("ows_Title");
+					var division = $(this).attr("ows_RequestorDivision");
+					var requestType = $(this).attr("ows_RequestType");
+					var fADE = $( this).attr( 'ows_AllDayEvent' );
+					var thisADE = false;
+					var thisStart;
+					var thisEnd;
+					var thisUrl;
+  					if ( typeof fADE !== "undefined" && fADE !== "false" ) 
+						{
+							thisUrl = 'All Day';
+							//alert($(this).attr('ows_EventDate') + " " + $(this).attr('ows_EndDate'));							
+						}
+  					else 
+  						{
+		 					thisStartTime = getModifiedDateString($(this).attr('ows_StartDateTime'));						
+		 					thisEndTime = getModifiedDateString($(this).attr('ows_EndDateTime' ));	
+		 					thisUrl = thisStartTime + ' - ' + thisEndTime;													
+						}
+						
+					arrayResults.push({
+							requestorcolumn: currrequestor,
+							divisioncolumn: division,
+							typecolumn: requestType,
+							timecolumn: thisUrl
+						});
+						count++;			
+         		}
+		}
+   		catch(err)
+   		{
+   			alert("error: "+err.message);
+   		}         		         	    			
+     });
+     		arrayResults.sort(function(a, b) {  
+     				a = a["divisioncolumn"]+a["requestorcolumn"];
+					b = b["divisioncolumn"]+b["requestorcolumn"];
+					return a == b ? 0 : (a < b ? -1 : 1)
+     		});
+     								//alert(arrayResults[6]["requestorcolumn"]);
+     		for(i=0;i<count;i++)
+     		{
+     				if((i%2) == 0)
+						{
+       						liHtml += "<tr class='ms-alternatingstrong'>";
+       						liHtml += "<td>" + arrayResults[i]["requestorcolumn"] + "</td>";
+       						liHtml += "<td>" +  arrayResults[i]["divisioncolumn"] + "</td>";
+   					    	liHtml += "<td>" +  arrayResults[i]["typecolumn"] + "</td>";
+       						liHtml += "<td>" +  arrayResults[i]["timecolumn"] + "</td>";
+       						liHtml += "</tr>";
+       						//i = 1;
+        				}
+       				else
+       					{
+        					liHtml += "<tr style='background-color: white; color: #284775;'>";
+       						liHtml += "<td>" + arrayResults[i]["requestorcolumn"] + "</td>";
+       						liHtml += "<td>" +  arrayResults[i]["divisioncolumn"] + "</td>";
+   					    	liHtml += "<td>" +  arrayResults[i]["typecolumn"] + "</td>";
+       						liHtml += "<td>" +  arrayResults[i]["timecolumn"] + "</td>";
+       						liHtml += "</tr>";
+       						//i = 0;
+         				}  
+     		}
+ 			if(itmsexist == 0)
+				{
+  					liHtml +="<tr class='ms-alternatingstrong'><td colspan='3' align='center'>All WPCB Staff Present Today</td></tr>";
+				}
+			liHtml += "</tbody></table>";
+			$("#tasksUL").append(liHtml);			
+    }
+  });
+ });
+
+</script>
+<div id="tasksUL"></div>
+
+
+
+
