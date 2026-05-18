@@ -1,0 +1,366 @@
+<div id="personnelStatusCalendarWp"></div>
+
+<script src="https://arlingtonva.sharepoint.com/teams/sys/master/scripts/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="https://arlingtonva.sharepoint.com/teams/sys/master/scripts/jquery.SPServices-2014.01.min.js" type="text/javascript"></script>
+
+<script src="https://arlingtonva.sharepoint.com/sites/wpcb/forms/SiteAssets/Personnel-Status-Calendar.js?ver=20260518a" type="text/javascript"></script>
+
+
+
+(function () {
+  'use strict';
+
+  var WEBPART_ID = 'personnelStatusCalendarWp';
+  var OUTPUT_ID = 'tasksUL';
+
+  function getRootElement() {
+    var root = document.getElementById(WEBPART_ID);
+
+    if (root) {
+      return root;
+    }
+
+    root = document.createElement('div');
+    root.id = WEBPART_ID;
+
+    var script = document.currentScript;
+    if (script && script.parentNode && script.parentNode.tagName.toLowerCase() !== 'head') {
+      script.parentNode.insertBefore(root, script);
+    } else {
+      document.body.appendChild(root);
+    }
+
+    return root;
+  }
+
+  function waitForDependencies(callback) {
+    var attempts = 0;
+    var maxAttempts = 80;
+
+    var timer = window.setInterval(function () {
+      attempts++;
+
+      var hasJQuery = !!window.jQuery;
+      var hasSPServices = !!(window.jQuery && window.jQuery.fn && window.jQuery.fn.SPServices);
+
+      if (hasJQuery && hasSPServices) {
+        window.clearInterval(timer);
+        callback();
+        return;
+      }
+
+      if (attempts >= maxAttempts) {
+        window.clearInterval(timer);
+
+        getRootElement().innerHTML =
+          '<div style="padding:12px;border:1px solid #d83b01;color:#a80000;background:#fff4ce;">' +
+            '<b>Personnel Status Calendar could not load.</b><br />' +
+            'Required scripts did not finish loading. Please verify jQuery and SPServices script URLs.' +
+          '</div>';
+
+        console.error('Personnel Status Calendar dependencies missing.', {
+          jQuery: hasJQuery,
+          SPServices: hasSPServices
+        });
+      }
+    }, 250);
+  }
+
+  function injectCss() {
+    if (document.getElementById('personnelStatusCalendarCss')) {
+      return;
+    }
+
+    var css =
+      '#' + WEBPART_ID + ' table.personnel-status-table { width:100%; border-collapse:collapse; }' +
+      '#' + WEBPART_ID + ' table.personnel-status-table td { padding:6px; }' +
+      '#' + WEBPART_ID + ' table.personnel-status-table thead tr { background-color:#5d7b9d; color:white; font-weight:bold; }';
+
+    var style = document.createElement('style');
+    style.id = 'personnelStatusCalendarCss';
+    style.type = 'text/css';
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
+  }
+
+  function renderMarkup() {
+    var root = getRootElement();
+
+    root.innerHTML =
+      '<div id="' + OUTPUT_ID + '"></div>';
+  }
+
+  function htmlEncode(value) {
+    if (value === null || typeof value === 'undefined') {
+      return '';
+    }
+
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function valueOrBlank(value) {
+    return value === null || typeof value === 'undefined' ? '' : value;
+  }
+
+  function pad2(value) {
+    value = parseInt(value, 10);
+    return value < 10 ? '0' + value : String(value);
+  }
+
+  function parseSharePointUtcDate(dateValue) {
+    if (typeof dateValue === 'string') {
+      var parts = dateValue.split('T');
+
+      if (parts.length < 2) {
+        return null;
+      }
+
+      var dateParts = parts[0].split('-');
+      var timeParts = parts[1].replace('Z', '').split(':');
+
+      return new Date(Date.UTC(
+        parseInt(dateParts[0], 10),
+        parseInt(dateParts[1], 10) - 1,
+        parseInt(dateParts[2], 10),
+        parseInt(timeParts[0], 10),
+        parseInt(timeParts[1], 10),
+        parseInt(timeParts[2], 10)
+      ));
+    }
+
+    if (dateValue instanceof Date) {
+      return dateValue;
+    }
+
+    return null;
+  }
+
+  function getModifiedDateString(dateValue) {
+    var dateUTC = parseSharePointUtcDate(dateValue);
+
+    if (!dateUTC) {
+      return '';
+    }
+
+    var hours = dateUTC.getHours();
+    var minutes = dateUTC.getMinutes();
+
+    var suffix = hours >= 12 ? 'PM' : 'AM';
+    var displayHour = hours % 12;
+
+    if (displayHour === 0) {
+      displayHour = 12;
+    }
+
+    return displayHour.toString() + ':' + pad2(minutes) + ' ' + suffix;
+  }
+
+  function isAllDayEvent(value) {
+    if (typeof value === 'undefined' || value === null) {
+      return false;
+    }
+
+    value = String(value).toLowerCase();
+
+    return value === '1' || value === 'true' || value === 'yes';
+  }
+
+  function isStartDateTodayOrEarlier(startDateValue) {
+    if (!startDateValue) {
+      return false;
+    }
+
+    var datePart = startDateValue.substr(0, startDateValue.indexOf('T'));
+    var pieces = datePart.split('-');
+
+    if (pieces.length !== 3) {
+      return false;
+    }
+
+    var startDate = new Date(
+      parseInt(pieces[0], 10),
+      parseInt(pieces[1], 10) - 1,
+      parseInt(pieces[2], 10)
+    );
+
+    var currentDate = new Date();
+    var today = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate()
+    );
+
+    return startDate.getTime() <= today.getTime();
+  }
+
+  function loadPersonnelStatusCalendar() {
+    var $ = window.jQuery;
+
+    var myQueryOptions =
+      '<QueryOptions>' +
+        '<DateInUtc>TRUE</DateInUtc>' +
+      '</QueryOptions>';
+
+    var myQuery =
+      '<Query>' +
+        '<OrderBy>' +
+          '<FieldRef Name="RequestorDivision" Ascending="True"/>' +
+          '<FieldRef Name="Title" Ascending="True"/>' +
+        '</OrderBy>' +
+        '<Where>' +
+          '<And>' +
+            '<Leq>' +
+              '<FieldRef Name="StartDateTime"/>' +
+              '<Value Type="DateTime" IncludeTimeValue="FALSE"><Today/></Value>' +
+            '</Leq>' +
+            '<Geq>' +
+              '<FieldRef Name="EndDateTime" />' +
+              '<Value Type="DateTime" IncludeTimeValue="FALSE"><Today /></Value>' +
+            '</Geq>' +
+          '</And>' +
+        '</Where>' +
+      '</Query>';
+
+    $().SPServices({
+      webURL: 'https://arlingtonva.sharepoint.com/sites/wpcb/apps',
+      operation: 'GetListItems',
+      async: false,
+      listName: 'PersonnelStatusCalendar',
+      CAMLViewFields:
+        '<ViewFields>' +
+          '<FieldRef Name="Title" />' +
+          '<FieldRef Name="StartDateTime" />' +
+          '<FieldRef Name="EndDateTime" />' +
+          '<FieldRef Name="RequestorDivision" />' +
+          '<FieldRef Name="RequestType" />' +
+          '<FieldRef Name="AllDayEvent" />' +
+        '</ViewFields>',
+      CAMLQuery: myQuery,
+      CAMLRowLimit: 100,
+      CAMLQueryOptions: myQueryOptions,
+
+      completefunc: function (xData, Status) {
+        var arrayResults = [];
+
+        try {
+          var responseXML = xData.responseXML || $.parseXML(xData.responseText);
+          var $XML = $(responseXML);
+
+          $XML.find('z\\:row, row').each(function () {
+            try {
+              var startDateTime = $(this).attr('ows_StartDateTime');
+
+              if (!isStartDateTodayOrEarlier(startDateTime)) {
+                return;
+              }
+
+              var requestor = valueOrBlank($(this).attr('ows_Title'));
+              var division = valueOrBlank($(this).attr('ows_RequestorDivision'));
+              var requestType = valueOrBlank($(this).attr('ows_RequestType'));
+              var allDayEvent = $(this).attr('ows_AllDayEvent');
+
+              var timeDisplay;
+
+              if (isAllDayEvent(allDayEvent)) {
+                timeDisplay = 'All Day';
+              } else {
+                var startTime = getModifiedDateString(startDateTime);
+                var endTime = getModifiedDateString($(this).attr('ows_EndDateTime'));
+
+                timeDisplay = startTime + ' - ' + endTime;
+              }
+
+              arrayResults.push({
+                requestorcolumn: requestor,
+                divisioncolumn: division,
+                typecolumn: requestType,
+                timecolumn: timeDisplay
+              });
+            } catch (rowErr) {
+              console.warn('Personnel Status Calendar row parse error.', rowErr);
+            }
+          });
+        } catch (err) {
+          console.error('Personnel Status Calendar response parse error.', err);
+        }
+
+        arrayResults.sort(function (a, b) {
+          var aSort = String(a.divisioncolumn || '') + String(a.requestorcolumn || '');
+          var bSort = String(b.divisioncolumn || '') + String(b.requestorcolumn || '');
+
+          if (aSort === bSort) {
+            return 0;
+          }
+
+          return aSort < bSort ? -1 : 1;
+        });
+
+        renderResults(arrayResults);
+      }
+    });
+  }
+
+  function renderResults(arrayResults) {
+    var $ = window.jQuery;
+
+    var liHtml =
+      '<table class="ms-viewlsts personnel-status-table">' +
+        '<thead>' +
+          '<tr>' +
+            '<td>Requestor</td>' +
+            '<td>Division</td>' +
+            '<td>Request Type</td>' +
+            '<td>Time</td>' +
+          '</tr>' +
+        '</thead>' +
+        '<tbody>';
+
+    if (arrayResults.length === 0) {
+      liHtml +=
+        '<tr class="ms-alternatingstrong">' +
+          '<td colspan="4" align="center">All WPCB Staff Present Today</td>' +
+        '</tr>';
+    } else {
+      for (var i = 0; i < arrayResults.length; i++) {
+        if ((i % 2) === 0) {
+          liHtml += '<tr class="ms-alternatingstrong">';
+        } else {
+          liHtml += '<tr style="background-color:white;color:#284775;">';
+        }
+
+        liHtml +=
+          '<td>' + htmlEncode(arrayResults[i].requestorcolumn) + '</td>' +
+          '<td>' + htmlEncode(arrayResults[i].divisioncolumn) + '</td>' +
+          '<td>' + htmlEncode(arrayResults[i].typecolumn) + '</td>' +
+          '<td>' + htmlEncode(arrayResults[i].timecolumn) + '</td>' +
+        '</tr>';
+      }
+    }
+
+    liHtml += '</tbody></table>';
+
+    $('#' + OUTPUT_ID).html(liHtml);
+  }
+
+  function init() {
+    injectCss();
+    renderMarkup();
+
+    waitForDependencies(function () {
+      loadPersonnelStatusCalendar();
+    });
+  }
+
+  window.getModifiedDateString = getModifiedDateString;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
