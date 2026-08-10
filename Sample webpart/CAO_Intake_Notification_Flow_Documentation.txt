@@ -1,0 +1,534 @@
+CAO - INTAKE FORM - NOTIFICATION PROCESS FLOW
+TECHNICAL AND BUSINESS PROCESS DOCUMENTATION
+
+FLOW NAME
+
+CAO - Intake form - Notification Process flow - PROD
+
+
+1. PURPOSE
+
+This Power Automate flow manages the notification lifecycle for the CAO Intake Form process.
+
+The flow handles the following events:
+
+1. A new intake request is submitted.
+2. Attorneys are notified of the new request.
+3. The requestor receives a confirmation email.
+4. An attorney is assigned to the request.
+5. Administrative assistants are notified to create a case matter.
+6. The DocSetID is added to the intake record.
+7. The flow searches SharePoint for the newly created case matter.
+8. The assigned attorney is notified when the case matter is available.
+
+
+2. TRIGGER
+
+The flow starts when an item is created or modified in the CAO Intake Form SharePoint list.
+
+SharePoint site:
+https://arlingtonva.sharepoint.com/sites/CAO-IntakeForm/
+
+List:
+CAO Intake Form
+
+Trigger polling frequency:
+Every 1 minute
+
+
+3. CONNECTIONS
+
+The flow uses the following Power Automate connectors:
+
+- SharePoint Online
+- Microsoft 365 Outlook
+
+
+4. VARIABLES
+
+CaseManagementSite
+Type: String
+Purpose: Stores the CAO Case Management site URL.
+Value:
+https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite/
+
+varSite
+Type: String
+Purpose: Stores the CAO Intake Form site URL.
+Value:
+https://arlingtonva.sharepoint.com/sites/CAO-IntakeForm/
+
+ItemEditLink
+Type: String
+Purpose: Builds a direct link to the current intake form item.
+
+SearchAttempts
+Type: Integer
+Initial value: 0
+Purpose: Tracks the number of SharePoint Search attempts.
+
+MaxSearchAttempts
+Type: Integer
+Value: 5
+Purpose: Defines the maximum number of SharePoint Search attempts.
+
+SearchWaitDuration
+Type: Integer
+Value: 5
+Purpose: Stores a search wait-duration setting. The visible Delay action in the definition waits 1 minute.
+
+SearchFound
+Type: Boolean
+Initial value: false
+Purpose: Indicates whether the SharePoint Document Set was found.
+
+varAttachArray
+Type: Array
+Purpose: Stores intake-form email attachments.
+
+varAttorneyEmails
+Type: String
+Purpose: Stores the attorney notification recipient list.
+
+varAAEmails
+Type: String
+Purpose: Stores the administrative-assistant recipient list.
+
+varTemp
+Type: String
+Purpose: Temporarily builds semicolon-separated recipient lists.
+
+
+5. RECIPIENT CONFIGURATION
+
+The flow reads email recipients from the SharePoint list named:
+
+IntakeForm Emails
+
+It loops through the list items and reads each item's People field. It builds semicolon-separated email strings.
+
+When the configuration item Title equals Attorney, the resulting email string is assigned to varAttorneyEmails.
+
+For the other branch, the resulting email string is assigned to varAAEmails.
+
+
+6. CHANGE DETECTION
+
+The flow uses the SharePoint action:
+
+Get changes for an item or a file (properties only)
+
+This action evaluates changes since the trigger window started. The results are used to determine whether:
+
+- The item is new.
+- The Status column changed.
+- The DocSetID column changed.
+
+
+7. STAGE 1 - NEW INTAKE ITEM
+
+Condition
+
+The flow treats an item as new when SinceVersionExisted equals false.
+
+
+7.1 Remove Existing Sharing
+
+The flow runs Stop sharing an item or a file for the intake item.
+
+
+7.2 Grant Read Access
+
+The flow grants read access to the following recipients when values are available:
+
+- Item author
+- Requestor
+- Department Head
+- Division Chief
+- Additional Arlington County employee
+
+The configured SharePoint role value is:
+
+role:1073741826
+
+
+7.3 Grant Edit Access
+
+The flow grants edit access to the recipients stored in:
+
+- varAttorneyEmails
+- varAAEmails
+
+The configured SharePoint role value is:
+
+role:1073741827
+
+
+7.4 Retrieve Attachments
+
+The flow performs the following actions:
+
+1. Get attachments from the CAO Intake Form item.
+2. Loop through each attachment.
+3. Get the attachment content.
+4. Append the attachment name and content to varAttachArray.
+
+Each array entry contains:
+
+- name
+- ContentBytes
+
+
+7.5 Build New-Request Email
+
+The flow uses a Compose action containing an HTML email template.
+
+The email includes intake information such as:
+
+Requestor information:
+
+- Requestor name
+- Requestor email
+- Department
+- Department Head email
+- Division
+- Division Chief email
+- Additional Arlington County employee email
+
+Request details:
+
+- Main Category
+- Deed Information
+- Contract Information
+- Contract Number
+- New or Amended Contract
+- Whether the original contract and amendments were attached
+- Request Title
+- Short description and relevant details
+- Priority Level
+- Due Date
+- Reason for Priority Level or Due Date
+
+The template also contains a link to the intake request.
+
+
+7.6 Send Notification to Attorneys
+
+Recipients:
+varAttorneyEmails
+
+Subject:
+New legal assistance request from [Requestor Email]
+
+Body:
+The generated HTML request summary
+
+Attachments:
+varAttachArray
+
+Importance:
+Normal
+
+BCC:
+Kgunnam@arlingtonva.us
+
+
+7.7 Send Confirmation to Requestor
+
+Recipients:
+
+- Item author
+- Additional Arlington County employee
+
+Subject:
+CAO Request: [Request Title]
+
+The email thanks the requestor for submitting a request for legal assistance and states that the requestor will receive another email if the matter is assigned to an attorney. It includes a copy of the submitted information and the intake attachments.
+
+BCC:
+Kgunnam@arlingtonva.us
+
+After the confirmation email succeeds, this new-item branch terminates with a Succeeded status.
+
+
+8. STAGE 2 - ATTORNEY ASSIGNMENT
+
+This condition runs after the new-item condition.
+
+The attorney-assignment branch runs when all of the following are true:
+
+1. The Status column changed.
+2. Status equals Assigned Attorney.
+3. DocSetID is null.
+
+
+8.1 Grant Assigned Attorney Access
+
+The flow grants read access to the person in the AssignedAttorney field.
+
+The configured SharePoint role value is:
+
+role:1073741826
+
+
+8.2 Notify Administrative Assistants
+
+Recipients:
+varAAEmails
+
+Subject:
+Legal Assistance Request for [Requestor Name] has been assigned to [Assigned Attorney].
+
+The message instructs the recipient to:
+
+1. Create a new Case Matter in the Case Management system.
+2. Update the DocSetID in the intake record.
+
+The message includes a link to the intake item.
+
+BCC:
+Kgunnam@arlingtonva.us
+
+
+8.3 Notify Requestor of Attorney Assignment
+
+Recipients:
+
+- Item author
+- Additional Arlington County employee
+
+Subject:
+Your request for legal assistance regarding [Request Title] has been assigned
+
+The email identifies the assigned attorney and states that the matter will be addressed in the normal course of business. It tells the recipient to notify CAO if a different priority is needed and provides cao@arlingtonva.us for questions.
+
+BCC:
+Kgunnam@arlingtonva.us
+
+After this email succeeds, the attorney-assignment branch terminates with a Succeeded status.
+
+
+9. STAGE 3 - DOCSETID ASSIGNED
+
+The DocSetID branch runs when all of the following are true:
+
+1. The DocSetID column changed.
+2. DocSetID is not null.
+3. AssignedAttorney is not null.
+
+This indicates that an administrative assistant has created the Case Matter and updated the intake record with the Document Set identifier.
+
+
+10. SHAREPOINT SEARCH PROCESS
+
+The flow uses a Do Until loop to search for the newly created Document Set.
+
+The loop stops when either:
+
+- SearchFound equals true, or
+- SearchAttempts is greater than or equal to MaxSearchAttempts.
+
+The loop has the following configured limits:
+
+- Maximum count: 60
+- Timeout: 1 hour
+
+
+10.1 Search Request
+
+The flow sends a POST request to:
+
+_api/search/postquery
+
+The search query uses:
+
+mvDocSetNumberOWSTEXT:"[DocSetID]" ContentTypeId:0x0120D520*
+
+Row limit:
+5
+
+The request shown in the definition selects:
+
+- Title
+- mvDocSetNumberOWSTEXT
+
+
+10.2 Parse Search Response
+
+The flow parses the SharePoint Search REST response and retrieves rows from:
+
+PrimaryQueryResult > RelevantResults > Table > Rows > results
+
+
+10.3 Retry Behavior
+
+If the search result array is empty, the flow:
+
+1. Increments SearchAttempts by 1.
+2. Waits 1 minute.
+3. Repeats the search.
+
+If results are returned, the flow sets SearchFound to true.
+
+MaxSearchAttempts is set to 5.
+
+
+11. PROCESS SUCCESSFUL SEARCH RESULT
+
+When SearchFound equals true, the flow performs the following actions.
+
+
+11.1 Extract Path
+
+The flow filters the search result cells for the key Path and stores its Value.
+
+
+11.2 Extract List ID
+
+The flow filters the search result cells for the key ListId.
+
+It removes the opening and closing braces from the ListId value.
+
+
+11.3 Retrieve Library Information
+
+The flow sends a GET request to the Case Management site using the extracted List ID.
+
+The request retrieves:
+
+- Library Title
+- Library ID
+- Root Folder Name
+- Root Folder Server Relative URL
+
+The library Title is stored for use in the notification email.
+
+
+11.4 Notify Assigned Attorney That the Case Exists
+
+Recipient:
+Assigned Attorney
+
+Subject:
+A new case has been assigned to you.
+
+The email includes:
+
+- A link to the intake form
+- A link to the newly created Case Matter
+- The document library name
+- A link to the CAO Case Management System
+
+BCC:
+Kgunnam@arlingtonva.us
+
+
+12. SEARCH FAILURE HANDLING
+
+If SearchFound is still false after the search loop, the flow sends a failure notification.
+
+Recipient:
+Kgunnam@arlingtonva.us
+
+Subject:
+Failed to get search results for CAO
+
+The body includes:
+
+- Current UTC timestamp
+- A dynamically generated URL to the Power Automate flow run
+
+The definition also contains a disabled test or fallback branch represented by a condition that compares true to false. That branch contains a hard-coded example Case Matter link and notification email, but its condition prevents it from running as currently defined.
+
+
+13. EMAIL NOTIFICATION MATRIX
+
+Event: New intake item
+Recipients: Configured attorneys
+Purpose: Notify attorneys of a new legal-assistance request
+Attachments: Yes
+
+Event: New intake item
+Recipients: Item author and additional County employee
+Purpose: Confirm receipt and provide a copy of the request
+Attachments: Yes
+
+Event: Attorney assigned
+Recipients: Configured administrative assistants
+Purpose: Request Case Matter creation and DocSetID update
+Attachments: No
+
+Event: Attorney assigned
+Recipients: Item author and additional County employee
+Purpose: Notify the requestor of the assigned attorney
+Attachments: No
+
+Event: DocSetID assigned and Document Set found
+Recipients: Assigned attorney
+Purpose: Provide links to the intake item and new Case Matter
+Attachments: No
+
+Event: SharePoint Search does not find the Document Set
+Recipients: Kgunnam@arlingtonva.us
+Purpose: Report the failure and provide the flow-run URL
+Attachments: No
+
+
+14. END-TO-END BUSINESS PROCESS
+
+Requestor submits CAO Intake Form
+    |
+    v
+SharePoint item is created
+    |
+    v
+Flow removes existing item sharing
+    |
+    v
+Flow grants read and edit permissions
+    |
+    v
+Flow retrieves intake attachments
+    |
+    v
+Flow emails the new request to configured attorneys
+    |
+    v
+Flow sends confirmation to the requestor
+    |
+    v
+CAO staff assign an attorney and set Status to Assigned Attorney
+    |
+    v
+Flow grants the assigned attorney access
+    |
+    v
+Flow asks administrative assistants to create the Case Matter
+    |
+    v
+Flow notifies the requestor of the attorney assignment
+    |
+    v
+Administrative assistant creates the Case Matter
+    |
+    v
+Administrative assistant updates DocSetID on the intake record
+    |
+    v
+Flow searches SharePoint for the matching Document Set
+    |
+    +-- Not found: wait 1 minute and retry, up to 5 attempts
+    |
+    +-- Found: retrieve path, List ID, and library name
+    |
+    v
+Flow emails the assigned attorney links to the intake item and Case Matter
+
+
+15. SOURCE
+
+Power Automate definition file:
+definition.json
+
+Flow display name:
+CAO - Intake form - Notification Process flow - PROD

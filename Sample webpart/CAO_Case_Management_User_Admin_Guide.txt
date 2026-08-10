@@ -1,0 +1,275 @@
+CAO CASE MANAGEMENT SYSTEM
+USER & ADMINISTRATIVE GUIDE
+
+1. INTRODUCTION
+
+The CAO Case Management System was developed to replace the MacroView client experience while continuing to use the existing SharePoint document libraries and document repository as the system backend. Existing cases did not require migration because the new solution was built on top of the existing SharePoint structure.
+
+The system provides:
+- CAO Intake Request processing
+- Attorney assignment management
+- Matter and case tracking
+- Document management
+- Dashboard views
+- Search capabilities
+- Copilot-assisted search experience
+- Board Report tracking functionality
+
+
+2. SYSTEM COMPONENTS
+
+CAO Intake Form
+Purpose: Entry point for legal assistance requests.
+
+SharePoint Lists
+Purpose: Store intake and assignment information.
+
+Case Management Dashboard
+Purpose: Interface for managing matters.
+
+SharePoint Document Libraries
+Purpose: Store case documents.
+
+Document Sets
+Purpose: Organize matter records.
+
+Power Automate Workflows
+Purpose: Automate notifications and status updates.
+
+Search Tools
+Purpose: Search matters and related documents.
+
+Copilot Agent
+Purpose: Natural-language queries against CAO case content.
+
+
+3. INTAKE REQUEST PROCESS
+
+Step 1 - Submit CAO Intake Form
+
+The process begins when a requestor submits the CAO Intake Form. The form is used to request attorney assistance from the County Attorney's Office.
+
+Step 2 - Intake Item Created
+
+When the request is submitted:
+- A new intake item is created.
+- Status is set to New.
+- A notification email is generated.
+
+
+4. ATTORNEY ASSIGNMENT PROCESS
+
+Step 3 - Intake Review
+
+Designated CAO staff review incoming requests.
+
+Current workflow documentation states that requests are routed to:
+- Ryan
+- Christine
+- Dahoud
+
+Step 4 - Assign Attorney
+
+After review:
+- An attorney is selected.
+- Status changes from New to Assigned Attorney.
+
+Step 5 - Assignment Notification
+
+After assignment is completed:
+- A notification is sent for matter creation.
+
+
+5. MATTER CREATION PROCESS
+
+Administrative staff create a new matter using information from the intake form.
+
+The documented instruction is:
+"Create the new assignment in CMS using the information from the intake form."
+
+
+6. CASE NUMBER GENERATION
+
+The system generates assignment numbers using a yearly numbering sequence.
+
+Examples:
+- 2026-CAO-001
+- 2026-CAO-002
+
+Board Reports use:
+- 2026-BR-001
+- 2026-BR-002
+
+Numbering resets each year.
+
+
+7. MATTER TYPES
+
+Litigation
+Litigation matters use a litigation-focused folder structure.
+
+Non-Litigation
+Non-litigation matters use a simplified folder structure.
+
+Board Reports
+Board Reports are tracked separately and use a BR numbering format.
+
+
+8. DOCUMENT STRUCTURE
+
+Litigation Matters
+Automatically organized folders include:
+- Case Notes
+- Correspondence
+- Drafts
+- Pleadings
+- Discovery
+- Transcripts
+- Research
+
+Non-Litigation Matters
+Automatically organized folders include:
+- Case Notes
+- Correspondence
+- Drafts
+- Research
+
+Board Reports
+Automatically organized folders include:
+- Drafts
+- Final Report
+
+
+9. INTAKE ATTACHMENTS
+
+Administrative instructions require staff to:
+1. Open the intake form.
+2. Review the attachments.
+3. Upload the attachments into the case.
+
+Current instructions specify uploading attachments individually into the Drafts folder.
+
+
+10. DASHBOARD FEATURES
+
+The dashboard provides visibility into matters assigned to the current user.
+
+Active Cases View
+Users can see:
+- Cases assigned to themselves
+- Active matters
+
+Attorney Filters
+The dashboard includes filters that allow cases to be filtered by assigned attorney. According to the system demonstration, this functionality did not exist in MacroView.
+
+Status Filters
+Users can filter matters by:
+- Active
+- Archived
+- Closed
+
+
+11. DOCUMENT MANAGEMENT
+
+Users can access case documents through the following methods.
+
+Case Dashboard
+Users can open associated document libraries directly from a case.
+
+SharePoint Libraries
+The underlying SharePoint library structure remains available.
+
+OneDrive Sync
+Document libraries can be synced for drag-and-drop file management through File Explorer.
+
+
+12. SEARCH FUNCTIONALITY
+
+The case management solution includes search capabilities for locating matters and documents.
+
+Users can search for:
+- Case numbers
+- Matter names
+- Keywords
+- Attorney assignments
+- Documents stored within case libraries
+
+
+13. COPILOT SEARCH INTEGRATION
+
+The system demonstration included a Copilot-based assistant.
+
+Search Cases
+The demonstrated use included searching for cases assigned to a specific attorney.
+
+Keyword Search
+A search for "Verizon" returned case-related results from the CAO environment.
+
+Scope Restriction
+The Copilot agent searches content contained within the CAO Case Management environment.
+
+
+14. BENEFITS REPORTED DURING SOLUTION DEMO
+
+The demonstration identified the following improvements over MacroView:
+- Elimination of dependency on the MacroView client application
+- Retention of existing SharePoint repositories
+- Attorney assignment filtering
+- Dashboard visibility of assigned matters
+- Drag-and-drop document management
+- Internal Copilot search capability
+
+
+15. END-TO-END WORKFLOW SUMMARY
+
+Requestor
+    |
+    v
+Submit CAO Intake Form
+    |
+    v
+Status = New
+    |
+    v
+Admin Review
+    |
+    v
+Assign Attorney
+    |
+    v
+Status = Assigned Attorney
+    |
+    v
+Create Matter
+    |
+    v
+Generate Matter Number
+    |
+    v
+Create Document Set
+    |
+    v
+Upload Attachments
+    |
+    v
+Update Intake Record
+    |
+    v
+Notify Attorney
+    |
+    v
+Notify Requestor
+    |
+    v
+Manage Case Documents
+    |
+    v
+Search / Dashboard / Copilot
+
+
+SOURCE MATERIALS
+
+- CAO's Case Management System Outline.docx
+- Intake Workflow Presentation.docx
+- New Intake Form Admin Process Instructions.pdf
+- CAO Case Management Solution Demo Meeting Recording
