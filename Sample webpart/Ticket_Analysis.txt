@@ -1,0 +1,197 @@
+Kishore Gunnam - Ticket Analysis (PII Removed)
+
+Executive Summary
+
+Based on available ticket-related emails, Teams discussions, meetings, and internal records, the majority of tickets handled were related to Microsoft 365 administration, SharePoint Online, Power Platform, licensing, permissions, identity management, and enterprise application support.
+
+Major Issue Categories
+
+1. SharePoint Online and OneDrive
+- File and folder permission issues
+- View-only versus edit access conflicts
+- External sharing and guest access problems
+- OneDrive synchronization and document access issues
+- SharePoint site access and ownership questions
+
+Technologies:
+- SharePoint Online
+- OneDrive for Business
+- Microsoft 365 Sharing
+- Microsoft Entra ID
+
+2. Microsoft Licensing Administration
+- License assignments
+- License removals and reassignments
+- Procurement validation
+- Premium feature activation
+- License availability troubleshooting
+
+Products:
+- Microsoft Visio
+- Microsoft Project
+- Planner Plan 1
+- Planner and Project Plan 3
+- Teams Rooms
+- Power Automate Premium
+- Microsoft 365 Copilot
+
+3. Power Apps Support
+- Application failures
+- Ownership transfers
+- Connection authentication issues
+- SharePoint-integrated app troubleshooting
+- Production support for business applications
+
+Technologies:
+- Power Apps
+- SharePoint Lists
+- PowerShell
+- Power Platform Connectors
+
+4. Power Automate and Workflow Automation
+- Premium licensing issues
+- Flow ownership changes
+- Connection reference issues
+- Workflow modernization efforts
+- Migration from SharePoint Designer workflows
+
+Technologies:
+- Power Automate
+- SharePoint Designer Workflows
+- PowerShell
+- SharePoint Online
+
+5. Power BI Support
+- Dashboard access requests
+- Permission management
+- Broken data sources
+- OneDrive and SharePoint data source issues
+- Report ownership and routing
+
+Technologies:
+- Power BI
+- Excel
+- OneDrive
+- SharePoint Online
+
+6. Microsoft Teams Support
+- Teams Rooms licensing
+- Meeting background issues
+- Teams client cache problems
+- User experience issues
+
+Technologies:
+- Microsoft Teams
+- Teams Rooms
+- Microsoft 365 Licensing
+
+7. Microsoft Office Support
+- Excel workbook issues
+- Pivot chart troubleshooting
+- Application ownership questions
+- Routing Office application incidents
+
+Technologies:
+- Excel
+- Office Desktop Applications
+- Windows 11
+
+8. Identity and Authentication
+- MFA issues
+- Synchronization failures
+- Access provisioning problems
+- Group membership issues
+- Authentication prompts and sign-in issues
+
+Technologies:
+- Microsoft Entra ID
+- Active Directory
+- MFA
+- Windows Hello
+
+9. ServiceNow Ticket Management
+- Incident triage
+- Assignment group routing
+- SLA monitoring
+- Problem management coordination
+- Ticket follow-up and closure
+
+Technologies:
+- ServiceNow
+
+10. Microsoft Support Escalations
+- Escalation of unresolved Microsoft 365 issues
+- Vendor coordination
+- Support case reviews
+- Platform behavior investigations
+
+Technologies:
+- Microsoft 365 Support
+- SharePoint Online
+- OneDrive
+- Power Platform
+
+11. Custom Business Solutions
+- Case management systems
+- Intake forms
+- Department applications
+- AI-powered search and query experiences
+
+Technologies:
+- SharePoint Online
+- Power Apps
+- Power Automate
+- Microsoft Search
+- Copilot Technologies
+
+12. Workflow Modernization and Legacy Support
+- SharePoint Designer workflow reviews
+- Modernization planning
+- Power Automate migration assessments
+
+Technologies:
+- SharePoint Designer 2010
+- Power Automate
+- SharePoint Online
+
+Technology Frequency Ranking
+
+Very High Frequency:
+- SharePoint Online
+- OneDrive
+- Power Apps
+- Power Automate
+- Microsoft Licensing
+- Microsoft Entra ID
+
+High Frequency:
+- Power BI
+- Microsoft Teams
+- ServiceNow
+- Authentication and Permissions
+
+Medium Frequency:
+- Excel and Office Applications
+- Teams Rooms
+- AI Builder
+- Copilot-related services
+
+Overall Role Profile
+
+The ticket data indicates work extending beyond traditional help desk support. Activities commonly involved:
+
+- Microsoft 365 platform administration
+- SharePoint administration and development
+- Power Platform administration
+- License management
+- Identity and access management
+- Application ownership management
+- ServiceNow ticket triage
+- Microsoft support escalations
+- Business application support
+- Solution architecture and modernization
+
+Most issues involved Microsoft cloud technologies, with SharePoint Online, OneDrive, Power Platform, Microsoft licensing, and permissions management representing the largest share of support effort.
+
+Note:
+This analysis is derived from available enterprise records and communications. Personally identifiable information, requester details, case content, and sensitive business information have been removed.
