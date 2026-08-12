@@ -1,0 +1,248 @@
+SPFX NAVIGATION BAR OUTAGE CAUSED BY SHAREPOINT ONLINE CDN DOMAIN CHANGE
+
+1. PURPOSE
+
+This document records an outage affecting a SharePoint Framework (SPFx) navigation bar deployed as an Application Customizer across multiple SharePoint Online sites. It describes the observed symptoms, investigation, root cause, implemented resolution, alternative remediation considered, and the reason that alternative was not selected.
+
+Organization-specific names, tenant names, site URLs, personal information, and personally identifiable information have been removed.
+
+
+2. SOLUTION OVERVIEW
+
+The navigation bar is implemented as an SPFx Application Customizer. The extension provides a consistent navigation experience across SharePoint Online sites.
+
+The extension depended on two CSS files:
+
+- Bootstrap CSS
+- Custom mega-menu CSS
+
+These stylesheets were originally loaded at runtime from the SharePoint Online Public CDN by using SPComponentLoader.loadCss().
+
+Example of the previous implementation using anonymized paths:
+
+SPComponentLoader.loadCss(
+  "https://publiccdn.sharepointonline.com/<tenant-domain>/<cdn-path>/NavigationAppExtension/SPFXMegaMenu.css"
+);
+
+SPComponentLoader.loadCss(
+  "https://publiccdn.sharepointonline.com/<tenant-domain>/<cdn-path>/NavigationAppExtension/bootstrap.css"
+);
+
+
+3. ACTUAL ISSUE
+
+The navigation bar stopped appearing on SharePoint Online pages even though the SPFx Application Customizer remained deployed.
+
+The extension relied on CSS resources referenced through the legacy SharePoint Online Public CDN hostname:
+
+publiccdn.sharepointonline.com
+
+Microsoft migrated SharePoint Online static asset hosting to Azure Front Door and introduced a new Public CDN hostname:
+
+public-cdn.sharepointonline.com
+
+The existing SPFx extension contained hardcoded references to the legacy hostname. The required stylesheets were therefore no longer being loaded successfully. Browser security enforcement also reported the stylesheet requests as blocked under the applicable Content Security Policy (CSP).
+
+Because the Bootstrap and custom mega-menu styles were unavailable, the navigation markup did not receive the styling required for its normal layout and visibility. From an end-user perspective, the navigation bar appeared to be missing.
+
+
+4. USER-OBSERVED SYMPTOMS
+
+The following symptoms were observed:
+
+- The navigation bar was not visible on affected SharePoint Online sites.
+- SharePoint pages otherwise continued to load.
+- The problem affected a shared, tenant-wide navigation component rather than an individual page feature.
+- No useful error was displayed directly on the page for the end user.
+- The Application Customizer was still deployed, so the initial symptom did not immediately indicate a failed solution deployment.
+
+
+5. HOW THE ISSUE WAS IDENTIFIED
+
+5.1 Visual identification
+
+The first indication was that the expected navigation bar was no longer visible on SharePoint Online pages where it normally appeared.
+
+5.2 Browser Developer Tools
+
+Browser Developer Tools were opened to investigate the page at runtime.
+
+In the Console tab, errors indicated that the externally referenced stylesheet resources were blocked. The console messages referenced Content Security Policy enforcement or blocked stylesheet loading.
+
+Representative error wording included:
+
+- Refused to load the stylesheet
+- Content Security Policy violation
+- Blocked resource
+
+The exact wording can vary by browser and policy response.
+
+5.3 Source code review
+
+The Application Customizer source was reviewed. The investigation identified that the extension was loading both required CSS files through SPComponentLoader.loadCss() and that both URLs used the legacy SharePoint Online Public CDN hostname.
+
+5.4 CDN hostname comparison
+
+The hardcoded hostname in the solution was compared with Microsoft's updated SharePoint Online Public CDN hostname. The solution used:
+
+publiccdn.sharepointonline.com
+
+The newer hostname is:
+
+public-cdn.sharepointonline.com
+
+The addition of the hyphen between "public" and "cdn" is significant.
+
+5.5 Root-cause conclusion
+
+The navigation failure was traced to the runtime dependency on CSS files referenced through a hardcoded legacy CDN URL. When those CSS files were blocked or could not be retrieved through that URL, the navigation component lost the styles required to display correctly.
+
+
+6. ROOT CAUSE
+
+The root cause was an architectural dependency on hardcoded SharePoint Online Public CDN URLs in the SPFx Application Customizer.
+
+Contributing factors were:
+
+1. The extension loaded critical CSS at runtime from an external CDN URL.
+2. The URL contained the legacy hostname publiccdn.sharepointonline.com.
+3. Microsoft introduced the newer hostname public-cdn.sharepointonline.com as part of its CDN migration.
+4. Browser console errors showed that stylesheet requests were being blocked under CSP enforcement.
+5. The navigation component depended on the unavailable stylesheets for its visibility and layout.
+
+The issue was not resolved by changing SharePoint permissions, reinstalling the extension, or modifying an individual site because the failure occurred in a shared external resource dependency used by the extension.
+
+
+7. IMPLEMENTED RESOLUTION
+
+7.1 Selected approach
+
+The two CSS files were moved into the SPFx project and included directly in the solution instead of being retrieved from the SharePoint Online Public CDN at runtime.
+
+The files were placed in the project's local Styles folder:
+
+./Styles/bootstrap.css
+./Styles/SPFXMegaMenu.css
+
+The Application Customizer was updated to load the local files through the SPFx/Webpack build process:
+
+const bootstrapCss: string = require('./Styles/bootstrap.css');
+const megaMenuCss: string = require('./Styles/SPFXMegaMenu.css');
+
+The previous SPComponentLoader.loadCss() calls that referenced the external CDN URLs were removed.
+
+7.2 Build and deployment
+
+After the code change:
+
+1. The SPFx solution was rebuilt.
+2. A new solution package was generated.
+3. The updated package was deployed through the established SPFx deployment process.
+4. Affected SharePoint Online pages were tested.
+5. Browser Developer Tools were used to confirm that the legacy external stylesheet requests were no longer made.
+6. The navigation bar was verified as visible and styled correctly.
+
+7.3 Outcome
+
+The change restored the navigation bar and eliminated its runtime dependency on the two hardcoded SharePoint Online Public CDN stylesheet URLs.
+
+The implemented design now keeps the CSS files versioned with the SPFx source and distributed with the solution package.
+
+
+8. WHY THE IMPLEMENTED RESOLUTION WAS PREFERRED
+
+The bundled approach was selected for the following reasons:
+
+- It removes hardcoded references to the SharePoint Online Public CDN hostname.
+- It avoids dependence on the continued availability or structure of a specific CDN URL.
+- It prevents these two stylesheets from being loaded as separate runtime requests to the legacy external location.
+- It keeps the TypeScript and CSS changes together in source control.
+- It allows the navigation code and its required styles to be released as one versioned SPFx solution.
+- It reduces the risk that another CDN hostname or path change will cause the same navigation outage.
+- It addresses the underlying external-dependency design rather than only replacing one hostname with another.
+
+
+9. ALTERNATIVE CONSIDERED
+
+9.1 Update the CDN hostname
+
+A possible alternative was to retain SPComponentLoader.loadCss() and replace the legacy hostname:
+
+publiccdn.sharepointonline.com
+
+with the newer hostname:
+
+public-cdn.sharepointonline.com
+
+An anonymized example would be:
+
+SPComponentLoader.loadCss(
+  "https://public-cdn.sharepointonline.com/<tenant-domain>/<cdn-path>/NavigationAppExtension/SPFXMegaMenu.css"
+);
+
+SPComponentLoader.loadCss(
+  "https://public-cdn.sharepointonline.com/<tenant-domain>/<cdn-path>/NavigationAppExtension/bootstrap.css"
+);
+
+
+10. WHY THE ALTERNATIVE WAS NOT USED
+
+The hostname replacement was not selected because it would preserve the same underlying dependency pattern.
+
+Specific concerns included:
+
+- The extension would still contain hardcoded CDN URLs.
+- Critical navigation styling would still depend on successful external runtime requests.
+- A future hostname, path, CDN service, allow-list, or security-policy change could affect the extension again.
+- The alternative would correct the immediate URL value without removing the architectural weakness that caused the outage.
+- Microsoft guidance associated with the CDN migration advised avoiding hardcoded CDN URLs for future-proofing.
+- Bundling the styles allowed the required files to be managed and deployed with the SPFx solution itself.
+
+For these reasons, changing the hostname was considered a short-term compatibility fix, while placing the CSS files inside the solution was selected as the more maintainable remediation.
+
+
+11. VALIDATION CHECKLIST
+
+The following checks can be used after deployment:
+
+- Confirm the navigation bar appears on representative SharePoint Online sites.
+- Confirm menu layout and Bootstrap-dependent formatting are correct.
+- Confirm navigation links function as expected.
+- Review the browser Console for CSP or blocked-stylesheet errors.
+- Review the Network tab and confirm no requests are made to publiccdn.sharepointonline.com for the two navigation stylesheets.
+- Confirm the updated SPFx package version is deployed.
+- Test with a standard user account as well as an administrator account.
+- Test multiple site templates or site types covered by the tenant-wide extension deployment.
+
+
+12. PREVENTIVE RECOMMENDATIONS
+
+- Avoid hardcoding SharePoint Online Public CDN hostnames in SPFx code when the asset can be packaged with the solution.
+- Keep critical CSS and other solution-specific resources under source control.
+- Review SPFx solutions for references to publiccdn.sharepointonline.com.
+- Review Microsoft 365 Message Center notices for SharePoint Online platform and CDN changes.
+- Include browser Console and Network inspection in troubleshooting procedures for missing SPFx UI components.
+- Treat a tenant-wide visual failure as a possible shared resource or dependency issue before troubleshooting each site individually.
+- Document external dependencies that cannot be bundled and review them during solution maintenance.
+
+
+13. MICROSOFT REFERENCES
+
+Microsoft Learn:
+Use the Office 365 Content Delivery Network (CDN) with SharePoint Online
+https://learn.microsoft.com/en-us/microsoft-365/enterprise/use-microsoft-365-cdn-with-spo?view=o365-worldwide
+
+Microsoft 365 Message Center announcement:
+MC1066155 - Microsoft SharePoint Online: Important update - Enabling a new Public Content Delivery Network (CDN) domain
+
+Microsoft 365 Message Center follow-up:
+MC1184996 - Legacy SharePoint Online Content Delivery Network (CDN) domain to be retired - review configurations
+
+The Message Center notices described the new public-cdn.sharepointonline.com domain, advised against hardcoded CDN URLs, and subsequently addressed retirement of the legacy publiccdn.sharepointonline.com domain.
+
+
+14. SUMMARY
+
+The SPFx navigation bar was not visible because its required Bootstrap and mega-menu stylesheets were loaded through hardcoded references to the legacy SharePoint Online Public CDN hostname. Browser Developer Tools exposed blocked stylesheet and CSP-related console errors. Source review confirmed that SPComponentLoader.loadCss() was requesting both files from the legacy CDN location.
+
+The issue was resolved by adding the CSS files directly to the SPFx project and requiring them from the local Styles folder. Updating the URL to the newer CDN hostname was considered but not selected because it would retain the hardcoded external dependency. Bundling the files with the solution provided a more maintainable and resilient resolution.
