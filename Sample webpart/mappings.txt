@@ -1,0 +1,60 @@
+mvDocSetName
+mvDocSetNumber
+mvDocSetType
+mvDocSetStatus
+mvCaseDisposition
+mvManagedBy
+mvDepartmentContact
+mvDateOpened
+mvDateClosed
+
+
+Below are the columns. Each set has internal name, column type and what I see in Cralwed prperties
+mvDocSetName
+Single line of text
+Property Name - Mapped To Property
+(ows_mvDocSetName)
+
+mvDocSetType
+Managed metadata
+Property Name - Mapped To Property
+ows_taxId_mvDocSetType - mvDocSetType
+
+mvDocSetStatus
+Managed metadata
+Property Name - Mapped To Property
+ows_taxId_mvDocSetStatus - mvDocSetStatus
+
+mvCaseDisposition
+Managed metadata
+Property Name - Mapped To Property
+ows_mvCaseDisposition - mvCaseDisposition
+
+mvManagedBy
+Person
+Property Name - Mapped To Property
+ows_mvManagedBy - mvManagedBy
+
+mvDepartmentContact
+Person
+Property Name - Mapped To Property
+ows_mvDepartmentContact - mvDepartmentContact
+
+mvDateOpened
+Date
+Property Name - Mapped To Property
+ows_mvDateOpened - RefinableDateSingle01
+
+mvDateClosed
+Date
+Property Name - Mapped To Property
+ows_mvDateClosed - RefinableDateSingle02
+
+As you already know we mapped the mvDocSetNumber
+mvDocSetNumber
+Single line of text
+Property Name - Mapped To Property
+ows_mvDocSetNumber - mvDocSetNumber, RefinableString135
+ows_q_TEXT_mvDocSetNumber - RefinableString135
+
+RefinableString135 already assigned to OWS_MVDOCSETNUMBER, OWS_Q_TEXT_MVDOCSETNUMBER
