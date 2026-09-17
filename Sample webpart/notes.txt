@@ -1,1 +1,5 @@
 <SITE_URL>/_api/search/query?querytext='Path:"<SITE_URL>/" AND ContentTypeId:0x0120D5*'&selectproperties='Path,ContentTypeId,mvDocSetName,mvDocSetNumber,RefinableString135,mvDocSetType,mvDocSetStatus,mvCaseDisposition,mvManagedBy,mvDepartmentContact,RefinableDateSingle01,RefinableDateSingle02'&rowlimit=5&trimduplicates=false&enablequeryrules=false
+
+
+
+https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/search/query?querytext='Path:"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/" AND ContentTypeId:0x0120D5*'&selectproperties='Path,ContentTypeId,mvDocSetName,mvDocSetNumber,RefinableString135,mvDocSetType,mvDocSetStatus,mvCaseDisposition,mvManagedBy,mvDepartmentContact,RefinableDateSingle01,RefinableDateSingle02'&rowlimit=5&trimduplicates=false&enablequeryrules=false
