@@ -1,0 +1,79 @@
+Managed property: mvDocSetName
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_MVDOCSETNAME
+
+Managed property: mvDocSetNumber
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_MVDOCSETNUMBER
+
+Managed property: RefinableString135
+Searchable: False
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: True
+Mappeed crawled properties: OWS_MVDOCSETNUMBER, OWS_Q_TEXT_MVDOCSETNUMBER
+
+Managed property: mvDocSetType
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_TAXID_MVDOCSETTYPE
+
+Managed property: mvDocSetStatus
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_TAXID_MVDOCSETSTATUS
+
+Managed property: mvCaseDisposition
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_MVCASEDISPOSITION
+
+Managed property: mvManagedBy
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: True
+Mappeed crawled properties: OWS_MVMANAGEDBY
+
+Managed property: mvDepartmentContact
+Searchable: True
+Type: Text
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_MVDEPARTMENTCONTACT
+
+Managed property: RefinableDateSingle01
+Searchable: False
+Type: Date and Time
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_MVDATEOPENED
+
+Managed property: RefinableDateSingle02
+Searchable: False
+Type: Date and Time
+Queryable: True
+Retrivable: True
+Allow multiple values: False
+Mappeed crawled properties: OWS_MVDATECLOSED
