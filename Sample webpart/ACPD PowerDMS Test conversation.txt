@@ -1,3 +1,9 @@
+When a public URL is added as a knowledge source in Copilot Studio, the agent does not crawl the website itself. It relies on content that Bing Search has already indexed and returns for the question.
+
+In this case, Bing appears to have indexed the content of some PowerDMS documents, but only the titles or metadata of others. This explains why the agent can answer questions about some documents but cannot summarize others, even though they are accessible in a browser. The reason for the apparent indexing gaps is unknown.
+
+
+
 https://public.powerdms.com/ARLVAPD/documents/888595
 
 You said: https://public.powerdms.com/ARLVAPD/documents/888595
