@@ -1,0 +1,181 @@
+COPILOT STUDIO AGENT + POWERDMS KNOWLEDGE SOURCE - DISCUSSION SUMMARY
+Date: September 30, 2026
+====================================================================
+
+GOAL
+----
+Build a Copilot Studio agent that answers ONLY from Arlington County Police
+Department public documents hosted at:
+  https://public.powerdms.com/ARLVAPD/tree/
+Constraint: The documents must stay on the PowerDMS site. They cannot be
+exported or copied to SharePoint or uploaded to the agent.
+
+Test question used:
+  "Give me summary of memo from Ron Carly to Douglas Scott"
+  Target document: "PD 013 - County Manager's Delegation of Authority 2009"
+  UI link: https://public.powerdms.com/ARLVAPD/tree/documents/209
+  Note: The 2009 county manager's name was probably spelled "Ron Carlee", not
+  "Ron Carly". Use the correct spelling in test questions.
+
+
+1. HOW THE "PUBLIC WEBSITE" KNOWLEDGE SOURCE WORKS
+--------------------------------------------------
+- It does NOT crawl the site, open pages, or follow links in the page
+  source.
+- It sends the user's question (rephrased with conversation context) to
+  Bing through "Grounding with Bing Search".
+- It returns only the Bing results that fall inside the configured URL
+  scope.
+- It works from Bing search snippets, not full page content.
+- The URL can be at most 2 levels deep (for example
+  public.powerdms.com/ARLVAPD/ is valid).
+- The search request, including the query, can't exceed 2,048 characters.
+- Because of this, a link being visible in the page source does NOT mean
+  the agent can read the linked document.
+
+Sources:
+  https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-public-website
+  https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-studio
+
+
+2. WHY THE FIRST AGENT FAILED (scope = /ARLVAPD/tree/)
+------------------------------------------------------
+PowerDMS has two URL forms for each document:
+  /ARLVAPD/tree/documents/{id}  -> UI version (tree/sidebar navigation)
+  /ARLVAPD/documents/{id}       -> where the document itself is stored
+
+What Bing has stored:
+  - /tree/documents/... pages: only the sidebar list of document titles.
+    Example: /tree/documents/209 contains only menu text, not the memo.
+  - Some /documents/... pages: full document text.
+    Example: /ARLVAPD/documents/1320288 (Falls Church MOA).
+
+The /tree/ scope filtered out every /documents/ result, so the agent could
+see that PD 013 existed but couldn't read it.
+The agent's claim that the content was "behind PowerDMS authentication" was
+NOT accurate. It simply couldn't get the text through Bing.
+
+
+3. WEB SEARCH TOGGLE - SHOULD IT BE TURNED ON?
+----------------------------------------------
+Recommendation: Keep Web Search OFF.
+- Web search also uses Bing. If Bing hasn't stored a document's text, web
+  search can't read it either.
+- Web search is NOT limited to PowerDMS. The agent could answer from news
+  articles, other departments' policies, or copies on other sites.
+- Instructions ("answer only from PowerDMS") only guide the model. They
+  don't filter results, so they aren't a reliable restriction.
+- A correctly scoped Public website source is a hard limit and gets the
+  same Bing content without leaking to other sites.
+- If you test with web search on, check the citations. Any citation that
+  isn't public.powerdms.com means the restriction didn't hold.
+
+
+4. WHY THE AVA AGENT (arlingtonva.us) WORKS
+-------------------------------------------
+- AVA's scope is the whole domain (https://www.arlingtonva.us), so its
+  PDFs (/files/sharedassets/...pdf) fall inside the scope.
+- Bing has stored the full text of those PDFs. That's where the attendance
+  list for the APCYF Feb 25, 2026 meeting notes came from.
+- AVA's first two answers failed because they cited the HTML event page
+  ("APCYF Public Meeting"), not the PDF. After the user pasted the PDF
+  URL/file name, the rephrased query matched the PDF in Bing and the
+  citation changed to the PDF ("MEETING MINUTES OF VIRTUAL MEETI...").
+- AVA never opened the PDF itself. It matched a better Bing result.
+- The hosting difference matters (this is an inference):
+    arlingtonva.us (OpenForms) -> regular pages and direct PDF links;
+                                   Bing stores the full text.
+    public.powerdms.com        -> pages built by JavaScript and a document
+                                   viewer; Bing mostly stores titles,
+                                   menus, and dates.
+
+
+5. RESULTS AFTER CHANGING SCOPE TO https://public.powerdms.com/ARLVAPD/
+-----------------------------------------------------------------------
+- Memo question: The agent found /ARLVAPD/documents/888595 (created
+  March 12, 2015), but Bing had only metadata (link + date), no text.
+  -> The scope change worked; Bing just doesn't have the text.
+- Other documents: Most returned no answer (metadata only in Bing).
+- Falls Church MOA test: SUCCESS. The agent summarized the ERT section
+  from /documents/1320288 and /documents/215 (FCPD lacks a fully staffed
+  ERT; barricade/hostage/active shooter scenarios; command, negotiation,
+  and entry teams; requests through Arlington ECC; Unified Command; etc.).
+  -> This proves the agent configuration is CORRECT.
+
+
+6. WHY BING HAS TEXT FOR ONLY SOME DOCUMENTS
+--------------------------------------------
+- NOT related to document ID order. Bing finds pages by following links
+  (sitemaps, links from other sites), not by counting IDs.
+- 209 is the tree/UI ID. The stored document ID may be different (the
+  memo came back as 888595).
+- The Falls Church MOA exists under two IDs (215 and 1320288), so
+  PowerDMS may create new IDs for versions or copies.
+- NOT scanned images. Ctrl+F works in all documents, so the files have
+  real text.
+- Most likely cause (inference, not confirmed): The PowerDMS viewer loads
+  document text with JavaScript after the page opens. Browsers show it,
+  but Bing often stores only what's in the page before scripts run
+  (title/date). Bing also limits how much of a site it crawls.
+- It can't be fixed from Copilot Studio. Only the site owner (PowerDMS)
+  can improve Bing indexing (Bing Webmaster Tools, sitemap submission).
+
+
+7. CURRENT RECOMMENDED AGENT CONFIGURATION
+------------------------------------------
+- Knowledge source: Public website -> https://public.powerdms.com/ARLVAPD/
+- Remove the old /ARLVAPD/tree/ source.
+- Web Search: OFF
+- Use general knowledge: OFF
+- Instructions, for example:
+    "Answer only from the PowerDMS knowledge source. Always cite the
+     document URL. If the answer isn't found, say you couldn't find it and
+     don't guess."
+- Test with specific wording (document titles, correct names).
+- Limitation: It only works for documents Bing has stored the full text
+  for.
+
+
+8. OPTIONS FOR FULL COVERAGE (documents must stay on PowerDMS)
+--------------------------------------------------------------
+Option A - Ask PowerDMS support (free, slow, out of our control)
+  Ask whether they submit a sitemap for public pages to Bing, or can make
+  document text crawlable.
+
+Option B - Live tool / agent flow (RECOMMENDED - only reliable fix)
+  - The public tree loads its document list from a JSON API with no
+    sign-in (an open-source scraper, github.com/JonGerhardson/
+    powerdms-poweruser, finds this endpoint from a /tree URL).
+  - Build an agent flow or custom connector with:
+      SearchDocuments(keyword)  -> get tree JSON, filter by title
+      GetDocumentText(docId)    -> download file from
+                                   /ARLVAPD/documents/{id}, extract text
+  - The files have real text, so plain text extraction is enough (AI
+    Builder OCR isn't required).
+  - Add the flow under Tools with clear descriptions. Keep the restrictive
+    instructions.
+  - Benefits: doesn't depend on Bing, always current, PowerDMS stays the
+    only source.
+  - Caveat: These are undocumented internal endpoints that could change.
+    The PowerDMS API terms say to use their APIs only as documented.
+    Confirm with APD/PowerDMS before production.
+    https://www.powerdms.com/api-terms-and-conditions
+  - Hybrid: Keep the Public website source for documents Bing has stored,
+    and use the tool when it comes back empty.
+
+Option C - Enterprise Websites Copilot connector (low expectations)
+  - Crawls the site into the Microsoft Graph index and supports PDFs.
+  - Likely fails on JavaScript-built pages (error 6021 "no textual
+    content").
+  - Needs a Microsoft 365 admin to set up.
+  https://learn.microsoft.com/en-us/microsoft-365/copilot/connectors/enterprise-web-connector
+
+
+9. NEXT STEP
+------------
+Open https://public.powerdms.com/ARLVAPD/documents/888595 with
+F12 > Network > Fetch/XHR, and capture the request URLs that load:
+  1. the document list/tree
+  2. the document metadata
+  3. the document content/file download
+Use them to build the SearchDocuments / GetDocumentText flow.
