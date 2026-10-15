@@ -1,0 +1,242 @@
+<#
+.SYNOPSIS
+    Exports what the MSWPO SPFx rebuild needs from SharePoint that is not in the source export (READ-ONLY).
+
+.DESCRIPTION
+    Nothing in SharePoint is created, changed or deleted. Output (under -OutDir, default ..\docs):
+      schemas\<list>.json            list settings + every field (internal name, title, type, required, choices, SchemaXml),
+                                     NewForm/EditForm/DispForm JSLink values, classic workflow associations
+      schemas\_index.json            one line per list (found/missing, item count, field count, workflows)
+      legacy-ui\pages\<page>.*       Site Pages wiki HTML (WikiField) and each web part's XML (Script/Content Editor code)
+      legacy-ui\site-assets.csv      inventory of SiteAssets/MSWPO on the site
+      legacy-ui\site-assets-missing\ files present in SiteAssets/MSWPO but missing from the local MSWPO\ export
+      legacy-ui\access-groups.json   group names (Title) from MSWPO Access Management + member count (no member names)
+
+.REQUIREMENTS
+    - PowerShell 7.2+  (pwsh)
+    - PnP.PowerShell 2.x or later:  Install-Module PnP.PowerShell -Scope CurrentUser
+    - An Entra ID app registration for PnP interactive sign-in (the shared PnP app was retired in 2024):
+          Register-PnPEntraIDAppForInteractiveLogin -ApplicationName "PnP MSWPO export" -Tenant arlingtonva.onmicrosoft.com
+      (needs SharePoint delegated permissions; an admin may have to grant consent) - pass its Client ID below.
+    - Account with Read access to /sites/wpcb/mswpo, /sites/wpcb/ops and /sites/wpcb/lab.
+
+.EXAMPLE
+    pwsh ./tools/Export-MswpoSchema.ps1 -ClientId 00000000-0000-0000-0000-000000000000
+#>
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory)] [string] $ClientId,
+    [string] $TenantUrl = 'https://arlingtonva.sharepoint.com',
+    [string] $OutDir = (Join-Path $PSScriptRoot '..\docs'),
+    [string] $LocalExportDir = (Join-Path $PSScriptRoot '..\MSWPO')
+)
+
+$ErrorActionPreference = 'Stop'
+
+# Every list referenced by the legacy code (docs/LEGACY_ANALYSIS.md section 3).
+$listsBySite = [ordered]@{
+    '/sites/wpcb/mswpo' = @(
+        # Core
+        'B441CA50-2EFB-425F-BF1B-E66EE18806B0', # MSWPO Access Management
+        'F032B017-5260-492F-B72A-1A7E7FC31A23', # Operator LookUp List
+        '68C451AE-426B-4CFA-B2DC-B101D8D115DF', # Operator Certification and Employee Data
+        '9E08D4B1-10E4-4E14-8E02-31C3379732C0', # MSWPO Safety Training Completion List
+        'D088C1C4-D8DD-4281-9E5C-62D2645CB84A', # Operator DOC Certification Dates for Lab
+        'C8746D73-8405-44C5-BCE2-0DD0E8CDC332', # All MSWPO Training Documents
+        'C18CC7CF-4BB6-4D55-BCCD-9D252976D75B', # Supervisor Station Assignment
+        'C2932C64-DF7B-4221-85D3-5E3A11FDC2D5', # Operator Station Assignment
+        # CDSS L3, L2, L1 (per station + All)
+        '3b8c1d2c-1839-4491-87b0-30c4926361d5', 'a606bc0f-0f4c-4654-bd1c-e4fca32154ab', 'a1d23b11-4eb9-40d8-9e3e-565e1b7ee422', '64d28fce-ff0e-46b4-8c64-76fa27162a04',
+        '99fe0336-193e-42b6-83aa-ff7cc8f44183', 'D8F44610-ED6A-4063-BFCD-2C47339A179A', 'AF8406F9-2ADB-4617-8FBB-EFA63275F563', '8F4B7AA0-9E38-4207-AA8B-B6B379289B1D',
+        '6bbcdef7-25d5-4452-9edb-430cbce91383', 'e7928039-8cb0-4571-8532-bd18236e0a64', '4203d654-cca1-40ca-a313-c24865e36ac9', 'da4af426-2ee3-445a-9d14-67246ee2dba0', 'FCBAA45D-439A-432B-B356-E8A3290BE6FC',
+        # Task Standards L3, L2, L1
+        'DBEC4BE4-3A1E-403F-B5C5-79340F48445C', 'f0b13014-aba0-4f79-b21d-b9d48d8d5a24', 'd6e8defa-b6d6-4654-a7af-1f244599c1bd', 'ea0b10c3-cb86-4e19-ab76-f16b55bac9e0',
+        'c5588cd5-0cc4-4b2d-aac7-2281aa41c353', '8918815a-b12c-4741-b024-957895254cce', '2d185a32-a228-4fb7-8e31-e43b20666ac4', '13e69c0a-f5c5-4e61-8f59-ce5c1221725d',
+        '12b89a76-d611-4d7e-86ce-bdae0882eb6b', '2eb6ea19-3b99-462b-a3dd-6eb7e51192cf', '59173f23-f986-4e21-92f2-4343b5f88fe7', 'a6afcd05-df9e-46b9-b641-e1998298ee43', 'FB0FD350-3EF9-45E4-A293-519434B7AA65',
+        # Training Docs L3, L2, L1
+        '8a44d44b-8da7-40e7-a057-d94e2954c712', '9a113dca-97ec-4c37-86ca-01f95a0d1498', 'd9fc725b-9394-46ef-b94e-90bedd717865', '5cc83d4e-892d-4f2b-8a7f-4986d74fd68b',
+        '149e1017-cf92-45f2-b195-fe12a570f8f4', 'e12a45d2-8faa-43cd-847b-f04b8657a7a9', 'b65f8db5-051d-4cfc-b4fb-f33bae7084a0', '3674435a-0c3a-4a45-8c8d-81eb98335d13',
+        '73802df7-1040-4d44-bd40-c74d66f16534', '74231577-79c4-4ee5-8b05-503fd273fe8a', '388c9585-9829-4d8e-b0c2-b6003df3d374', 'f2e77d5e-917a-436b-bded-250b54dcbb75', '9428C900-C93D-4428-A3F9-33F15864672B'
+    )
+    '/sites/wpcb/ops' = @(
+        'b7045914-d08f-4e21-8e0e-8f667aad0ef1', # Operation Forms and Checklists
+        'f00dd4b1-ce1b-4040-97b7-467300d1f268', # System Operating Manuals
+        'f989fed2-feb6-42db-a9b2-a93268efba48', # Field SOPs
+        'adb0911f-4e9f-4fbd-87aa-7050e247f3af', # Operator Mini-Modules (Task Standards)
+        'ea97b02b-719f-4030-aa30-16d8c1968074'  # PCS Strategies and Manuals
+    )
+    '/sites/wpcb/lab' = @(
+        '6BA7EB66-940C-4935-B808-ED938ED99302'  # Lab SOPs for Operations
+    )
+}
+
+function New-Dir([string] $Path) {
+    if (-not (Test-Path $Path)) { New-Item -ItemType Directory -Path $Path | Out-Null }
+    (Resolve-Path $Path).Path
+}
+
+function Get-SafeName([string] $Name) {
+    ($Name -replace '[\\/:*?"<>|]', '_').Trim()
+}
+
+function Write-Json($Object, [string] $Path) {
+    $Object | ConvertTo-Json -Depth 10 | Set-Content -Path $Path -Encoding utf8
+}
+
+function Connect-Site([string] $SiteRelativeUrl) {
+    Write-Host "Connecting to $TenantUrl$SiteRelativeUrl ..." -ForegroundColor Cyan
+    Connect-PnPOnline -Url ($TenantUrl + $SiteRelativeUrl) -Interactive -ClientId $ClientId -ReturnConnection
+}
+
+function Get-FormJsLink($Connection, [string] $FormUrl) {
+    try {
+        $parts = Get-PnPWebPart -ServerRelativePageUrl $FormUrl -Connection $Connection
+        foreach ($wp in $parts) {
+            $xml = Get-PnPWebPartXml -ServerRelativePageUrl $FormUrl -Identity $wp.Id -Connection $Connection
+            $m = [regex]::Match($xml, '<property name="JSLink"[^>]*>([^<]*)</property>')
+            if ($m.Success -and $m.Groups[1].Value) { return $m.Groups[1].Value }
+        }
+        return $null
+    }
+    catch { return "error: $($_.Exception.Message)" }
+}
+
+function Export-List($Connection, [string] $SiteUrl, [string] $ListId, [string] $SchemaDir) {
+    try {
+        $list = Get-PnPList -Identity $ListId -Connection $Connection -ThrowExceptionIfListNotFound
+    }
+    catch {
+        Write-Warning "List $ListId not found on $SiteUrl"
+        return [pscustomobject]@{ Site = $SiteUrl; Id = $ListId; Found = $false; Error = $_.Exception.Message }
+    }
+
+    Get-PnPProperty -ClientObject $list -Property RootFolder, ContentTypes, WorkflowAssociations, Views -Connection $Connection | Out-Null
+    $rootUrl = $list.RootFolder.ServerRelativeUrl
+    Write-Host "  $($list.Title)  ($rootUrl)"
+
+    $fields = Get-PnPField -List $list -Connection $Connection | ForEach-Object {
+        $schema = [xml]$_.SchemaXml
+        $choices = @($schema.Field.CHOICES.CHOICE) | Where-Object { $_ }
+        [pscustomobject]@{
+            InternalName     = $_.InternalName
+            Title            = $_.Title
+            Type             = $_.TypeAsString
+            Required         = $_.Required
+            ReadOnly         = $_.ReadOnlyField
+            Hidden           = $_.Hidden
+            DefaultValue     = $_.DefaultValue
+            Description      = $_.Description
+            Choices          = $choices
+            Format           = $schema.Field.Format
+            Min              = $schema.Field.Min
+            Max              = $schema.Field.Max
+            Decimals         = $schema.Field.Decimals
+            Mult             = $schema.Field.Mult
+            UserSelectionMode = $schema.Field.UserSelectionMode
+            LookupList       = $schema.Field.List
+            LookupShowField  = $schema.Field.ShowField
+            Formula          = $schema.Field.Formula
+            ValidationFormula = $_.ValidationFormula
+            ValidationMessage = $_.ValidationMessage
+            EnforceUniqueValues = $_.EnforceUniqueValues
+            SchemaXml        = $_.SchemaXml
+        }
+    }
+
+    $forms = $null
+    if ($list.BaseType -eq 'GenericList') {
+        $forms = [ordered]@{
+            NewForm  = Get-FormJsLink $Connection "$rootUrl/NewForm.aspx"
+            EditForm = Get-FormJsLink $Connection "$rootUrl/EditForm.aspx"
+            DispForm = Get-FormJsLink $Connection "$rootUrl/DispForm.aspx"
+        }
+    }
+
+    $result = [ordered]@{
+        Site                 = $SiteUrl
+        Id                   = $list.Id.Guid
+        Title                = $list.Title
+        Url                  = $rootUrl
+        BaseType             = "$($list.BaseType)"
+        BaseTemplate         = $list.BaseTemplate
+        ItemCount            = $list.ItemCount
+        EnableVersioning     = $list.EnableVersioning
+        ValidationFormula    = $list.ValidationFormula
+        ContentTypes         = @($list.ContentTypes | ForEach-Object { $_.Name })
+        Views                = @($list.Views | ForEach-Object { [ordered]@{ Title = $_.Title; Default = $_.DefaultView; Url = $_.ServerRelativeUrl } })
+        WorkflowAssociations = @($list.WorkflowAssociations | ForEach-Object { [ordered]@{ Name = $_.Name; Enabled = $_.Enabled } })
+        FormJsLinks          = $forms
+        Fields               = @($fields)
+    }
+    Write-Json $result (Join-Path $SchemaDir ((Get-SafeName $list.Title) + '.json'))
+
+    [pscustomobject]@{
+        Site = $SiteUrl; Id = $list.Id.Guid; Found = $true; Title = $list.Title; Url = $rootUrl
+        ItemCount = $list.ItemCount; FieldCount = @($fields).Count
+        Workflows = ($result.WorkflowAssociations | ForEach-Object { $_.Name }) -join '; '
+    }
+}
+
+# ---------------------------------------------------------------------------------------------
+$schemaDir  = New-Dir (Join-Path $OutDir 'schemas')
+$uiDir      = New-Dir (Join-Path $OutDir 'legacy-ui')
+$pagesDir   = New-Dir (Join-Path $uiDir 'pages')
+$missingDir = New-Dir (Join-Path $uiDir 'site-assets-missing')
+
+$index = @()
+$mswpoConn = $null
+foreach ($site in $listsBySite.Keys) {
+    $conn = Connect-Site $site
+    if ($site -eq '/sites/wpcb/mswpo') { $mswpoConn = $conn }
+    foreach ($id in $listsBySite[$site]) {
+        $index += Export-List $conn $site $id $schemaDir
+    }
+}
+Write-Json $index (Join-Path $schemaDir '_index.json')
+
+# --- Classic Site Pages: wiki HTML + web part XML -----------------------------------------------
+Write-Host "Exporting Site Pages ..." -ForegroundColor Cyan
+$pages = Get-PnPListItem -List 'Site Pages' -Fields 'FileLeafRef', 'FileRef', 'WikiField' -PageSize 500 -Connection $mswpoConn
+foreach ($page in $pages) {
+    $name = [IO.Path]::GetFileNameWithoutExtension($page['FileLeafRef'])
+    $base = Join-Path $pagesDir (Get-SafeName $name)
+    if ($page['WikiField']) { Set-Content -Path "$base.wikifield.html" -Value $page['WikiField'] -Encoding utf8 }
+    try {
+        $parts = Get-PnPWebPart -ServerRelativePageUrl $page['FileRef'] -Connection $mswpoConn
+        $i = 0
+        foreach ($wp in $parts) {
+            $i++
+            $xml = Get-PnPWebPartXml -ServerRelativePageUrl $page['FileRef'] -Identity $wp.Id -Connection $mswpoConn
+            Set-Content -Path ("$base.webpart$i." + (Get-SafeName $wp.WebPart.Title) + '.xml') -Value $xml -Encoding utf8
+        }
+        Write-Host "  $($page['FileLeafRef'])  ($i web parts)"
+    }
+    catch { Write-Warning "  $($page['FileLeafRef']): $($_.Exception.Message)" }
+}
+
+# --- Site Assets inventory + files missing from the local export --------------------------------
+Write-Host "Inventorying SiteAssets/MSWPO ..." -ForegroundColor Cyan
+$assets = Get-PnPFolderItem -FolderSiteRelativeUrl 'SiteAssets/MSWPO' -ItemType File -Recursive -Connection $mswpoConn
+$inventory = foreach ($f in $assets) {
+    $rel = $f.ServerRelativeUrl -replace '^.*/SiteAssets/MSWPO/', ''
+    $localPath = Join-Path $LocalExportDir ($rel -replace '/', '\')
+    $inLocal = Test-Path $localPath
+    if (-not $inLocal) {
+        $target = New-Dir (Join-Path $missingDir (Split-Path ($rel -replace '/', '\') -Parent))
+        Get-PnPFile -Url $f.ServerRelativeUrl -Path $target -FileName $f.Name -AsFile -Force -Connection $mswpoConn
+    }
+    [pscustomobject]@{ Path = $rel; Length = $f.Length; Modified = $f.TimeLastModified; InLocalExport = $inLocal }
+}
+$inventory | Export-Csv -Path (Join-Path $uiDir 'site-assets.csv') -NoTypeInformation -Encoding utf8
+
+# --- Access Management group names (no personal data) -------------------------------------------
+$groups = Get-PnPListItem -List 'B441CA50-2EFB-425F-BF1B-E66EE18806B0' -Connection $mswpoConn | ForEach-Object {
+    [pscustomobject]@{ Id = $_.Id; Title = $_['Title']; MemberCount = @($_['Group_x0020_Members']).Count }
+}
+Write-Json @($groups) (Join-Path $uiDir 'access-groups.json')
+
+Write-Host ""
+Write-Host "Done." -ForegroundColor Green
+Write-Host "  Lists found: $(@($index | Where-Object Found).Count) / $($index.Count)  -> $schemaDir"
+Write-Host "  Pages      -> $pagesDir"
+Write-Host "  Missing site-asset files downloaded: $(@($inventory | Where-Object { -not $_.InLocalExport }).Count) -> $missingDir"
