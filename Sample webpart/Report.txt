@@ -1,0 +1,46 @@
+MSWPO diagnostics 2026-10-15T15:46:51.187Z
+Page: https://arlingtonva.sharepoint.com/sites/wpcb/mswpo/SitePages/Test-MSWPO.aspx
+User: Kishore Gunnam <Kgunnam@arlingtonva.us> | group: Management | role: Management
+useLegacyForms: {"cdss":false,"taskStandards":false,"trainingDocs":false}
+
+OK      | Access Management | "MSWPO Access Management Configuration" | 4 items | /sites/wpcb/mswpo B441CA50-2EFB-425F-BF1B-E66EE18806B0
+OK      | Operator LookUp List | "Operator LookUp List" | 58 items | /sites/wpcb/mswpo F032B017-5260-492F-B72A-1A7E7FC31A23
+OK      | Operator Certification and Employee Data | "Operator Certification and Employee Data" | 60 items | /sites/wpcb/mswpo 68C451AE-426B-4CFA-B2DC-B101D8D115DF
+OK      | Safety Training Completion | "MSWPO Safety Training Completion List" | 133 items | /sites/wpcb/mswpo 9E08D4B1-10E4-4E14-8E02-31C3379732C0
+OK      | DOC Certification Dates | "DOC Certification Dates for Lab" | 60 items | /sites/wpcb/mswpo D088C1C4-D8DD-4281-9E5C-62D2645CB84A
+OK      | Training Document Sets | "All MSWPO Training Documents" | 121 items | /sites/wpcb/mswpo C8746D73-8405-44C5-BCE2-0DD0E8CDC332
+OK      | Supervisor Station Assignment | "Supervisor Station Assignment" | 7052 items | /sites/wpcb/mswpo C18CC7CF-4BB6-4D55-BCCD-9D252976D75B
+OK      | Operator Station Assignment | "Operator Station Assignment" | 1757 items | /sites/wpcb/mswpo C2932C64-DF7B-4221-85D3-5E3A11FDC2D5
+OK      | CDSS – All Stations – Level 1 | "CDSS- All Stations - Training Level 1" | 6 items | /sites/wpcb/mswpo FCBAA45D-439A-432B-B356-E8A3290BE6FC
+OK      | CDSS – AWT Station – Level 2 | "CDSS AWT Station Training Level 2" | 16 items | /sites/wpcb/mswpo AF8406F9-2ADB-4617-8FBB-EFA63275F563
+OK      | CDSS – DWB Station – Level 2 | "CDSS DWB Station Training Level 2" | 23 items | /sites/wpcb/mswpo 8F4B7AA0-9E38-4207-AA8B-B6B379289B1D
+OK      | CDSS – Primary Station – Level 2 | "CDSS Primary Station Training Level 2" | 19 items | /sites/wpcb/mswpo 99fe0336-193e-42b6-83aa-ff7cc8f44183
+OK      | CDSS – Secondary Station – Level 2 | "CDSS Secondary Station Training Level 2" | 21 items | /sites/wpcb/mswpo D8F44610-ED6A-4063-BFCD-2C47339A179A
+OK      | CDSS – AWT Station – Level 3 | "CDSS- AWT Station - Training Level 3" | 22 items | /sites/wpcb/mswpo a1d23b11-4eb9-40d8-9e3e-565e1b7ee422
+OK      | CDSS – DWB Station – Level 3 | "CDSS- DWB Station - Training Level 3" | 22 items | /sites/wpcb/mswpo 64d28fce-ff0e-46b4-8c64-76fa27162a04
+OK      | CDSS – Primary Station – Level 3 | "CDSS Primary Station Training Level 3" | 23 items | /sites/wpcb/mswpo 3b8c1d2c-1839-4491-87b0-30c4926361d5
+OK      | CDSS – Secondary Station – Level 3 | "CDSS- Secondary Station - Training Level 3" | 24 items | /sites/wpcb/mswpo a606bc0f-0f4c-4654-bd1c-e4fca32154ab
+OK      | Task Standards – All Stations – Level 1 | "All Stations Level 1 Task Standards - Test" | 3 items | /sites/wpcb/mswpo FB0FD350-3EF9-45E4-A293-519434B7AA65
+OK      | Task Standards – AWT Station – Level 2 | "AWT Station Level 2 Task Standards - MiniMods" | 8 items | /sites/wpcb/mswpo 2d185a32-a228-4fb7-8e31-e43b20666ac4
+OK      | Task Standards – DWB Station – Level 2 | "DWB Station Level 2 Task Standards - MiniMods" | 14 items | /sites/wpcb/mswpo 13e69c0a-f5c5-4e61-8f59-ce5c1221725d
+OK      | Task Standards – Primary Station – Level 2 | "Primary Station Level 2 Task Standards - MiniMods" | 8 items | /sites/wpcb/mswpo c5588cd5-0cc4-4b2d-aac7-2281aa41c353
+OK      | Task Standards – Secondary Station – Level 2 | "Secondary Station Level 2 Task Standards - MiniMods" | 13 items | /sites/wpcb/mswpo 8918815a-b12c-4741-b024-957895254cce
+OK      | Task Standards – AWT Station – Level 3 | "AWT Station Level 3 Task Standards - RRCLs" | 22 items | /sites/wpcb/mswpo d6e8defa-b6d6-4654-a7af-1f244599c1bd
+OK      | Task Standards – DWB Station – Level 3 | "DWB Station Level 3 Task Standards - RRCLs" | 21 items | /sites/wpcb/mswpo ea0b10c3-cb86-4e19-ab76-f16b55bac9e0
+OK      | Task Standards – Primary Station – Level 3 | "Primary Station Level 3 Task Standards - RRCLs" | 24 items | /sites/wpcb/mswpo DBEC4BE4-3A1E-403F-B5C5-79340F48445C
+OK      | Task Standards – Secondary Station – Level 3 | "Secondary Station Level 3 Task Standards - RRCLs" | 26 items | /sites/wpcb/mswpo f0b13014-aba0-4f79-b21d-b9d48d8d5a24
+OK      | Training Docs – All Stations – Level 1 | "All Stations - Level 1 Feeder Training Docs" | 0 items | /sites/wpcb/mswpo 9428C900-C93D-4428-A3F9-33F15864672B
+OK      | Training Docs – AWT Station – Level 2 | "AWT Station - Level 2 Feeder Training Docs" | 12 items | /sites/wpcb/mswpo b65f8db5-051d-4cfc-b4fb-f33bae7084a0
+OK      | Training Docs – DWB Station – Level 2 | "DWB Station - Level 2 Feeder Training Docs" | 20 items | /sites/wpcb/mswpo 3674435a-0c3a-4a45-8c8d-81eb98335d13
+OK      | Training Docs – Primary Station – Level 2 | "Primary Station - Level 2 Feeder Training Docs" | 15 items | /sites/wpcb/mswpo 149e1017-cf92-45f2-b195-fe12a570f8f4
+OK      | Training Docs – Secondary Station – Level 2 | "Secondary Station - Level 2 Feeder Training Docs" | 19 items | /sites/wpcb/mswpo e12a45d2-8faa-43cd-847b-f04b8657a7a9
+OK      | Training Docs – AWT Station – Level 3 | "AWT Station - Level 3 Feeder Training Docs" | 14 items | /sites/wpcb/mswpo d9fc725b-9394-46ef-b94e-90bedd717865
+OK      | Training Docs – DWB Station – Level 3 | "DWB Station - Level 3 Feeder Training Docs" | 18 items | /sites/wpcb/mswpo 5cc83d4e-892d-4f2b-8a7f-4986d74fd68b
+OK      | Training Docs – Primary Station – Level 3 | "Primary Station - Level 3 Feeder Training Docs" | 29 items | /sites/wpcb/mswpo 8a44d44b-8da7-40e7-a057-d94e2954c712
+OK      | Training Docs – Secondary Station – Level 3 | "Secondary Station - Level 3 Feeder Training Docs" | 23 items | /sites/wpcb/mswpo 9a113dca-97ec-4c37-86ca-01f95a0d1498
+OK      | Library Operation Forms and Checklists (/sites/wpcb/ops) | "Operation Forms and Checklists" | 2 items | /sites/wpcb/ops b7045914-d08f-4e21-8e0e-8f667aad0ef1
+OK      | Library System Operating Manuals (/sites/wpcb/ops) | "System Operating Manuals" | 307 items | /sites/wpcb/ops f00dd4b1-ce1b-4040-97b7-467300d1f268
+OK      | Library Field SOPs (/sites/wpcb/ops) | "Field SOPs" | 184 items | /sites/wpcb/ops f989fed2-feb6-42db-a9b2-a93268efba48
+OK      | Library Operator Mini-Modules (Task Standards) (/sites/wpcb/ops) | "Operator Mini-Modules (Task Standards)" | 43 items | /sites/wpcb/ops adb0911f-4e9f-4fbd-87aa-7050e247f3af
+OK      | Library PCS Strategies and Manuals (/sites/wpcb/ops) | "PCS Strategies and Manuals" | 199 items | /sites/wpcb/ops ea97b02b-719f-4030-aa30-16d8c1968074
+OK      | Library Lab SOPs for Operations (/sites/wpcb/lab) | "Lab SOPs for Operations" | 38 items | /sites/wpcb/lab 6BA7EB66-940C-4935-B808-ED938ED99302
