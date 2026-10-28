@@ -766,10 +766,19 @@ function Get-CleanupItems {
             $todo += [pscustomobject]@{ Key = $def.Key; Id = [int]$i.Id; Why = 'form saved during the run' }
         }
     }
-    foreach ($k in 'operatorStationAssignment', 'supervisorStationAssignment') {
-        foreach ($i in (Get-ItemsAbove (Get-Core $k) ([int]$State.baseline[$k]) | Where-Object { $_.FieldValues['Author'].LookupId -eq $Me.Id })) {
-            $todo += [pscustomobject]@{ Key = $k; Id = [int]$i.Id; Why = 'station assignment saved by you during the run' }
-        }
+    # Station assignments may be saved from the browser by another account: match the operator, not the author.
+    $osa = @(Get-ItemsAbove (Get-Core 'operatorStationAssignment') ([int]$State.baseline['operatorStationAssignment']) |
+            Where-Object { (Format-Value $_.FieldValues['operator']) -eq $name })
+    foreach ($i in $osa) { $todo += [pscustomobject]@{ Key = 'operatorStationAssignment'; Id = [int]$i.Id; Why = 'station assignment row saved during the run' } }
+    # Day/shift items only when every row of that key belongs to the test operator (a real supervisor may have used the same key).
+    $keys = @($osa | ForEach-Object { Format-Value $_.FieldValues['Title'] } | Select-Object -Unique)
+    foreach ($i in (Get-ItemsAbove (Get-Core 'supervisorStationAssignment') ([int]$State.baseline['supervisorStationAssignment']))) {
+        $key = Format-Value $i.FieldValues['Title']
+        if ($keys -notcontains $key) { continue }
+        $others = @(Get-ItemsAbove (Get-Core 'operatorStationAssignment') ([int]$State.baseline['operatorStationAssignment']) |
+                Where-Object { (Format-Value $_.FieldValues['Title']) -eq $key -and (Format-Value $_.FieldValues['operator']) -ne $name })
+        if ($others.Count) { Write-Warning "Keeping $key (#$($i.Id)): it also has rows for other operators."; continue }
+        $todo += [pscustomobject]@{ Key = 'supervisorStationAssignment'; Id = [int]$i.Id; Why = "station assignment day $key saved during the run" }
     }
     # Dependants first, Operator LookUp last (other lists look it up).
     $order = @{ operatorLookup = 9; operatorCertification = 8; safetyTraining = 7; docCertificationDates = 6; trainingDocumentSets = 5 }
