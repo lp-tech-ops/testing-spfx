@@ -63,6 +63,8 @@ param(
     [double[]] $SafetyThisYear = @(40, 50, 45),
     [switch] $Force,
     [string] $DataDir,
+    # Role / RestoreRole: the account to change (email), e.g. the one signed in to the browser. Default: you.
+    [string] $User,
     [switch] $DeviceLogin,
     [string] $Tenant
 )
@@ -385,57 +387,86 @@ function Set-Membership($Item, [int[]]$Ids) {
     Invoke-PnPQuery
 }
 
-function Get-ExpectedRole($Items) {
+# The account whose role is changed: -User <email> (e.g. the account signed in to the browser), default = you.
+function Get-TargetUser {
+    if (-not $User) { return $Me }
+    $u = New-PnPUser -LoginName $User   # ensures the user exists on the site and returns it (Id, Title, Email)
+    return $u
+}
+
+function Get-UserKey($Who) { return ([string]$Who.Email).ToLowerInvariant() }
+
+# Old state files kept one list of item ids for the signed-in account; move it to the per-user map.
+function Get-OriginalRoleMap($St) {
+    if (-not $St.ContainsKey('originalRolesByUser')) { $St.originalRolesByUser = @{} }
+    if ($St.ContainsKey('originalRoles')) {
+        $St.originalRolesByUser[(Get-UserKey $Me)] = @($St.originalRoles)
+        $St.Remove('originalRoles')
+    }
+    return $St.originalRolesByUser
+}
+
+function Get-ExpectedRole($Items, $Who = $Me) {
     # Legacy rule (roleLogic.ts): ID order, last match wins, Supervisors is never replaced.
     $resolved = ''
     foreach ($it in ($Items | Sort-Object { [int]$_.Id })) {
-        if ((Get-MemberIds $it) -contains $Me.Id -and $resolved -ne 'Supervisors') { $resolved = [string]$it.FieldValues['Title'] }
+        if ((Get-MemberIds $it) -contains $Who.Id -and $resolved -ne 'Supervisors') { $resolved = [string]$it.FieldValues['Title'] }
     }
-    $isOperator = (Find-OperatorItems (Get-Core 'operatorLookup') 'Operator_x0020_Name' $Me.Title).Count -gt 0
+    $isOperator = (Find-OperatorItems (Get-Core 'operatorLookup') 'Operator_x0020_Name' $Who.Title).Count -gt 0
     if ($resolved -eq 'Trainer') { if ($isOperator) { return 'Trainer-Operator' } else { return 'Trainer' } }
     if (-not $resolved) { if ($isOperator) { return 'Operator' } else { return 'Visitor' } }
     return $resolved
 }
 
+function Set-UserGroups($Items, $Who, [int[]]$WantIds) {
+    foreach ($it in $Items) {
+        $ids = Get-MemberIds $it
+        $isIn = $ids -contains $Who.Id
+        $want = $WantIds -contains [int]$it.Id
+        if ($want -and -not $isIn) { Set-Membership $it ($ids + $Who.Id); Write-Host "  added to     $($it.FieldValues['Title']) (#$($it.Id))" }
+        if (-not $want -and $isIn) { Set-Membership $it ($ids | Where-Object { $_ -ne $Who.Id }); Write-Host "  removed from $($it.FieldValues['Title']) (#$($it.Id))" }
+    }
+}
+
 function Invoke-Role([string]$Target) {
+    $who = Get-TargetUser
     $list = Get-Core 'accessManagement'
     $items = Get-Items $list | Sort-Object { [int]$_.Id }
     $st = $State
     if (-not $st) { $st = @{ created = @() } }
-    if (-not $st.originalRoles) {
-        $st.originalRoles = @($items | Where-Object { (Get-MemberIds $_) -contains $Me.Id } | ForEach-Object { [int]$_.Id })
-        Save-State $st
-        Write-Host "Saved your original groups (item ids: $($st.originalRoles -join ', '))."
+    $map = Get-OriginalRoleMap $st
+    $key = Get-UserKey $who
+    if (-not $map.ContainsKey($key)) {
+        $map[$key] = @($items | Where-Object { (Get-MemberIds $_) -contains $who.Id } | ForEach-Object { [int]$_.Id })
+        Write-Host "Saved the original groups of $($who.Title) (item ids: $(if ($map[$key].Count) { $map[$key] -join ', ' } else { 'none' }))."
     }
+    Save-State $st
     $group = if ($Target -eq 'Operator') { '' } else { $Target }
     $targetItem = $items | Where-Object { [string]$_.FieldValues['Title'] -eq $group } | Select-Object -Last 1
     if ($group -and -not $targetItem) { throw "No Access Management item titled '$group'." }
-    foreach ($it in $items) {
-        $ids = Get-MemberIds $it
-        $isMe = $ids -contains $Me.Id
-        $want = $targetItem -and [int]$it.Id -eq [int]$targetItem.Id
-        if ($want -and -not $isMe) { Set-Membership $it ($ids + $Me.Id); Write-Host "  added to   $($it.FieldValues['Title']) (#$($it.Id))" }
-        if (-not $want -and $isMe) { Set-Membership $it ($ids | Where-Object { $_ -ne $Me.Id }); Write-Host "  removed from $($it.FieldValues['Title']) (#$($it.Id))" }
-    }
-    $role = Get-ExpectedRole (Get-Items $list)
-    Write-Host "Role the app should now show: $role  (reload the page)" -ForegroundColor Green
+    Write-Host "Setting the role of $($who.Title) <$($who.Email)> to $Target" -ForegroundColor Cyan
+    Set-UserGroups $items $who $(if ($targetItem) { @([int]$targetItem.Id) } else { @() })
+    $role = Get-ExpectedRole (Get-Items $list) $who
+    Write-Host "Role the app should now show for $($who.Title): $role  (reload the page)" -ForegroundColor Green
     return $st
 }
 
+# Restores every account whose role this run changed (or only -User).
 function Invoke-RestoreRole {
-    if (-not $State -or $null -eq $State.originalRoles) { Write-Host 'Nothing to restore (Role was never used in this run).'; return }
+    if (-not $State) { Write-Host 'Nothing to restore (Role was never used in this run).'; return }
+    $map = Get-OriginalRoleMap $State
+    $keys = @($map.Keys)
+    if ($User) { $keys = @($keys | Where-Object { $_ -eq $User.ToLowerInvariant() }) }
+    if (-not $keys.Count) { Write-Host 'Nothing to restore (Role was never used in this run).'; return }
     $list = Get-Core 'accessManagement'
-    $items = Get-Items $list
-    foreach ($it in $items) {
-        $ids = Get-MemberIds $it
-        $want = $State.originalRoles -contains [int]$it.Id
-        $isMe = $ids -contains $Me.Id
-        if ($want -and -not $isMe) { Set-Membership $it ($ids + $Me.Id); Write-Host "  added to   $($it.FieldValues['Title'])" }
-        if (-not $want -and $isMe) { Set-Membership $it ($ids | Where-Object { $_ -ne $Me.Id }); Write-Host "  removed from $($it.FieldValues['Title'])" }
+    foreach ($k in $keys) {
+        $who = New-PnPUser -LoginName $k
+        Write-Host "Restoring the groups of $($who.Title) <$k>" -ForegroundColor Cyan
+        Set-UserGroups (Get-Items $list) $who @($map[$k])
+        Write-Host "  role the app should show: $(Get-ExpectedRole (Get-Items $list) $who)" -ForegroundColor Green
+        $map.Remove($k)
     }
-    $State.Remove('originalRoles')
     Save-State $State
-    Write-Host "Groups restored. Role the app should show: $(Get-ExpectedRole (Get-Items $list))" -ForegroundColor Green
 }
 
 # ---- setup (section A) ----------------------------------------------------------------------------
@@ -804,8 +835,13 @@ function Invoke-Status {
     if (-not $State) { Write-Host 'No run set up yet (use -Action Setup).'; return }
     Write-Host "Operator: $($State.operator) <$($State.email)>  started $($State.startedAt)"
     Write-Host "Created by Setup: $(($State.created | ForEach-Object { "$($_.list)#$($_.id)" }) -join ', ')"
-    if ($null -ne $State.originalRoles) { Write-Host "Original groups (Access Management item ids): $($State.originalRoles -join ', ')" }
-    Write-Host "Role the app should show now: $(Get-ExpectedRole (Get-Items (Get-Core 'accessManagement')))"
+    $items = Get-Items (Get-Core 'accessManagement')
+    Write-Host "Your role (signed-in account): $(Get-ExpectedRole $items)"
+    $map = Get-OriginalRoleMap $State
+    foreach ($k in $map.Keys) {
+        $who = New-PnPUser -LoginName $k
+        Write-Host "Changed by this run: $($who.Title) <$k> - now $(Get-ExpectedRole $items $who); original groups (item ids): $(if (@($map[$k]).Count) { @($map[$k]) -join ', ' } else { 'none' })"
+    }
     $n = if (Test-Path $SnapDir) { @(Get-ChildItem $SnapDir -Filter '*.json').Count } else { 0 }
     Write-Host "Snapshots: $n"
 }
