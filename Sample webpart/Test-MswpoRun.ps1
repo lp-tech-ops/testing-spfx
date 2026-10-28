@@ -398,38 +398,47 @@ function Invoke-RestoreRole {
 }
 
 # ---- setup (section A) ----------------------------------------------------------------------------
+function Get-CreatedCount($St, [string]$Key) { return @($St.created | Where-Object { $_.list -eq $Key }).Count }
+
+# Re-running Setup resumes: items already created by this run are skipped, the rest is created.
 function Invoke-Setup {
-    if ($State -and $State.created -and $State.created.Count -and -not $Force) {
-        throw "A run is already set up for '$($State.operator)' ($($State.created.Count) items). Run -Action Cleanup -Force first (or Setup -Force to add another)."
-    }
-    $name = if ($OperatorName) { $OperatorName } else { $Me.Title }
-    $email = if ($OperatorEmail) { $OperatorEmail } else { $Me.Email }
-    $script:OperatorName = $name
     $lookup = Get-Core 'operatorLookup'
-    if ((Find-OperatorItems $lookup 'Operator_x0020_Name' $name).Count) { throw "'$name' is already in the Operator LookUp List on this site - pick another -OperatorName or clean up first." }
-
-    $st = if ($State) { $State } else { @{} }
-    $st.operator = $name
-    $st.email = $email
-    $st.startedAt = (Get-Date).ToString('o')
-    if (-not $st.created) { $st.created = @() }
-    Write-Host "Recording the highest item id of every MSWPO list ..."
-    $st.baseline = @{}
-    foreach ($key in $Lists.Core.Keys) { $st.baseline[$key] = Get-MaxId (Get-Core $key) }
-    foreach ($def in $Lists.Station) { $st.baseline[$def.Key] = Get-MaxId (Resolve-MswpoList $def) }
-    Save-State $st
-
-    Write-Host "Creating test operator '$name' <$email>, shift $Shift" -ForegroundColor Cyan
-    # A1 Operator LookUp
-    $a1 = [ordered]@{
-        Operator_x0020_Name = $name; Operator_x0020_Email = $email; Operator_x0020_Shift = $Shift; Job_x0020_Title = 'Operator'
-    }
     $lf = Get-FieldInfo $lookup
-    $a1.Status = Select-ActiveStatus $lf['Status']
-    'PrimaryStationHours', 'PrimaryStationTrainingHours', 'SecondaryStationHours', 'SecondaryStationTrainingHours', 'AWTStationHours',
-    'AWTStationTrainingHours', 'DWBStationHours', 'DWBStationTrainingHours', 'SupervisorDutiesStationHours',
-    'SupervisorDutiesStationTrainingHours', 'SupervisorDutiesHours' | Where-Object { $lf[$_] } | ForEach-Object { $a1[$_] = 0 }
-    Add-TrackedItem $st 'operatorLookup' $lookup (New-Values $lookup $a1) | Out-Null
+    if ($State -and $State.operator -and $State.baseline) {
+        if ($OperatorName -and $OperatorName -ne $State.operator) { throw "A run for '$($State.operator)' already exists. Run -Action Cleanup -Force first." }
+        $st = $State
+        $name = $st.operator
+        $email = $st.email
+        Write-Host "Resuming setup for '$name' (already created: $(($st.created | ForEach-Object { $_.list }) -join ', '))" -ForegroundColor Yellow
+    } else {
+        $name = if ($OperatorName) { $OperatorName } else { $Me.Title }
+        $email = if ($OperatorEmail) { $OperatorEmail } else { $Me.Email }
+        if ((Find-OperatorItems $lookup 'Operator_x0020_Name' $name).Count) { throw "'$name' is already in the Operator LookUp List on this site - pick another -OperatorName or clean up first." }
+        $st = if ($State) { $State } else { @{} }
+        $st.operator = $name
+        $st.email = $email
+        $st.startedAt = (Get-Date).ToString('o')
+        $st.created = @()
+        Write-Host "Recording the highest item id of every MSWPO list ..."
+        $st.baseline = @{}
+        foreach ($key in $Lists.Core.Keys) { $st.baseline[$key] = Get-MaxId (Get-Core $key) }
+        foreach ($def in $Lists.Station) { $st.baseline[$def.Key] = Get-MaxId (Resolve-MswpoList $def) }
+        Save-State $st
+    }
+    $script:OperatorName = $name
+    Write-Host "Test operator '$name' <$email>, shift $Shift" -ForegroundColor Cyan
+
+    # A1 Operator LookUp
+    if (-not (Get-CreatedCount $st 'operatorLookup')) {
+        $a1 = [ordered]@{
+            Operator_x0020_Name = $name; Operator_x0020_Email = $email; Operator_x0020_Shift = $Shift; Job_x0020_Title = 'Operator'
+        }
+        $a1.Status = Select-ActiveStatus $lf['Status']
+        'PrimaryStationHours', 'PrimaryStationTrainingHours', 'SecondaryStationHours', 'SecondaryStationTrainingHours', 'AWTStationHours',
+        'AWTStationTrainingHours', 'DWBStationHours', 'DWBStationTrainingHours', 'SupervisorDutiesStationHours',
+        'SupervisorDutiesStationTrainingHours', 'SupervisorDutiesHours' | Where-Object { $lf[$_] } | ForEach-Object { $a1[$_] = 0 }
+        Add-TrackedItem $st 'operatorLookup' $lookup (New-Values $lookup $a1) | Out-Null
+    }
 
     # Shift supervisor = legacy GetSupervisorEmail: active Supervisor on the same shift, last match wins.
     $supShift = Select-Choice $lf['Operator_x0020_Shift'] $Shift 'Shift'
@@ -450,17 +459,25 @@ function Invoke-Setup {
     if ($sup -and $ef['Shift_x0020_Supervisor']) {
         $a2.Shift_x0020_Supervisor = if ($ef['Shift_x0020_Supervisor'].Type -like 'User*') { Format-Value $sup.FieldValues['Operator_x0020_Email'] } else { Format-Value $sup.FieldValues['Operator_x0020_Name'] }
     }
-    Add-TrackedItem $st 'operatorCertification' $emp (New-Values $emp $a2) | Out-Null
+    if (-not (Get-CreatedCount $st 'operatorCertification')) {
+        Add-TrackedItem $st 'operatorCertification' $emp (New-Values $emp $a2) | Out-Null
+    }
 
-    # A3 Safety, last year and this year
+    # A3 Safety, last year and this year (note: the comma binds tighter than "-", hence the parentheses)
     $safety = Get-Core 'safetyTraining'
     $sf = Get-FieldInfo $safety
     $year = (Get-Date).Year
-    foreach ($row in @(@($year - 1, $SafetyLastYear), @($year, $SafetyThisYear))) {
-        $y = if ($sf['Year'] -and $sf['Year'].Type -match 'Number') { [int]$row[0] } else { [string]$row[0] }
+    $safetyRows = @(
+        @{ Year = ($year - 1); Values = $SafetyLastYear },
+        @{ Year = $year; Values = $SafetyThisYear }
+    )
+    $done = Get-CreatedCount $st 'safetyTraining'
+    for ($i = $done; $i -lt $safetyRows.Count; $i++) {
+        $row = $safetyRows[$i]
+        $y = if ($sf['Year'] -and $sf['Year'].Type -match 'Number') { [int]$row.Year } else { [string]$row.Year }
         $a3 = [ordered]@{
             Operator_x0020_Look_x0020_up = $name; Year = $y
-            _x0025_Face_x0020_to_x0020_Face_ = $row[1][0]; _x0025_Online_x0020_Completed = $row[1][1]; _x0025__x0020_Total_x0020_Safety = $row[1][2]
+            _x0025_Face_x0020_to_x0020_Face_ = $row.Values[0]; _x0025_Online_x0020_Completed = $row.Values[1]; _x0025__x0020_Total_x0020_Safety = $row.Values[2]
         }
         Add-TrackedItem $st 'safetyTraining' $safety (New-Values $safety $a3) | Out-Null
     }
@@ -470,9 +487,12 @@ function Invoke-Setup {
     $df = Get-FieldInfo $doc
     $a4 = [ordered]@{ Title = $name; Shift = $Shift }
     if ($df['Status']) { $a4.Status = Select-ActiveStatus $df['Status'] }
-    Add-TrackedItem $st 'docCertificationDates' $doc (New-Values $doc $a4) | Out-Null
+    if (-not (Get-CreatedCount $st 'docCertificationDates')) {
+        Add-TrackedItem $st 'docCertificationDates' $doc (New-Values $doc $a4) | Out-Null
+    }
 
     # A5 Document set (name without a trailing dot - legacy GetDocumentSetURL), Title = operator name
+    if (Get-CreatedCount $st 'trainingDocumentSets') { Write-Host 'Setup complete.' -ForegroundColor Green; return $st }
     $lib = Get-Core 'trainingDocumentSets'
     $dsName = Get-DocSetName $name
     if (Get-DocSetFolder $name) { throw "A document set '$dsName' already exists in '$($lib.Title)'." }
