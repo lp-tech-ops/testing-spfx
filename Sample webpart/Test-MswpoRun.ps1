@@ -22,13 +22,20 @@
                    your groups.
 
     Lists are found like the web part does on a non-production site (decision D20): production GUID, else URL
-    name, else title - read from src/webparts/mswpo/config/lists.ts so the two never drift apart.
+    name, else title. The definitions are embedded below (copied from src/webparts/mswpo/config/lists.ts and kept
+    in sync by tools/Run-LogicTests.ps1), so this single file can be copied to and run on any machine.
+
+    Output (state, snapshots, CHANGES.md) goes to -DataDir; default: docs/test-run-data when run from the project,
+    otherwise a "test-run-data" folder next to this script. Bring CHANGES.md back (or paste the console output).
 
 .REQUIREMENTS
     PowerShell 7.2+, PnP.PowerShell 2.x+, the Entra app ClientId used for Deploy-Mswpo.ps1, edit rights on the test site.
+    Sign-in: browser pop-up (-Interactive, like Deploy-Mswpo.ps1); on a server without a usable browser add
+    -DeviceLogin and complete the code on any device (add -Tenant <tenant>.onmicrosoft.com if PnP asks for it).
 
 .EXAMPLE
-    pwsh ./tools/Test-MswpoRun.ps1 -ClientId <guid> -SiteUrl https://arlingtonva.sharepoint.com/sites/<test> -Action Setup
+    pwsh ./Test-MswpoRun.ps1 -ClientId <guid> -SiteUrl https://arlingtonva.sharepoint.com/sites/<test> -Action Setup
+    pwsh ./Test-MswpoRun.ps1 -ClientId <guid> -SiteUrl <test site> -Action Setup -DeviceLogin
     pwsh ./tools/Test-MswpoRun.ps1 -ClientId <guid> -SiteUrl <test site> -Action Role -Role Supervisors
     pwsh ./tools/Test-MswpoRun.ps1 -ClientId <guid> -SiteUrl <test site> -Action Snapshot -Label C1
     pwsh ./tools/Test-MswpoRun.ps1 -ClientId <guid> -SiteUrl <test site> -Action Check -Step SSA
@@ -51,16 +58,76 @@ param(
     # Safety percentages: face-to-face, online, total
     [double[]] $SafetyLastYear = @(80, 90, 85),
     [double[]] $SafetyThisYear = @(40, 50, 45),
-    [switch] $Force
+    [switch] $Force,
+    [string] $DataDir,
+    [switch] $DeviceLogin,
+    [string] $Tenant
 )
 
 $ErrorActionPreference = 'Stop'
 $ProductionPath = '/sites/wpcb/mswpo'
-$DataDir = Join-Path $PSScriptRoot '..\docs\test-run-data'
+if (-not $DataDir) {
+    $projectDocs = Join-Path $PSScriptRoot '..\docs'
+    $DataDir = if (Test-Path $projectDocs) { Join-Path $projectDocs 'test-run-data' } else { Join-Path $PSScriptRoot 'test-run-data' }
+}
 $StateFile = Join-Path $DataDir 'state.json'
 $SnapDir = Join-Path $DataDir 'snapshots'
 $ChangesFile = Join-Path $DataDir 'CHANGES.md'
-$ListsTs = Join-Path $PSScriptRoot '..\src\webparts\mswpo\config\lists.ts'
+
+# BEGIN LISTS - generated from src/webparts/mswpo/config/lists.ts by tools/Run-LogicTests.ps1; do not edit by hand.
+$EmbeddedLists = @'
+export const CORE_LISTS = {
+accessManagement: mswpo('B441CA50-2EFB-425F-BF1B-E66EE18806B0', 'MSWPO Access Management Configuration', 'MSWPO Access Management Configuration'),
+operatorLookup: mswpo('F032B017-5260-492F-B72A-1A7E7FC31A23', 'Operator LookUp List', 'Operator LookUp List'),
+operatorCertification: mswpo('68C451AE-426B-4CFA-B2DC-B101D8D115DF', 'Operator Certification and Employee Data', 'Employee Data'),
+safetyTraining: mswpo('9E08D4B1-10E4-4E14-8E02-31C3379732C0', 'MSWPO Safety Training Completion List', 'MSWPO Safety Training Completion List'),
+docCertificationDates: mswpo('D088C1C4-D8DD-4281-9E5C-62D2645CB84A', 'DOC Certification Dates for Lab', 'DOC Certification Dates for Lab'),
+trainingDocumentSets: mswpo('C8746D73-8405-44C5-BCE2-0DD0E8CDC332', 'All MSWPO Training Documents', 'All MSWPO Training Documents'),
+supervisorStationAssignment: mswpo('C18CC7CF-4BB6-4D55-BCCD-9D252976D75B', 'Supervisor Station Assignment', 'Supervisor Station Assignment'),
+operatorStationAssignment: mswpo('C2932C64-DF7B-4221-85D3-5E3A11FDC2D5', 'Operator Station Assignment')
+export const STATION_LEVEL_LISTS: Record<FormKind, Record<Level, StationLists>> = {
+cdss: {
+3: {
+primary: mswpo('3b8c1d2c-1839-4491-87b0-30c4926361d5', 'CDSS Primary Station Training Level 3', 'CDSS Primary Station Training Level 3'),
+secondary: mswpo('a606bc0f-0f4c-4654-bd1c-e4fca32154ab', 'CDSS- Secondary Station - Training Level 3', 'CDSS Secondary Station  Training Level 3'),
+awt: mswpo('a1d23b11-4eb9-40d8-9e3e-565e1b7ee422', 'CDSS- AWT Station - Training Level 3', 'CDSS AWT Station  Training Level 3'),
+dwb: mswpo('64d28fce-ff0e-46b4-8c64-76fa27162a04', 'CDSS- DWB Station - Training Level 3', 'CDSS DWB Station  Training Level 3')
+2: {
+primary: mswpo('99fe0336-193e-42b6-83aa-ff7cc8f44183', 'CDSS Primary Station Training Level 2', 'CDSS Primary Station Training Level 2'),
+secondary: mswpo('D8F44610-ED6A-4063-BFCD-2C47339A179A', 'CDSS Secondary Station Training Level 2', 'CDSS Secondary Station Training Level 2'),
+awt: mswpo('AF8406F9-2ADB-4617-8FBB-EFA63275F563', 'CDSS AWT Station Training Level 2', 'CDSS AWT Station Training Level 2'),
+dwb: mswpo('8F4B7AA0-9E38-4207-AA8B-B6B379289B1D', 'CDSS DWB Station Training Level 2', 'CDSS DWB Station Training Level 2')
+1: {
+all: mswpo('FCBAA45D-439A-432B-B356-E8A3290BE6FC', 'CDSS- All Stations - Training Level 1', 'CDSS All Stations  Training Level 1')
+taskStandards: {
+3: {
+primary: mswpo('DBEC4BE4-3A1E-403F-B5C5-79340F48445C', 'Primary Station Level 3 Task Standards - RRCLs', 'Primary Station Level 3 Task Standards  RRCLs'),
+secondary: mswpo('f0b13014-aba0-4f79-b21d-b9d48d8d5a24', 'Secondary Station Level 3 Task Standards - RRCLs', 'Secondary Station Level 3 Task Standards  RRCLs'),
+awt: mswpo('d6e8defa-b6d6-4654-a7af-1f244599c1bd', 'AWT Station Level 3 Task Standards - RRCLs', 'AWT Station Level 3 Task Standards  RRCLs'),
+dwb: mswpo('ea0b10c3-cb86-4e19-ab76-f16b55bac9e0', 'DWB Station Level 3 Task Standards - RRCLs', 'DWB Station Level 3 Task Standards  RRCLs')
+2: {
+primary: mswpo('c5588cd5-0cc4-4b2d-aac7-2281aa41c353', 'Primary Station Level 2 Task Standards - MiniMods', 'Primary Station Level 2 Task Standards  MiniMods'),
+secondary: mswpo('8918815a-b12c-4741-b024-957895254cce', 'Secondary Station Level 2 Task Standards - MiniMods', 'Secondary Station Level 2 Task Standards  MiniMods'),
+awt: mswpo('2d185a32-a228-4fb7-8e31-e43b20666ac4', 'AWT Station Level 2 Task Standards - MiniMods', 'AWT Station Level 2 Task Standards  MiniMods'),
+dwb: mswpo('13e69c0a-f5c5-4e61-8f59-ce5c1221725d', 'DWB Station Level 2 Task Standards - MiniMods', 'DWB Station Level 2 Task Standards  MiniMods')
+1: {
+all: mswpo('FB0FD350-3EF9-45E4-A293-519434B7AA65', 'All Stations Level 1 Task Standards - Test', 'All Stations Level1 Task Standards  Test')
+trainingDocs: {
+3: {
+primary: mswpo('8a44d44b-8da7-40e7-a057-d94e2954c712', 'Primary Station - Level 3 Feeder Training Docs', 'Primary Station  Level 3 Feeder Training Docs'),
+secondary: mswpo('9a113dca-97ec-4c37-86ca-01f95a0d1498', 'Secondary Station - Level 3 Feeder Training Docs', 'Secondary Station  Level 3 Feeder Training Docs'),
+awt: mswpo('d9fc725b-9394-46ef-b94e-90bedd717865', 'AWT Station - Level 3 Feeder Training Docs', 'AWT Station  Level 3 Feeder Training Docs'),
+dwb: mswpo('5cc83d4e-892d-4f2b-8a7f-4986d74fd68b', 'DWB Station - Level 3 Feeder Training Docs', 'DWB Station  Level 3 Feeder Training Docs')
+2: {
+primary: mswpo('149e1017-cf92-45f2-b195-fe12a570f8f4', 'Primary Station - Level 2 Feeder Training Docs', 'Primary Station  Level 2 Feeder Training Docs'),
+secondary: mswpo('e12a45d2-8faa-43cd-847b-f04b8657a7a9', 'Secondary Station - Level 2 Feeder Training Docs', 'Secondary Station  Level 2 Feeder Training Docs'),
+awt: mswpo('b65f8db5-051d-4cfc-b4fb-f33bae7084a0', 'AWT Station - Level 2 Feeder Training Docs', 'AWT Station  Level 2 Feeder Training Docs'),
+dwb: mswpo('3674435a-0c3a-4a45-8c8d-81eb98335d13', 'DWB Station - Level 2 Feeder Training Docs', 'DWB Station  Level 2 Feeder Training Docs')
+1: {
+all: mswpo('9428C900-C93D-4428-A3F9-33F15864672B', 'All Stations - Level 1 Feeder Training Docs', 'All Stations  Level 1 Feeder Training Docs')
+export const TRAINING_LIBRARIES: ITrainingLibrary[] = [
+'@
+# END LISTS
 
 # ---- production guard -----------------------------------------------------------------------------
 $sitePath = ([Uri]$SiteUrl).AbsolutePath.TrimEnd('/')
@@ -68,12 +135,12 @@ if ($sitePath -ieq $ProductionPath -or $sitePath -eq '') {
     throw "Refusing to run: $SiteUrl is the production MSWPO site. Use the test site URL."
 }
 
-# ---- list definitions from lists.ts ---------------------------------------------------------------
-function Read-ListConfig {
+# ---- list definitions (embedded copy of lists.ts) -------------------------------------------------
+function Read-ListConfig([string[]]$Lines = ($EmbeddedLists -split "`r?`n")) {
     $core = [ordered]@{}
     $station = @()
     $kind = ''; $level = ''; $inStation = $false
-    foreach ($line in Get-Content $ListsTs) {
+    foreach ($line in $Lines) {
         if ($line -match 'export const STATION_LEVEL_LISTS') { $inStation = $true; continue }
         if ($line -match 'export const TRAINING_LIBRARIES') { break }
         if ($inStation -and $line -match '^\s*(cdss|taskStandards|trainingDocs): \{') { $kind = $Matches[1]; continue }
@@ -89,7 +156,7 @@ function Read-ListConfig {
             }
         }
     }
-    if (-not $core.Contains('operatorLookup') -or $station.Count -lt 20) { throw "Could not read the list definitions from $ListsTs" }
+    if (-not $core.Contains('operatorLookup') -or $station.Count -lt 20) { throw 'Could not read the embedded list definitions (run tools/Run-LogicTests.ps1 in the project to regenerate them).' }
     return @{ Core = $core; Station = $station }
 }
 
@@ -241,7 +308,14 @@ function Get-DocSetFolder([string]$Name) {
 $Lists = Read-ListConfig
 New-Item -ItemType Directory -Force $DataDir | Out-Null
 Write-Host "Connecting to $SiteUrl ..." -ForegroundColor Cyan
-Connect-PnPOnline -Url $SiteUrl -Interactive -ClientId $ClientId
+if ($DeviceLogin) {
+    $signIn = @{ Url = $SiteUrl; DeviceLogin = $true; ClientId = $ClientId }
+    if ($Tenant) { $signIn.Tenant = $Tenant }
+    Connect-PnPOnline @signIn
+} else {
+    Connect-PnPOnline -Url $SiteUrl -Interactive -ClientId $ClientId
+}
+Write-Host "Data folder: $DataDir"
 $Me = Get-PnPProperty -ClientObject (Get-PnPWeb) -Property CurrentUser
 Write-Host "Signed in as $($Me.Title) <$($Me.Email)>"
 $State = Get-State
