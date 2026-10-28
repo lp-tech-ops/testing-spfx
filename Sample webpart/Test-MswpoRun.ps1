@@ -16,10 +16,13 @@
                    saves docs/test-run-data/snapshots/NN-<Label>.json and appends the field-level changes since the
                    previous snapshot to docs/test-run-data/CHANGES.md. Run it after each step: -Label C1.
       Check        -Step A (setup present and correct) | SSA (station assignment rows, reversals, hour sums) |
-                   Forms (which feeder/CDSS forms exist for the operator).
+                   Forms (which feeder/CDSS forms exist for the operator) | Lookups (lookup columns whose target
+                   list does not exist on this site - lists copied from production keep production list ids).
       Status       What this run has created so far and your current groups.
       Cleanup      Lists everything this run created; with -Force moves it to the site recycle bin and restores
                    your groups.
+      FixLookups   Lists the broken lookup columns (Check Lookups); with -Force re-points them to the test copies.
+                   Changes the test site's list schema only.
 
     Lists are found like the web part does on a non-production site (decision D20): production GUID, else URL
     name, else title. The definitions are embedded below (copied from src/webparts/mswpo/config/lists.ts and kept
@@ -45,10 +48,10 @@
 param(
     [Parameter(Mandatory)] [string] $ClientId,
     [Parameter(Mandatory)] [string] $SiteUrl,
-    [Parameter(Mandatory)] [ValidateSet('Setup', 'Role', 'RestoreRole', 'Snapshot', 'Check', 'Status', 'Cleanup')] [string] $Action,
+    [Parameter(Mandatory)] [ValidateSet('Setup', 'Role', 'RestoreRole', 'Snapshot', 'Check', 'Status', 'Cleanup', 'FixLookups')] [string] $Action,
     [ValidateSet('Management', 'Supervisors', 'Trainer', 'MSWPOAdmin', 'Operator')] [string] $Role,
     [string] $Label,
-    [ValidateSet('A', 'SSA', 'Forms')] [string] $Step,
+    [ValidateSet('A', 'SSA', 'Forms', 'Lookups')] [string] $Step,
     # Setup values. Default operator = you (so Operator-role steps and "email the operator" reach you).
     [string] $OperatorName,
     [string] $OperatorEmail,
@@ -254,11 +257,49 @@ function Select-ActiveStatus($Field) {
     return $active
 }
 
+# Target list of a lookup column. A list copied from production keeps the PRODUCTION list id in its lookup
+# columns ("Broken"): then the test copy of that production list is returned via the embedded definitions.
+$LookupTargetCache = @{}
+function Find-LookupTarget([string]$ListId) {
+    $id = $ListId.Trim('{', '}')
+    if ($id -notmatch '^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$') { return $null }   # Self, UserInfo, AppPrincipals
+    if ($LookupTargetCache.ContainsKey($id)) { return $LookupTargetCache[$id] }
+    try { $l = Get-PnPList -Identity $id -ErrorAction Stop } catch { $l = $null }
+    if ($l) {
+        $t = [pscustomobject]@{ List = $l; Broken = $false; Def = $null }
+    } else {
+        $def = @($Lists.Core.Values) + @($Lists.Station) | Where-Object { $_.Id -ieq $id } | Select-Object -First 1
+        $copy = if ($def) { Resolve-MswpoList $def } else { $null }
+        $t = [pscustomobject]@{ List = $copy; Broken = $true; Def = $def }
+    }
+    $LookupTargetCache[$id] = $t
+    return $t
+}
+
 function Resolve-LookupId($Field, [string]$Text) {
-    $target = Get-PnPList -Identity ($Field.LookupList.Trim('{', '}'))
-    $match = Get-Items $target | Where-Object { (Format-Value $_.FieldValues[$Field.ShowField]) -eq $Text } | Select-Object -Last 1
-    if (-not $match) { throw "No item '$Text' in '$($target.Title)' for lookup '$($Field.Title)'" }
+    $t = Find-LookupTarget $Field.LookupList
+    if (-not $t -or -not $t.List) {
+        throw "Lookup column '$($Field.Title)' points to list $($Field.LookupList), which does not exist on this site and is not a known MSWPO list. Run -Action Check -Step Lookups."
+    }
+    if ($t.Broken) {
+        Write-Warning "Lookup column '$($Field.Title)' still points to the PRODUCTION list '$($t.Def.Title)' (id $($Field.LookupList)), which does not exist on this site. Using the test copy for the item id - but the app cannot read this column until it is repaired: -Action FixLookups."
+    }
+    $match = Get-Items $t.List | Where-Object { (Format-Value $_.FieldValues[$Field.ShowField]) -eq $Text } | Select-Object -Last 1
+    if (-not $match) { throw "No item '$Text' in '$($t.List.Title)' for lookup '$($Field.Title)'" }
     return [int]$match.Id
+}
+
+# Every lookup column of the MSWPO lists whose target list does not exist on this site.
+function Get-BrokenLookups {
+    $out = @()
+    foreach ($def in @($Lists.Core.Values) + @($Lists.Station)) {
+        $list = Resolve-MswpoList $def
+        foreach ($f in ((Get-FieldInfo $list).Values | Where-Object { $_.Type -like 'Lookup*' -and $_.LookupList } | Sort-Object Name)) {
+            $t = Find-LookupTarget $f.LookupList
+            if ($t -and $t.Broken) { $out += [pscustomobject]@{ List = $list; Field = $f; Target = $t } }
+        }
+    }
+    return $out
 }
 
 # Builds the -Values hashtable, converting each wanted value to the field's type; skips fields the list lacks.
@@ -667,6 +708,15 @@ function Invoke-Check {
             }
             if (-not $script:CheckLines.Count) { Write-Host '  No feeder/CDSS forms yet.' }
         }
+        'Lookups' {
+            $broken = Get-BrokenLookups
+            foreach ($b in $broken) {
+                $copy = if ($b.Target.List) { "test copy: '$($b.Target.List.Title)'" } else { 'no copy found' }
+                $was = if ($b.Target.Def) { "production '$($b.Target.Def.Title)'" } else { 'an unknown list' }
+                Write-Check $false "$($b.List.Title) > $($b.Field.Title) ($($b.Field.Name)) points to $was $($b.Field.LookupList) - $copy"
+            }
+            if (-not $broken.Count) { Write-Check $true 'Every lookup column of the MSWPO lists points to a list on this site' }
+        }
     }
     Add-Content $ChangesFile -Encoding utf8 -Value (@('', "## Check $Step - $(Get-Date -Format 'yyyy-MM-dd HH:mm')", '') + $script:CheckLines)
 }
@@ -714,6 +764,39 @@ function Invoke-Cleanup {
     Write-Host "Run closed; state archived to $archive" -ForegroundColor Green
 }
 
+# Re-points lookup columns that still reference production lists to the test copies (test site schema only).
+function Invoke-FixLookups {
+    $broken = @(Get-BrokenLookups)
+    if (-not $broken.Count) { Write-Host 'No broken lookup columns.' -ForegroundColor Green; return }
+    $broken | ForEach-Object {
+        [pscustomobject]@{
+            List = $_.List.Title; Column = $_.Field.Title; 'Points to (missing)' = $_.Field.LookupList
+            'Will point to' = if ($_.Target.List) { "$($_.Target.List.Title) {$($_.Target.List.Id)}" } else { '(no copy - cannot fix)' }
+        }
+    } | Format-Table -AutoSize -Wrap | Out-String | Write-Host
+    if (-not $Force) { Write-Host 'Dry run. Add -Force to change these columns on the TEST site.' -ForegroundColor Yellow; return }
+    $webId = (Get-PnPWeb).Id
+    foreach ($b in $broken) {
+        if (-not $b.Target.List) { Write-Warning "Skipped $($b.List.Title) > $($b.Field.Title): no matching list on this site."; continue }
+        try {
+            $field = Get-PnPField -List $b.List -Identity $b.Field.Name
+            $xml = $field.SchemaXml.Replace("List=`"$($b.Field.LookupList)`"", "List=`"{$($b.Target.List.Id)}`"")
+            $xml = [regex]::Replace($xml, 'WebId="[^"]*"', "WebId=`"$webId`"")
+            $field.SchemaXml = $xml
+            $field.Update()
+            Invoke-PnPQuery
+            Write-Host "  fixed $($b.List.Title) > $($b.Field.Title)" -ForegroundColor Green
+        } catch {
+            Write-Warning "  $($b.List.Title) > $($b.Field.Title): SharePoint refused the change ($($_.Exception.Message)). The column would have to be recreated."
+        }
+    }
+    $FieldCache.Clear()
+    $LookupTargetCache.Clear()
+    $left = @(Get-BrokenLookups)
+    Write-Host "Broken lookup columns left: $($left.Count)"
+    Write-Host 'Now compare an existing operator (Admin page safety table, profile safety chart) with production: copied items keep their old lookup ids.' -ForegroundColor Yellow
+}
+
 function Invoke-Status {
     if (-not $State) { Write-Host 'No run set up yet (use -Action Setup).'; return }
     Write-Host "Operator: $($State.operator) <$($State.email)>  started $($State.startedAt)"
@@ -742,4 +825,5 @@ switch ($Action) {
     'Check' { Invoke-Check }
     'Status' { Invoke-Status }
     'Cleanup' { Invoke-Cleanup }
+    'FixLookups' { Invoke-FixLookups }
 }
