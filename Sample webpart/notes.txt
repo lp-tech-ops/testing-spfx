@@ -1,24 +1,8 @@
-PS C:\Users\kgunnamadm\Documents\New folder (2)> .\Test-MswpoRun.ps1 -ClientId "dd085fdc-092f-49ac-a919-95328fe624fd" -SiteUrl "https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/" -Action Check -Step A
 Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
 Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
 Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
-Check A for 'Kishore Gunnam AZA'
-  PASS  Operator LookUp: exactly one item (1)
-  PASS  Operator LookUp: status 'Active' is not Inactive
-  PASS  Employee Data: exactly one item (1)
-  PASS  Employee Data: Primary_x0020_Current_x0020_Leve = T (T)
-  PASS  Employee Data: Secondary_x0020_Current_x0020_Le = T (T)
-  PASS  Employee Data: AWT_x0020_Current_x0020_Level = T (T)
-  PASS  Employee Data: DWB_x0020_Current_x0020_Level = T (T)
-  PASS  Employee Data: shift supervisor set (Brent Derr)
-  PASS  Safety: 2 year(s): 2025, 2026
-  PASS  Lab DOC: exactly one item (1)
-  PASS  Document Set folder 'Kishore Gunnam AZA' exists
-  PASS  Document Set Title = 'Kishore Gunnam AZA' (the app finds it by Title) - is 'Kishore Gunnam AZA'
-PS C:\Users\kgunnamadm\Documents\New folder (2)> .\Test-MswpoRun.ps1 -ClientId "dd085fdc-092f-49ac-a919-95328fe624fd" -SiteUrl "https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/" -Action Role -Role Supervisors
-Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
-Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
-Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
-Saved your original groups (item ids: ).
-  added to   Supervisors (#1)
-Role the app should now show: Supervisors  (reload the page)
+Saved the original groups of Kishore Gunnam (item ids: 1).
+Setting the role of Kishore Gunnam <Kgunnam@arlingtonva.us> to Management
+  removed from Supervisors (#1)
+  added to     Management (#2)
+Role the app should now show for Kishore Gunnam: Management  (reload the page)
