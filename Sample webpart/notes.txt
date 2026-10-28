@@ -1,30 +1,24 @@
+PS C:\Users\kgunnamadm\Documents\New folder (2)> .\Test-MswpoRun.ps1 -ClientId "dd085fdc-092f-49ac-a919-95328fe624fd" -SiteUrl "https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/" -Action Check -Step A
 Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
 Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
 Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
-No broken lookup columns.
-PS C:\Users\kgunnamadm\Documents\New folder (2)> .\Test-MswpoRun.ps1 -ClientId "dd085fdc-092f-49ac-a919-95328fe624fd" -SiteUrl "https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/" -Action Setup
-Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
-Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
-Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
-Resuming setup for 'Kishore Gunnam AZA' (already created: operatorLookup, operatorCertification)
-Test operator 'Kishore Gunnam AZA' <kgunnamaza@arlingtonva.us>, shift A
-  + MSWPO Safety Training Completion List #241
-  + MSWPO Safety Training Completion List #242
-  + DOC Certification Dates for Lab #111
-  + All MSWPO Training Documents document set 'Kishore Gunnam AZA' #588
-## A-setup - 2026-10-28 16:27 (role: Operator, operator: Kishore Gunnam AZA)
-### Operator LookUp List
-- **added** #64 (by Kishore Gunnam AZA): AWTStationHours=0; AWTStationTrainingHours=0; DWBStationHours=0; DWBStationTrainingHours=0; FileLeafRef=64_.000; ID=64; Job_x0020_Title=Operator; Operator_x0020_Email=kgunnamaza@arlingtonva.us; Operator_x0020_Name=Kishore Gunnam AZA; Operator_x0020_Shift=A; PrimaryStationHours=0; PrimaryStationTrainingHours=0; Role=Operator; SecondaryStationHours=0; SecondaryStationTrainingHours=0; Status=Active; SupervisorDutiesHours=0; Title=Kishore Gunnam AZA
-### Operator Certification and Employee Data
-- **added** #61 (by Kishore Gunnam AZA): AWT_x0020_Current_x0020_Level=T; DWB_x0020_Current_x0020_Level=T; FileLeafRef=61_.000; Hire_x0020_Date=2026-05-01 00:00; ID=61; OPS_x0020_License_x0020_Level=1; Primary_x0020_Current_x0020_Leve=T; Secondary_x0020_Current_x0020_Le=T; Shift=A; Shift_x0020_Supervisor=Brent Derr; Status=Active; System_x0020_Defined_x0020_Opera=Kishore Gunnam AZA; Time_x0020_in_x0020_days_x0020_a=<img src='/_layouts/images/blank.gif' onload="{    var SPday=new Date();    SPday.setFullYear(2026,4,1);    var Days=Math.round((SPday.getTime()-new Date().getTime())/86400000);    this.parentNode.innerHTML=Math.abs(Days);}">; Time_x0020_in_x0020_years_x0020_=<img src='/_layouts/images/blank.gif' onload="{    var SPday=new Date();    SPday.setFullYear(2026,4,1);    var Days=Math.round(((SPday.getTime()-new Date().getTime())/86400000)/365);    this.parentNode.innerHTML=Math.abs(Days);}">; Title=Kishore Gunnam AZA
-### MSWPO Safety Training Completion List
-- **added** #241 (by Kishore Gunnam AZA): _x0025__x0020_Total_x0020_Safety=85; _x0025_Face_x0020_to_x0020_Face_=80; _x0025_Online_x0020_Completed=90; FileLeafRef=241_.000; ID=241; Operator_x0020_Look_x0020_up=Kishore Gunnam AZA; TEST_x0020_AVE=85; Title=Kishore Gunnam AZA; Year=2025
-- **added** #242 (by Kishore Gunnam AZA): _x0025__x0020_Total_x0020_Safety=45; _x0025_Face_x0020_to_x0020_Face_=40; _x0025_Online_x0020_Completed=50; FileLeafRef=242_.000; ID=242; Operator_x0020_Look_x0020_up=Kishore Gunnam AZA; TEST_x0020_AVE=45; Title=Kishore Gunnam AZA; Year=2026
-### DOC Certification Dates for Lab
-- **added** #111 (by Kishore Gunnam AZA): FileLeafRef=111_.000; ID=111; Shift=A; Status=Active; Title=Kishore Gunnam AZA
-### All MSWPO Training Documents
-- **added** #588 (by Kishore Gunnam AZA): FileLeafRef=Kishore Gunnam AZA; ID=588; Title=Kishore Gunnam AZA
-Saved C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data\snapshots\01-A-setup.json; appended to C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data\CHANGES.md
 Check A for 'Kishore Gunnam AZA'
   PASS  Operator LookUp: exactly one item (1)
-Test-MswpoRun.ps1: Cannot index into a null array.
+  PASS  Operator LookUp: status 'Active' is not Inactive
+  PASS  Employee Data: exactly one item (1)
+  PASS  Employee Data: Primary_x0020_Current_x0020_Leve = T (T)
+  PASS  Employee Data: Secondary_x0020_Current_x0020_Le = T (T)
+  PASS  Employee Data: AWT_x0020_Current_x0020_Level = T (T)
+  PASS  Employee Data: DWB_x0020_Current_x0020_Level = T (T)
+  PASS  Employee Data: shift supervisor set (Brent Derr)
+  PASS  Safety: 2 year(s): 2025, 2026
+  PASS  Lab DOC: exactly one item (1)
+  PASS  Document Set folder 'Kishore Gunnam AZA' exists
+  PASS  Document Set Title = 'Kishore Gunnam AZA' (the app finds it by Title) - is 'Kishore Gunnam AZA'
+PS C:\Users\kgunnamadm\Documents\New folder (2)> .\Test-MswpoRun.ps1 -ClientId "dd085fdc-092f-49ac-a919-95328fe624fd" -SiteUrl "https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/" -Action Role -Role Supervisors
+Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
+Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
+Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
+Saved your original groups (item ids: ).
+  added to   Supervisors (#1)
+Role the app should now show: Supervisors  (reload the page)
