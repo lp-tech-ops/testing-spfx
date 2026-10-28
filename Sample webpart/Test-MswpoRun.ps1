@@ -562,6 +562,9 @@ function ConvertTo-Row($Item, $Fields) {
         if ($f.Hidden -and $KeepFields -notcontains $f.Name) { continue }
         if ($f.Type -eq 'Computed' -and $KeepFields -notcontains $f.Name) { continue }
         $v = Format-Value $Item.FieldValues[$f.Name]
+        # Noise: list items' file name "64_.000", and legacy calculated columns that hold <img onload=...> script.
+        if ($f.Name -eq 'FileLeafRef' -and $v -match '^\d+_\.000$') { continue }
+        if ($v -like '<img *') { continue }
         if ($v -ne '' -or $KeepFields -contains $f.Name) { $row[$f.Name] = $v }
     }
     return $row
@@ -660,10 +663,10 @@ function Invoke-Check {
     Write-Host "Check $Step for '$name'" -ForegroundColor Cyan
     switch ($Step) {
         'A' {
-            $l = Find-OperatorItems (Get-Core 'operatorLookup') 'Operator_x0020_Name' $name
+            $l = @(Find-OperatorItems (Get-Core 'operatorLookup') 'Operator_x0020_Name' $name)
             Write-Check ($l.Count -eq 1) "Operator LookUp: exactly one item ($($l.Count))"
             if ($l.Count) { Write-Check ((Format-Value $l[0].FieldValues['Status']) -ne 'Inactive') "Operator LookUp: status '$(Format-Value $l[0].FieldValues['Status'])' is not Inactive" }
-            $e = Find-OperatorItems (Get-Core 'operatorCertification') 'System_x0020_Defined_x0020_Opera' $name
+            $e = @(Find-OperatorItems (Get-Core 'operatorCertification') 'System_x0020_Defined_x0020_Opera' $name)
             Write-Check ($e.Count -eq 1) "Employee Data: exactly one item ($($e.Count))"
             if ($e.Count) {
                 foreach ($f in 'Primary_x0020_Current_x0020_Leve', 'Secondary_x0020_Current_x0020_Le', 'AWT_x0020_Current_x0020_Level', 'DWB_x0020_Current_x0020_Level') {
@@ -671,9 +674,9 @@ function Invoke-Check {
                 }
                 Write-Check ((Format-Value $e[0].FieldValues['Shift_x0020_Supervisor']) -ne '') "Employee Data: shift supervisor set ($(Format-Value $e[0].FieldValues['Shift_x0020_Supervisor']))"
             }
-            $s = Find-OperatorItems (Get-Core 'safetyTraining') 'Operator_x0020_Look_x0020_up' $name
+            $s = @(Find-OperatorItems (Get-Core 'safetyTraining') 'Operator_x0020_Look_x0020_up' $name)
             Write-Check ($s.Count -ge 1) "Safety: $($s.Count) year(s): $(($s | ForEach-Object { Format-Value $_.FieldValues['Year'] }) -join ', ')"
-            $d = Find-OperatorItems (Get-Core 'docCertificationDates') 'Title' $name
+            $d = @(Find-OperatorItems (Get-Core 'docCertificationDates') 'Title' $name)
             Write-Check ($d.Count -eq 1) "Lab DOC: exactly one item ($($d.Count))"
             $set = Get-DocSetFolder $name
             Write-Check ([bool]$set) "Document Set folder '$(Get-DocSetName $name)' exists"
