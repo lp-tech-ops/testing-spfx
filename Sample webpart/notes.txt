@@ -1,5 +1,10 @@
-<SITE_URL>/_api/search/query?querytext='Path:"<SITE_URL>/" AND ContentTypeId:0x0120D5*'&selectproperties='Path,ContentTypeId,mvDocSetName,mvDocSetNumber,RefinableString135,mvDocSetType,mvDocSetStatus,mvCaseDisposition,mvManagedBy,mvDepartmentContact,RefinableDateSingle01,RefinableDateSingle02'&rowlimit=5&trimduplicates=false&enablequeryrules=false
-
-
-
-https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/_api/search/query?querytext='Path:"https://arlingtonva.sharepoint.com/sites/CAO-CaseManagementSite-Dev/" AND ContentTypeId:0x0120D5*'&selectproperties='Path,ContentTypeId,mvDocSetName,mvDocSetNumber,RefinableString135,mvDocSetType,mvDocSetStatus,mvCaseDisposition,mvManagedBy,mvDepartmentContact,RefinableDateSingle01,RefinableDateSingle02'&rowlimit=5&trimduplicates=false&enablequeryrules=false
+Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
+Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
+Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
+Resuming setup for 'Kishore Gunnam AZA' (already created: operatorLookup, operatorCertification)
+Test operator 'Kishore Gunnam AZA' <kgunnamaza@arlingtonva.us>, shift A
+Get-PnPList: C:\Users\kgunnamadm\Documents\New folder (2)\Test-MswpoRun.ps1:258
+Line |
+ 258 |  …    $target = Get-PnPList -Identity ($Field.LookupList.Trim('{', '}'))
+     |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | List does not exist.  The page you selected contains a list that does not exist.  It may have been deleted by another user.
