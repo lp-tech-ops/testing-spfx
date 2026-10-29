@@ -1,8 +1,28 @@
-Connecting to https://arlingtonva.sharepoint.com/sites/WPCB-MSWPO-DEV/ ...
-Data folder: C:\Users\kgunnamadm\Documents\New folder (2)\test-run-data
-Signed in as Kishore Gunnam AZA <kgunnamaza@arlingtonva.us>
-Saved the original groups of Kishore Gunnam (item ids: 1).
-Setting the role of Kishore Gunnam <Kgunnam@arlingtonva.us> to Management
-  removed from Supervisors (#1)
-  added to     Management (#2)
-Role the app should now show for Kishore Gunnam: Management  (reload the page)
+fnm install 24.22.2
+fnm default 24.22.2
+fnm use 24.22.2
+
+node --version
+npm --version
+Expected versions:
+v24.22.2
+11.19.1
+npm comes with Node; no separate installation is needed. Release details
+
+4. Install the SPFx project generator
+
+With Node 24 active:
+npm install --global yo @microsoft/generator-sharepoint@1.24.0
+
+yo --version
+npm list --global --depth=0
+Use the project-local Heft installation through npm scripts or npx. A global Heft installation is optional. Microsoft setup guidance
+
+5. Create a new SPFx project
+New-Item -ItemType Directory -Path my-spfx-project
+Set-Location my-spfx-project
+
+Set-Content -Path .nvmrc -Value "24.22.2" -Encoding ascii
+
+yo @microsoft/sharepoint
+Choose the required com
